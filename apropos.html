@@ -6,6 +6,33 @@
 <title>À propos — Drukpa Grenoble</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+.ap-body{background:#fdf8f0;padding:4rem 2rem}
+.ap-inner{max-width:1000px;margin:0 auto}
+.ap-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3rem}
+.ap-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8B6914;margin-bottom:.5rem}
+.ap-title{font-family:'Cinzel',serif;font-size:2rem;color:#2C1A08;margin-bottom:.75rem}
+.ap-divider{width:50px;height:2px;background:#C9A84C;margin-bottom:1.5rem}
+.ap-text p{color:#4A3520;line-height:1.95;font-size:.95rem;margin-bottom:1rem}
+.ap-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.ap-stat{background:white;padding:1.2rem 1.5rem;border-left:3px solid #C9A84C}
+.ap-stat-num{font-family:'Cinzel',serif;font-size:1.8rem;color:#C9A84C;display:block}
+.ap-stat-label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#6B5A3E}
+
+.ap-img-wrap{position:relative}
+.ap-img{width:100%;height:400px;object-fit:cover;display:block}
+.ap-quote{position:absolute;bottom:0;left:0;right:0;background:rgba(28,15,5,.82);padding:1.5rem 2rem}
+.ap-quote p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,230,195,.92);font-style:italic;line-height:1.7;margin-bottom:.5rem}
+.ap-quote cite{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C}
+
+.ap-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.ap-gallery img{width:100%;height:200px;object-fit:cover}
+
+@media(max-width:768px){
+  .ap-grid{grid-template-columns:1fr}
+  .ap-gallery{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
@@ -34,43 +61,49 @@
   <div class="page-divider"></div>
 </div>
 
-<section class="section about apropos-body">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div>
-        <img src="Bouddha_dor.jpg" alt="Bouddha doré" class="about-img">
-      </div>
-      <div class="about-text">
+<div class="ap-body">
+  <div class="ap-inner">
+    <div class="ap-grid">
+
+      <!-- Texte gauche -->
+      <div class="ap-text">
+        <div class="ap-label">À propos</div>
+        <h2 class="ap-title">L'association Drukpa Grenoble</h2>
+        <div class="ap-divider"></div>
         <p>
           Fondée dans la tradition de la <strong>lignée Drukpa du bouddhisme tibétain</strong>, notre association organise des sessions de méditation, des pratiques spirituelles et des enseignements pour tous ceux qui souhaitent progresser sur le chemin du Dharma.
         </p>
         <p>
-          Membre de l'<strong>UBF</strong> et affiliée au centre <strong>Drukpa Plouray</strong>, siège européen de la lignée, nous accueillons régulièrement des lamas et maîtres spirituels qualifiés.
+          Membre de l'<strong>UBF</strong> et affiliée au centre <strong>Drukpa Plouray</strong>, siège européen de la lignée, nous accueillons régulièrement des lamas et maîtres spirituels qualifiés. Nous participons au dialogue interreligieux au <strong>Centre Théologique de Meylan-Grenoble</strong>.
         </p>
-        <p>
-          Nous participons au dialogue interreligieux au <strong>Centre Théologique de Meylan-Grenoble</strong>.
-        </p>
-        <div class="about-stats">
-          <div class="stat"><span class="stat-num">15</span><span class="stat-label">Adhérents 2025</span></div>
-          <div class="stat"><span class="stat-num">4</span><span class="stat-label">Week-ends annuels</span></div>
-          <div class="stat"><span class="stat-num">30+</span><span class="stat-label">Ans de pratique</span></div>
-          <div class="stat"><span class="stat-num">2</span><span class="stat-label">Aumôniers</span></div>
+        <div class="ap-stats">
+          <div class="ap-stat"><span class="ap-stat-num">15</span><span class="ap-stat-label">Adhérents 2025</span></div>
+          <div class="ap-stat"><span class="ap-stat-num">4</span><span class="ap-stat-label">Week-ends annuels</span></div>
+          <div class="ap-stat"><span class="ap-stat-num">30+</span><span class="ap-stat-label">Ans de pratique</span></div>
+          <div class="ap-stat"><span class="ap-stat-num">2</span><span class="ap-stat-label">Aumôniers</span></div>
         </div>
-        <div class="quote-block">
+      </div>
+
+      <!-- Image droite avec citation -->
+      <div class="ap-img-wrap">
+        <img src="Bouddha_dor.jpg" alt="Bouddha doré" class="ap-img">
+        <div class="ap-quote">
           <p>« Contribuer à nourrir les causes d'un bonheur relatif et aussi plus profond et véritable pour toutes celles et tous ceux qui s'y relient. »</p>
           <cite>— Lopön Thrinlé Tenzin, Président</cite>
         </div>
       </div>
+
     </div>
 
     <!-- Galerie -->
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:3rem">
-      <img src="Moine_devant_l_autel.jpg" alt="Moine devant l'autel" style="width:100%;height:220px;object-fit:cover">
-      <img src="Salle_de_m_ditation.jpg" alt="Salle de méditation" style="width:100%;height:220px;object-fit:cover">
-      <img src="Offrande_bouddhiste.jpg" alt="Offrande bouddhiste" style="width:100%;height:220px;object-fit:cover">
+    <div class="ap-gallery">
+      <img src="Moine_devant_l_autel.jpg" alt="Moine devant l'autel">
+      <img src="Salle_de_m_ditation.jpg" alt="Salle de méditation">
+      <img src="Offrande_bouddhiste.jpg" alt="Offrande bouddhiste">
     </div>
+
   </div>
-</section>
+</div>
 
 <footer>
   <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
