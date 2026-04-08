@@ -10,7 +10,7 @@
 .ret-card{background:#2A1018;border:1px solid rgba(201,168,76,.15);border-radius:2px;overflow:hidden;position:relative;cursor:pointer}
 .ret-card-img{width:100%;height:180px;object-fit:cover;transition:transform .4s ease,filter .4s ease}
 .ret-card:hover .ret-card-img{transform:scale(1.05);filter:brightness(1.15)}
-.ret-card-preview{position:absolute;inset:0;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;z-index:2}
+.ret-card-preview{position:absolute;top:0;left:0;right:0;height:180px;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;z-index:2;pointer-events:none}
 .ret-card:hover .ret-card-preview{opacity:1}
 .ret-card-preview img{width:85%;height:85%;object-fit:cover;border:2px solid rgba(201,168,76,.4)}
 .ret-card-body{padding:1.5rem;position:relative;z-index:1}
