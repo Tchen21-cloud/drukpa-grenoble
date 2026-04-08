@@ -142,3 +142,29 @@ footer p{font-size:.8rem;color:rgba(245,230,195,.4);letter-spacing:.08em}
   .page-title{font-size:1.6rem}
   nav{padding:0 1rem}
 }
+
+/* ===== COULEURS PAR PAGE ===== */
+/* À propos — ocre/sable */
+.apropos-header{background:linear-gradient(135deg,#8B6914,#C4973A) !important}
+.apropos-body{background:#FDF6E3}
+/* Activités — vert sauge */
+.activites-header{background:linear-gradient(135deg,#4A7C59,#6B9E78) !important}
+.activites-body{background:#F0F7F0}
+/* Dialogue — bleu ardoise */
+.dialogue-header{background:linear-gradient(135deg,#2C4A6E,#3D6B9E) !important}
+.dialogue-body{background:#EEF3F9}
+/* Retraites — bordeaux */
+.retraites-header{background:linear-gradient(135deg,#6B1F2A,#9B3A47) !important}
+.retraites-body{background:#FDF0F1}
+/* Live to Love — rouge terracotta */
+.ltl-header{background:linear-gradient(135deg,#C0392B,#E74C3C) !important}
+.ltl-body{background:#FFF0EE}
+/* Intervenants — prune */
+.int-header{background:linear-gradient(135deg,#5B2C6F,#8E44AD) !important}
+.int-body{background:#F8F0FC}
+/* Aumônerie — rose poudré */
+.aum-header{background:linear-gradient(135deg,#B8536A,#D4778A) !important}
+.aum-body{background:#FFF0F3}
+/* Contact — bleu céladon */
+.contact-header{background:linear-gradient(135deg,#2E86AB,#4DAFCA) !important}
+.contact-body{background:#EEF8FB}
