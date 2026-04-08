@@ -31,7 +31,7 @@ nav{background:var(--dark);display:flex;align-items:center;padding:0 2rem;border
 .hero-content{position:relative;z-index:2}
 .hero-logo{width:110px;height:110px;object-fit:contain;mix-blend-mode:screen;opacity:.92;margin-bottom:1.5rem;filter:drop-shadow(0 2px 12px rgba(0,0,0,.5))}
 .hero-tagline{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.hero h1{font-family:"Cinzel",serif;font-size:clamp(2rem,5vw,3.5rem);color:var(--gold-light);margin-bottom:.5rem}
+.hero h1{font-family:"Cinzel",serif;font-size:clamp(2.6rem,6.5vw,4.55rem);color:var(--gold-light);margin-bottom:.5rem}
 .hero-sub{font-family:"Cormorant Garamond",serif;font-size:1.2rem;color:rgba(245,230,195,.8);margin-bottom:2.5rem;font-style:italic}
 .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .btn-primary{background:var(--gold);color:var(--dark);padding:.75rem 2rem;font-size:10px;letter-spacing:.15em;text-transform:uppercase;text-decoration:none;font-weight:700;transition:all .2s}
@@ -168,3 +168,47 @@ footer p{font-size:.8rem;color:rgba(245,230,195,.4);letter-spacing:.08em}
 /* Contact — bleu céladon */
 .contact-header{background:linear-gradient(135deg,#2E86AB,#4DAFCA) !important}
 .contact-body{background:#EEF8FB}
+
+/* ===== TEXTES LISIBLES SUR FONDS CLAIRS ===== */
+.apropos-body .section-label,
+.activites-body .section-label,
+.ltl-body .section-label,
+.aum-body .section-label,
+.contact-body .section-label{color:#8B6914}
+
+.apropos-body .section-title,
+.activites-body .section-title,
+.ltl-body .section-title,
+.aum-body .section-title,
+.contact-body .section-title{color:#3A2A0A}
+
+.apropos-body .about-text p,
+.activites-body .act-card p,
+.ltl-body p,
+.aum-body .aum-text p,
+.contact-body .contact-info p{color:#3A2A0A}
+
+/* Texte blanc sur fonds sombres (dialogue, retraites, intervenants) */
+.dialogue-body .section-label,
+.retraites-body .section-label,
+.int-body .section-label{color:#E8C97A}
+
+.dialogue-body .dialogue-text,
+.retraites-body .ret-card-body p,
+.int-body .int-card-body p{color:rgba(255,255,255,.85)}
+
+/* Contact fond clair — texte sombre */
+.contact-body{color:#1C3A4A}
+.contact-body h3{color:#1C3A4A !important}
+.contact-body .contact-info p{color:#2C5A70}
+.contact-body .form-group label{color:#1C6A8A}
+.contact-body .form-group input,
+.contact-body .form-group textarea,
+.contact-body .form-group select{
+  background:white;
+  border:1px solid #9ACAD8;
+  color:#1C3A4A
+}
+
+/* Accueil — logo visible */
+.hero-logo{mix-blend-mode:normal !important;background:rgba(255,255,255,.15);padding:4px;border-radius:4px}
