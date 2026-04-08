@@ -7,18 +7,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.ret-card{background:#2A1018;border:1px solid rgba(201,168,76,.15);border-radius:2px;overflow:hidden;position:relative;cursor:pointer}
-.ret-card-img{width:100%;height:180px;object-fit:cover;transition:transform .4s ease,filter .4s ease}
-.ret-card:hover .ret-card-img{transform:scale(1.05);filter:brightness(1.15)}
-.ret-card-preview{position:absolute;top:0;left:0;right:0;height:180px;background:rgba(0,0,0,.75);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease;z-index:2;pointer-events:none}
-.ret-card:hover .ret-card-preview{opacity:1}
-.ret-card-preview img{width:85%;height:85%;object-fit:cover;border:2px solid rgba(201,168,76,.4)}
-.ret-card-body{padding:1.5rem;position:relative;z-index:1}
-.ret-badge{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#E8C97A;margin-bottom:.5rem;display:block}
-.ret-date{font-size:.8rem;color:#E8C97A;margin-bottom:.5rem;display:block}
-.ret-card-body h3{font-family:'Cinzel',serif;font-size:1rem;color:#F5E6C3;margin-bottom:.5rem}
-.ret-card-body p{font-size:.85rem;color:rgba(245,230,195,.7);line-height:1.7}
-.ret-link{display:inline-block;margin-top:.75rem;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#E8C97A;text-decoration:none;border-bottom:1px solid #E8C97A}
+.ret-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.ret-card{position:relative;height:320px;overflow:hidden;cursor:pointer;border:1px solid rgba(201,168,76,.2)}
+.ret-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.ret-card:hover img{transform:scale(1.05)}
+.ret-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.1) 100%);transition:background .4s ease}
+.ret-card:hover .ret-overlay{background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.75) 50%,rgba(0,0,0,.4) 100%)}
+.ret-content{position:absolute;inset:0;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
+.ret-badge{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#E8C97A;margin-bottom:.3rem}
+.ret-date{font-size:.8rem;color:#E8C97A;margin-bottom:.4rem;display:block}
+.ret-card h3{font-family:'Cinzel',serif;font-size:1rem;color:#F5E6C3;margin-bottom:.5rem;line-height:1.4}
+.ret-desc{font-size:.82rem;color:rgba(245,230,195,.85);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s ease;opacity:0}
+.ret-card:hover .ret-desc{max-height:100px;opacity:1}
+.ret-link{display:inline-block;margin-top:.6rem;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#E8C97A;text-decoration:none;border-bottom:1px solid #E8C97A;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease .1s,opacity .3s ease .1s}
+.ret-card:hover .ret-link{max-height:30px;opacity:1}
 </style>
 </head>
 <body>
@@ -36,6 +38,7 @@
     <a href="livetolove.html">Live to Love</a>
     <a href="intervenants.html">Intervenants</a>
     <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
@@ -51,56 +54,48 @@
     <div class="ret-grid">
 
       <div class="ret-card">
-        <div class="ret-card-preview">
-          <img src="Chartreuse.jpg" alt="Chartreuse">
-        </div>
-        <img src="Chartreuse.jpg" alt="Chartreuse" class="ret-card-img">
-        <div class="ret-card-body">
+        <img src="Chartreuse.jpg" alt="Chartreuse">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
           <span class="ret-badge">À venir</span>
           <span class="ret-date">14 — 19 avril 2026</span>
           <h3>Retraite de méditation en Chartreuse</h3>
-          <p>Chalet « Les Belles Ombres » — Ste Marie du Mont. Retraite sous la conduite de Lopön Thrinlé Tenzin, dans le massif de la Chartreuse.</p>
+          <p class="ret-desc">Chalet « Les Belles Ombres » — Ste Marie du Mont. Retraite sous la conduite de Lopön Thrinlé Tenzin, dans le massif de la Chartreuse.</p>
           <a href="contact.html" class="ret-link">S'inscrire →</a>
         </div>
       </div>
 
       <div class="ret-card">
-        <div class="ret-card-preview">
-          <img src="Plouray.jpg" alt="Plouray">
-        </div>
-        <img src="Plouray.jpg" alt="Plouray" class="ret-card-img">
-        <div class="ret-card-body">
+        <img src="Plouray.jpg" alt="Plouray">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
           <span class="ret-badge">À venir</span>
           <span class="ret-date">Été 2026 — Plouray, Bretagne</span>
           <h3>Anniversaire des Reliques du Bouddha</h3>
-          <p>Centre Drukpa Plouray. Célébration du premier anniversaire de la venue des reliques du Bouddha à Plouray.</p>
+          <p class="ret-desc">Centre Drukpa Plouray. Célébration du premier anniversaire de la venue des reliques du Bouddha à Plouray.</p>
           <a href="contact.html" class="ret-link">Nous contacter →</a>
         </div>
       </div>
 
       <div class="ret-card">
-        <div class="ret-card-preview">
-          <img src="Retraite_2025.jpg" alt="Retraite 2025">
-        </div>
-        <img src="Retraite_2025.jpg" alt="Retraite 2025" class="ret-card-img">
-        <div class="ret-card-body">
+        <img src="Retraite_2025.jpg" alt="Retraite 2025">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
           <span class="ret-badge">2025</span>
           <span class="ret-date">21 — 29 juin 2025</span>
           <h3>Retraite Sangyé Menla</h3>
-          <p>Les Tranchats, Dordogne — Drukpa Vendée. Retraite guidée par Lopön Thrinlé Tenzin.</p>
+          <p class="ret-desc">Les Tranchats, Dordogne — Drukpa Vendée. Retraite guidée par Lopön Thrinlé Tenzin.</p>
         </div>
       </div>
 
       <div class="ret-card">
-        <div class="ret-card-preview">
-          <img src="drukpa-21.jpg" alt="Temple Plouray vide">
-        </div>
-        <img src="drukpa-21.jpg" alt="Temple Plouray vide" class="ret-card-img">
-        <div class="ret-card-body">
+        <img src="drukpa-21.jpg" alt="Temple Plouray">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
           <span class="ret-badge">2025</span>
           <span class="ret-date">13-14 sept & 20-21 déc 2025</span>
           <h3>Week-ends de pratique — Grenoble</h3>
-          <p>Sessions de pratique intensive en groupe, guidées par Lopön Thrinlé Tenzin lors de ses venues trimestrielles à Grenoble.</p>
+          <p class="ret-desc">Sessions de pratique intensive en groupe, guidées par Lopön Thrinlé Tenzin lors de ses venues trimestrielles à Grenoble.</p>
           <a href="contact.html" class="ret-link">Renseignements →</a>
         </div>
       </div>
