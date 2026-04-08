@@ -3,9 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Activités — Drukpa Grenoble</title>
+<title>Activités & pratiques — Drukpa Grenoble</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+.act-body{background:#f5f0e8;padding:4rem 2rem}
+.act-inner{max-width:1100px;margin:0 auto}
+
+/* Grille de cartes */
+.act-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-bottom:4rem}
+
+/* Carte standard */
+.act-card{background:white;padding:2rem;border-bottom:3px solid transparent;transition:border-color .2s,transform .2s;cursor:default}
+.act-card:hover{border-bottom-color:var(--gold);transform:translateY(-3px)}
+.act-icon{font-size:2rem;display:block;margin-bottom:1rem}
+.act-card h3{font-family:'Cinzel',serif;font-size:1.05rem;color:#2C1A08;margin-bottom:.6rem}
+.act-card p{font-size:.9rem;color:#6B5A3E;line-height:1.8}
+
+/* Carte spéciale — Retraites & nature avec galerie */
+.act-card-nature{background:white;border-bottom:3px solid transparent;transition:border-color .2s,transform .2s;cursor:pointer;overflow:hidden}
+.act-card-nature:hover{border-bottom-color:var(--gold);transform:translateY(-3px)}
+.act-card-nature-photos{display:grid;grid-template-columns:1fr 1fr;height:140px;overflow:hidden}
+.act-card-nature-photos img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.act-card-nature:hover .act-card-nature-photos img{transform:scale(1.06)}
+.act-card-nature-body{padding:2rem}
+.act-card-nature-body h3{font-family:'Cinzel',serif;font-size:1.05rem;color:#2C1A08;margin-bottom:.6rem}
+.act-card-nature-body p{font-size:.9rem;color:#6B5A3E;line-height:1.8}
+.act-card-nature-link{display:inline-block;margin-top:.75rem;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)}
+
+/* Section méditation détaillée */
+.act-featured{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--dark);padding:3rem;margin-bottom:3rem}
+.act-featured-text h2{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--gold-light);margin-bottom:1rem}
+.act-featured-text p{color:rgba(245,230,195,.8);line-height:1.9;font-size:.92rem;margin-bottom:1rem}
+.act-featured-text .horaire{background:rgba(201,168,76,.1);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-top:1.5rem}
+.act-featured-text .horaire-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.act-featured-text .horaire-val{color:rgba(245,230,195,.9);font-size:.9rem}
+.act-featured-img{width:100%;height:320px;object-fit:cover}
+
+/* Section photos bas de page */
+.act-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem}
+.act-photos img{width:100%;height:200px;object-fit:cover;transition:filter .3s}
+.act-photos img:hover{filter:brightness(1.1)}
+
+/* CTA */
+.act-cta{text-align:center;padding:3rem;background:white}
+.act-cta p{color:#6B5A3E;margin-bottom:1.5rem;font-size:.95rem}
+
+@media(max-width:768px){
+  .act-featured{grid-template-columns:1fr}
+  .act-photos{grid-template-columns:1fr 1fr}
+}
+</style>
 </head>
 <body>
 
@@ -35,8 +83,24 @@
   <div class="page-divider"></div>
 </div>
 
-<section class="section activites-body">
-  <div class="section-inner">
+<div class="act-body">
+  <div class="act-inner">
+
+    <!-- Section méditation mise en avant -->
+    <div class="act-featured">
+      <div class="act-featured-text">
+        <h2>La méditation au cœur de notre pratique</h2>
+        <p>Chaque session est un espace de silence et de présence. Nous pratiquons la méditation silencieuse, le Soutra du Cœur, les visualisations et la récitation de mantras — accessibles à tous, débutants comme pratiquants expérimentés.</p>
+        <p>Lopön Thrinlé Tenzin guide nos pratiques lors de ses venues trimestrielles à Grenoble, accompagné parfois de Drubpön Ngawang Tenzin.</p>
+        <div class="horaire">
+          <div class="horaire-label">Week-ends de pratique 2025</div>
+          <div class="horaire-val">13-14 septembre & 20-21 décembre<br>Centre d'Études Bouddhiques — Grenoble</div>
+        </div>
+      </div>
+      <img src="galerie_ceb_3.jpg" alt="Session de pratique au CEB Grenoble" class="act-featured-img">
+    </div>
+
+    <!-- Grille des 6 activités -->
     <div class="act-grid">
       <div class="act-card">
         <span class="act-icon">🧘</span>
@@ -48,18 +112,21 @@
         <h3>Enseignements</h3>
         <p>Visualisations, exercices respiratoires, récitations de mantras avec nos maîtres.</p>
       </div>
-      <div class="act-card" style="padding:0;overflow:hidden;cursor:pointer" onclick="window.location='galerie.html'">
-        <div style="display:grid;grid-template-columns:1fr 1fr;height:120px;overflow:hidden">
-          <img src="galerie_betta_1.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
-          <img src="galerie_betta_3.jpg" style="width:100%;height:100%;object-fit:cover;display:block">
+
+      <!-- Carte Retraites & nature avec photos galerie -->
+      <div class="act-card-nature" onclick="window.location='galerie.html'">
+        <div class="act-card-nature-photos">
+          <img src="galerie_betta_1.jpg" alt="Cascade Belledonne">
+          <img src="galerie_betta_3.jpg" alt="Groupe en forêt">
         </div>
-        <div style="padding:1.5rem">
+        <div class="act-card-nature-body">
           <span class="act-icon">🏔</span>
           <h3>Retraites & nature</h3>
           <p>Journées méditatives en Belledonne, Chartreuse et retraites en lien avec Drukpa Plouray.</p>
-          <span style="display:inline-block;margin-top:.75rem;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--gold)">Voir la galerie →</span>
+          <a href="galerie.html" class="act-card-nature-link">Voir la galerie →</a>
         </div>
       </div>
+
       <div class="act-card">
         <span class="act-icon">🕊</span>
         <h3>Dialogue interreligieux</h3>
@@ -77,17 +144,21 @@
       </div>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem">
-      <img src="Stupa_en_montagne.jpg" alt="Stupa en montagne" style="width:100%;height:280px;object-fit:cover">
-      <img src="Visite_de_la_salle_bouddhiste.jpg" alt="Visite de la salle bouddhiste" style="width:100%;height:280px;object-fit:cover">
+    <!-- Galerie photos -->
+    <div class="act-photos">
+      <img src="Stupa_en_montagne.jpg" alt="Stupa en montagne">
+      <img src="galerie_ceb_4.jpg" alt="Groupe au CEB Grenoble">
+      <img src="Offrande_bouddhiste.jpg" alt="Offrande bouddhiste">
     </div>
 
-    <div style="margin-top:3rem;text-align:center">
-      <p style="color:var(--text-muted);margin-bottom:1.5rem">Intéressé par nos activités ?</p>
+    <!-- CTA -->
+    <div class="act-cta">
+      <p>Vous souhaitez participer à nos activités ou en savoir plus ?</p>
       <a href="contact.html" class="btn-primary">Nous contacter</a>
     </div>
+
   </div>
-</section>
+</div>
 
 <footer>
   <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
