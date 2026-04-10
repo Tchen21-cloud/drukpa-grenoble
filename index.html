@@ -43,40 +43,56 @@
 
 #volet-g,#volet-d{
   position:absolute;top:0;bottom:0;
-  display:flex;align-items:center;justify-content:center;
   z-index:4;
-  transition:width 1.4s cubic-bezier(.4,0,.2,1), opacity 1.4s ease;
   overflow:hidden;
+  transition:none;
+}
+#volet-g.ferme,#volet-d.ferme{
+  transition:width 1.4s cubic-bezier(.4,0,.2,1);
 }
 #volet-g{
-  left:0;
-  background:linear-gradient(to right,#ffb3c6,#ffd6a5,#fffaaa,#b5ead7);
-  width:50%;
+  left:0;width:50%;
+  background:#ffffff;
 }
 #volet-d{
-  right:0;
-  background:linear-gradient(to left,#c9b8f4,#a8d8f0,#b5ead7,#fffaaa);
-  width:50%;
+  right:0;width:50%;
+  background:#ffffff;
 }
-#volet-g img,#volet-d img{
-  width:min(38vw,320px);
-  height:min(38vw,320px);
-  object-fit:contain;
-  position:absolute;
-  left:50%;top:50%;
-  transform:translate(-50%,-50%);
-  transition:opacity 1.4s ease;
-}
+
 @keyframes hue-cycle{
-  0%  {filter:hue-rotate(0deg)   saturate(1.1) brightness(1.05)}
-  100%{filter:hue-rotate(360deg) saturate(1.1) brightness(1.05)}
+  0%  {filter:hue-rotate(0deg)   saturate(1.0) brightness(1.0)}
+  100%{filter:hue-rotate(360deg) saturate(1.0) brightness(1.0)}
 }
-#volet-g img,#volet-d img{animation:hue-cycle 8s linear infinite}
+
+/* Le logo est unique, positionné en absolu sur toute la largeur du splash,
+   chaque volet en clip sa moitié via overflow:hidden */
+.logo-moitie{
+  position:absolute;
+  top:50%; transform:translateY(-50%);
+  width:100vw; height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;
+  animation:hue-cycle 8s linear infinite;
+}
+#volet-g .logo-moitie{
+  left:0;          /* ancré au bord gauche du volet, s'étend sur 100vw */
+}
+#volet-d .logo-moitie{
+  right:0;         /* ancré au bord droit du volet, s'étend vers la gauche */
+  left:auto;
+  transform:translateY(-50%) translateX(calc(100% - 100vw));
+}
+.logo-moitie img{
+  width:90vh;height:90vh;
+  max-width:90vw;max-height:90vh;
+  object-fit:contain;
+  display:block;
+}
 
 #cursor-dot{
   position:absolute;
   width:10px;height:10px;border-radius:50%;
-  background:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.75);
   pointer-events:none;z-index:10;
   transform:translate(-50%,-50%);
   transition:opacity .3s;
@@ -102,10 +118,14 @@
   </div>
 
   <div id="volet-g">
-    <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
+    <div class="logo-moitie">
+      <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
+    </div>
   </div>
   <div id="volet-d">
-    <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
+    <div class="logo-moitie">
+      <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
+    </div>
   </div>
 
   <div id="cursor-dot"></div>
@@ -113,44 +133,38 @@
 
 <script>
 (function(){
-  var splash  = document.getElementById('splash');
-  var voletG  = document.getElementById('volet-g');
-  var voletD  = document.getElementById('volet-d');
-  var dot     = document.getElementById('cursor-dot');
+  var splash    = document.getElementById('splash');
+  var voletG    = document.getElementById('volet-g');
+  var voletD    = document.getElementById('volet-d');
+  var dot       = document.getElementById('cursor-dot');
   var stopTimer = null;
-  var W = 0;
 
-  function ouvrirVolets(pct){
-    voletG.style.width = pct + '%';
-    voletD.style.width = pct + '%';
+  function ouvrirVolets(){
+    voletG.classList.remove('ferme');
+    voletD.classList.remove('ferme');
+    voletG.style.width = '0%';
+    voletD.style.width = '0%';
   }
-
   function fermerVolets(){
+    voletG.classList.add('ferme');
+    voletD.classList.add('ferme');
     voletG.style.width = '50%';
     voletD.style.width = '50%';
   }
 
-  splash.addEventListener('mousemove', function(e){
+  splash.addEventListener('mousemove',function(e){
     var rect = splash.getBoundingClientRect();
-    var mx   = e.clientX - rect.left;
-    var my   = e.clientY - rect.top;
-    W = rect.width;
-
-    dot.style.left    = mx + 'px';
-    dot.style.top     = my + 'px';
+    dot.style.left    = (e.clientX - rect.left) + 'px';
+    dot.style.top     = (e.clientY - rect.top)  + 'px';
     dot.style.opacity = '1';
 
-    var distCentre = Math.abs(mx - W / 2);
-    var pct = Math.max(0, 50 - (distCentre / W * 100));
-    ouvrirVolets(pct);
+    ouvrirVolets();
 
     clearTimeout(stopTimer);
-    stopTimer = setTimeout(function(){
-      fermerVolets();
-    }, 900);
+    stopTimer = setTimeout(fermerVolets, 900);
   });
 
-  splash.addEventListener('mouseleave', function(){
+  splash.addEventListener('mouseleave',function(){
     dot.style.opacity = '0';
     clearTimeout(stopTimer);
     fermerVolets();
