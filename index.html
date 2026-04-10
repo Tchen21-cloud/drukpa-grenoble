@@ -29,28 +29,64 @@
 </nav>
 
 <style>
-#splash{position:relative;width:100%;height:100vh;overflow:hidden;cursor:none;background:#080810}
-#hero-real{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
-#hero-real .hero-bg{position:absolute;inset:0;background-image:url('eyeem-82693436.jpg');background-size:cover;background-position:center}
-#hero-real .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.65) 100%)}
-#hero-real .hero-content{position:relative;z-index:2;text-align:center;padding:2rem}
-#hero-real .hero-tagline{color:#E8C97A;text-shadow:0 1px 4px rgba(0,0,0,.8);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
-#hero-real h1{text-shadow:0 2px 12px rgba(0,0,0,.7);margin:.5rem 0}
-#hero-real .hero-sub{text-shadow:0 1px 6px rgba(0,0,0,.8);margin-bottom:1rem}
-#hero-real .hero-desc{color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.7);max-width:560px;margin:0 auto 2.5rem;font-size:.95rem;line-height:1.8}
-#hero-real .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-#reveal-canvas{position:absolute;inset:0;pointer-events:none;z-index:3}
-#logo-splash{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none;transition:opacity .8s ease}
-#logo-splash img{width:min(72vw,520px);height:min(72vw,520px);object-fit:contain}
-@keyframes hue-spin{from{filter:hue-rotate(0deg) saturate(1.6) brightness(1.05)}to{filter:hue-rotate(360deg) saturate(1.6) brightness(1.05)}}
-#logo-splash img{animation:hue-spin 5s linear infinite}
-#logo-splash.hidden{opacity:0}
-#hint{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);z-index:10;color:rgba(255,255,255,.45);font-size:.75rem;letter-spacing:.15em;text-transform:uppercase;pointer-events:none;transition:opacity .5s}
-#hint.hidden{opacity:0}
+#splash{position:relative;width:100%;height:100vh;overflow:hidden;cursor:none}
+
+#hero-reel{position:absolute;inset:0}
+#hero-reel .hero-bg{position:absolute;inset:0;background-image:url('eyeem-82693436.jpg');background-size:cover;background-position:center}
+#hero-reel .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.65) 100%)}
+#hero-reel .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;z-index:1}
+#hero-reel .hero-tagline{color:#E8C97A;text-shadow:0 1px 4px rgba(0,0,0,.8);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
+#hero-reel h1{text-shadow:0 2px 12px rgba(0,0,0,.7);margin:.4rem 0}
+#hero-reel .hero-sub{text-shadow:0 1px 6px rgba(0,0,0,.8);margin-bottom:.8rem}
+#hero-reel .hero-desc{color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.7);max-width:540px;font-size:.93rem;line-height:1.8;margin:0 auto 2rem}
+#hero-reel .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+#volet-g,#volet-d{
+  position:absolute;top:0;bottom:0;
+  display:flex;align-items:center;justify-content:center;
+  z-index:4;
+  transition:width 1.4s cubic-bezier(.4,0,.2,1), opacity 1.4s ease;
+  overflow:hidden;
+}
+#volet-g{
+  left:0;
+  background:linear-gradient(to right,#ffb3c6,#ffd6a5,#fffaaa,#b5ead7);
+  width:50%;
+}
+#volet-d{
+  right:0;
+  background:linear-gradient(to left,#c9b8f4,#a8d8f0,#b5ead7,#fffaaa);
+  width:50%;
+}
+#volet-g img,#volet-d img{
+  width:min(38vw,320px);
+  height:min(38vw,320px);
+  object-fit:contain;
+  position:absolute;
+  left:50%;top:50%;
+  transform:translate(-50%,-50%);
+  transition:opacity 1.4s ease;
+}
+@keyframes hue-cycle{
+  0%  {filter:hue-rotate(0deg)   saturate(1.1) brightness(1.05)}
+  100%{filter:hue-rotate(360deg) saturate(1.1) brightness(1.05)}
+}
+#volet-g img,#volet-d img{animation:hue-cycle 8s linear infinite}
+
+#cursor-dot{
+  position:absolute;
+  width:10px;height:10px;border-radius:50%;
+  background:rgba(255,255,255,.7);
+  pointer-events:none;z-index:10;
+  transform:translate(-50%,-50%);
+  transition:opacity .3s;
+  opacity:0;
+}
 </style>
 
 <div id="splash">
-  <div id="hero-real">
+
+  <div id="hero-reel">
     <div class="hero-bg"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
@@ -65,81 +101,60 @@
     </div>
   </div>
 
-  <div id="logo-splash">
+  <div id="volet-g">
+    <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
+  </div>
+  <div id="volet-d">
     <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
   </div>
 
-  <canvas id="reveal-canvas"></canvas>
-  <div id="hint">Bougez la souris pour découvrir</div>
+  <div id="cursor-dot"></div>
 </div>
 
 <script>
 (function(){
-  const splash = document.getElementById('splash');
-  const canvas = document.getElementById('reveal-canvas');
-  const ctx = canvas.getContext('2d');
-  const logo = document.getElementById('logo-splash');
-  const hint = document.getElementById('hint');
-  let W, H, mx = -999, my = -999;
-  let trail = [];
-  let stopTimer = null;
-  let moved = false;
+  var splash  = document.getElementById('splash');
+  var voletG  = document.getElementById('volet-g');
+  var voletD  = document.getElementById('volet-d');
+  var dot     = document.getElementById('cursor-dot');
+  var stopTimer = null;
+  var W = 0;
 
-  function resize(){
-    W = splash.offsetWidth;
-    H = splash.offsetHeight;
-    canvas.width = W;
-    canvas.height = H;
-    draw();
+  function ouvrirVolets(pct){
+    voletG.style.width = pct + '%';
+    voletD.style.width = pct + '%';
   }
 
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    ctx.fillStyle = '#080810';
-    ctx.fillRect(0,0,W,H);
-    if(!moved) return;
-    ctx.save();
-    ctx.globalCompositeOperation = 'destination-out';
-    trail.forEach(function(p){
-      var g = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r);
-      g.addColorStop(0,'rgba(0,0,0,1)');
-      g.addColorStop(0.55,'rgba(0,0,0,.75)');
-      g.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle = g;
-      ctx.fill();
-    });
-    ctx.restore();
+  function fermerVolets(){
+    voletG.style.width = '50%';
+    voletD.style.width = '50%';
   }
 
   splash.addEventListener('mousemove', function(e){
-    var r = splash.getBoundingClientRect();
-    mx = e.clientX - r.left;
-    my = e.clientY - r.top;
-    if(!moved){ moved = true; hint.classList.add('hidden'); }
-    trail.push({x:mx, y:my, r:110});
-    if(trail.length > 120) trail.shift();
-    logo.classList.add('hidden');
-    draw();
+    var rect = splash.getBoundingClientRect();
+    var mx   = e.clientX - rect.left;
+    var my   = e.clientY - rect.top;
+    W = rect.width;
+
+    dot.style.left    = mx + 'px';
+    dot.style.top     = my + 'px';
+    dot.style.opacity = '1';
+
+    var distCentre = Math.abs(mx - W / 2);
+    var pct = Math.max(0, 50 - (distCentre / W * 100));
+    ouvrirVolets(pct);
+
     clearTimeout(stopTimer);
     stopTimer = setTimeout(function(){
-      logo.classList.remove('hidden');
-      trail = [];
-      moved = false;
-      draw();
+      fermerVolets();
     }, 900);
   });
 
   splash.addEventListener('mouseleave', function(){
-    logo.classList.remove('hidden');
-    trail = [];
-    moved = false;
-    draw();
+    dot.style.opacity = '0';
+    clearTimeout(stopTimer);
+    fermerVolets();
   });
-
-  window.addEventListener('resize', resize);
-  resize();
 })();
 </script>
 
