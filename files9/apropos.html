@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>À propos — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.ap-body{background:#fdf8f0;padding:4rem 2rem}
+.ap-inner{max-width:1000px;margin:0 auto}
+.ap-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3rem}
+.ap-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8B6914;margin-bottom:.5rem}
+.ap-title{font-family:'Cinzel',serif;font-size:2rem;color:#2C1A08;margin-bottom:.75rem}
+.ap-divider{width:50px;height:2px;background:#C9A84C;margin-bottom:1.5rem}
+.ap-text p{color:#4A3520;line-height:1.95;font-size:.95rem;margin-bottom:1rem}
+.ap-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.ap-stat{background:white;padding:1.2rem 1.5rem;border-left:3px solid #C9A84C}
+.ap-stat-num{font-family:'Cinzel',serif;font-size:1.8rem;color:#C9A84C;display:block}
+.ap-stat-label{font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#6B5A3E}
+
+.ap-img-wrap{position:relative}
+.ap-img{width:100%;height:400px;object-fit:cover;display:block}
+.ap-quote{position:absolute;bottom:0;left:0;right:0;background:rgba(28,15,5,.82);padding:1.5rem 2rem}
+.ap-quote p{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:rgba(245,230,195,.92);font-style:italic;line-height:1.7;margin-bottom:.5rem}
+.ap-quote cite{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C}
+
+.ap-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2rem}
+.ap-gallery img{width:100%;height:200px;object-fit:cover}
+
+@media(max-width:768px){
+  .ap-grid{grid-template-columns:1fr}
+  .ap-gallery{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html" class="active">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html">Retraites</a>
+    <a href="livetolove.html">Live to Love</a>
+    <a href="intervenants.html">Intervenants</a>
+    <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- BANDEAU DEBUT -->
+<div class="page-bandeau" style="position:relative;width:100%;overflow:hidden;margin-bottom:0;">
+<svg width="100%" height="155" viewBox="0 0 800 155" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="tornapropos"><path d="M0,0 L800,0 L800,138 C782,142 764,132 746,135 C726,139 710,146 690,143 C670,140 654,131 634,134 C614,137 598,145 578,142 C558,139 542,130 522,133 C502,136 486,143 466,140 C446,137 430,128 410,131 C390,134 374,142 354,139 C334,136 318,127 298,130 C278,133 262,141 242,138 C222,135 206,126 186,129 C166,132 150,140 130,137 C110,134 94,125 74,128 C54,131 38,139 18,136 C8,134 2,130 0,132 Z"/></clipPath></defs>
+<rect width="800" height="155" fill="#fce8ee" clip-path="url(#tornapropos)"/>
+<path d="M0,132 C18,136 38,139 54,136 C74,128 94,125 110,122 C130,137 150,140 166,137 C186,129 206,126 222,123 C242,138 262,141 278,138 C298,130 318,127 334,124 C354,139 374,142 390,139 C410,131 430,128 446,125 C466,140 486,143 502,140 C522,133 542,130 558,127 C578,142 598,145 614,142 C634,134 654,131 670,128 C690,143 710,146 726,143 C746,135 764,132 782,129 C800,138 800,138 800,148 L0,148Z" fill="rgba(0,0,0,.05)"/>
+<g transform="translate(120,80)" stroke="#b85070" fill="none" opacity=".06" stroke-linejoin="round">
+      <rect x="-52" y="-52" width="104" height="104" rx="10" stroke-width="3.5"/>
+      <rect x="-36" y="-36" width="72" height="72" rx="7" stroke-width="2.5"/>
+      <rect x="-20" y="-20" width="40" height="40" rx="4" stroke-width="2"/>
+      <line x1="-52" y1="-20" x2="-20" y2="-20" stroke-width="2.5"/><line x1="20" y1="-20" x2="52" y2="-20" stroke-width="2.5"/>
+      <line x1="-52" y1="20" x2="-20" y2="20" stroke-width="2.5"/><line x1="20" y1="20" x2="52" y2="20" stroke-width="2.5"/>
+      <line x1="-20" y1="-52" x2="-20" y2="-20" stroke-width="2.5"/><line x1="20" y1="-52" x2="20" y2="-20" stroke-width="2.5"/>
+      <line x1="-20" y1="20" x2="-20" y2="52" stroke-width="2.5"/><line x1="20" y1="20" x2="20" y2="52" stroke-width="2.5"/>
+      <circle cx="-36" cy="-36" r="5" stroke-width="1.5"/><circle cx="36" cy="-36" r="5" stroke-width="1.5"/>
+      <circle cx="-36" cy="36" r="5" stroke-width="1.5"/><circle cx="36" cy="36" r="5" stroke-width="1.5"/>
+    </g>
+<text x="240" y="52" font-size="10" fill="rgba(184,80,112,.45)" font-family="Lato,sans-serif" letter-spacing="2.5">À PROPOS</text>
+<text x="240" y="84" font-size="26" fill="#6a1a2a" font-family="Cormorant Garamond,Georgia,serif" font-weight="600" opacity=".88">L&#x27;association Drukpa Grenoble</text>
+<line x1="240" y1="98" x2="680" y2="98" stroke="#b85070" stroke-width="1.2" opacity=".3"/>
+</svg>
+</div>
+<!-- BANDEAU FIN -->
+
+
+<div class="page-header apropos-header">
+  <div class="page-label">À propos</div>
+  <h1 class="page-title">L'association Drukpa Grenoble</h1>
+  <div class="page-divider"></div>
+</div>
+
+<div class="ap-body">
+  <div class="ap-inner">
+    <div class="ap-grid">
+
+      <!-- Texte gauche -->
+      <div class="ap-text">
+        <div class="ap-label">À propos</div>
+        <h2 class="ap-title">L'association Drukpa Grenoble</h2>
+        <div class="ap-divider"></div>
+        <p>
+          Fondée dans la tradition de la <strong>lignée Drukpa du bouddhisme tibétain</strong>, notre association organise des sessions de méditation, des pratiques spirituelles et des enseignements pour tous ceux qui souhaitent progresser sur le chemin du Dharma.
+        </p>
+        <p>
+          Membre de l'<strong>UBF</strong> et affiliée au centre <strong>Drukpa Plouray</strong>, siège européen de la lignée, nous accueillons régulièrement des lamas et maîtres spirituels qualifiés. Nous participons au dialogue interreligieux au <strong>Centre Théologique de Meylan-Grenoble</strong>.
+        </p>
+        <div class="ap-stats">
+          <div class="ap-stat"><span class="ap-stat-num">15</span><span class="ap-stat-label">Adhérents 2025</span></div>
+          <div class="ap-stat"><span class="ap-stat-num">4</span><span class="ap-stat-label">Week-ends annuels</span></div>
+          <div class="ap-stat"><span class="ap-stat-num">30+</span><span class="ap-stat-label">Ans de pratique</span></div>
+          <div class="ap-stat"><span class="ap-stat-num">2</span><span class="ap-stat-label">Aumôniers</span></div>
+        </div>
+      </div>
+
+      <!-- Image droite avec citation -->
+      <div class="ap-img-wrap">
+        <img src="Bouddha_dor.jpg" alt="Bouddha doré" class="ap-img">
+        <div class="ap-quote">
+          <p>« Contribuer à nourrir les causes d'un bonheur relatif et aussi plus profond et véritable pour toutes celles et tous ceux qui s'y relient. »</p>
+          <cite>— Lopön Thrinlé Tenzin, Président</cite>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Galerie -->
+    <div class="ap-gallery">
+      <img src="Moine_devant_l_autel.jpg" alt="Moine devant l'autel">
+      <img src="Salle_de_m_ditation.jpg" alt="Salle de méditation">
+      <img src="Offrande_bouddhiste.jpg" alt="Offrande bouddhiste">
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+</footer>
+</body>
+</html>

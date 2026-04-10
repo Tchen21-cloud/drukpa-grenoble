@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activités & pratiques — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.act-body{background:#f5f0e8;padding:4rem 2rem}
+.act-inner{max-width:1100px;margin:0 auto}
+
+/* Grille de cartes */
+.act-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;margin-bottom:4rem}
+
+/* Carte standard */
+.act-card{background:white;padding:2rem;border-bottom:3px solid transparent;transition:border-color .2s,transform .2s;cursor:default}
+.act-card:hover{border-bottom-color:var(--gold);transform:translateY(-3px)}
+.act-icon{font-size:2rem;display:block;margin-bottom:1rem}
+.act-card h3{font-family:'Cinzel',serif;font-size:1.05rem;color:#2C1A08;margin-bottom:.6rem}
+.act-card p{font-size:.9rem;color:#6B5A3E;line-height:1.8}
+
+/* Carte spéciale — Retraites & nature avec galerie */
+.act-card-nature{background:white;border-bottom:3px solid transparent;transition:border-color .2s,transform .2s;cursor:pointer;overflow:hidden}
+.act-card-nature:hover{border-bottom-color:var(--gold);transform:translateY(-3px)}
+.act-card-nature-photos{display:grid;grid-template-columns:1fr 1fr;height:140px;overflow:hidden}
+.act-card-nature-photos img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.act-card-nature:hover .act-card-nature-photos img{transform:scale(1.06)}
+.act-card-nature-body{padding:2rem}
+.act-card-nature-body h3{font-family:'Cinzel',serif;font-size:1.05rem;color:#2C1A08;margin-bottom:.6rem}
+.act-card-nature-body p{font-size:.9rem;color:#6B5A3E;line-height:1.8}
+.act-card-nature-link{display:inline-block;margin-top:.75rem;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);text-decoration:none;border-bottom:1px solid var(--gold)}
+
+/* Section méditation détaillée */
+.act-featured{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;background:var(--dark);padding:3rem;margin-bottom:3rem}
+.act-featured-text h2{font-family:'Cinzel',serif;font-size:1.5rem;color:var(--gold-light);margin-bottom:1rem}
+.act-featured-text p{color:rgba(245,230,195,.8);line-height:1.9;font-size:.92rem;margin-bottom:1rem}
+.act-featured-text .horaire{background:rgba(201,168,76,.1);border-left:3px solid var(--gold);padding:1rem 1.5rem;margin-top:1.5rem}
+.act-featured-text .horaire-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.act-featured-text .horaire-val{color:rgba(245,230,195,.9);font-size:.9rem}
+.act-featured-img{width:100%;height:320px;object-fit:cover}
+
+/* Section photos bas de page */
+.act-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3rem}
+.act-photos img{width:100%;height:200px;object-fit:cover;transition:filter .3s}
+.act-photos img:hover{filter:brightness(1.1)}
+
+/* CTA */
+.act-cta{text-align:center;padding:3rem;background:white}
+.act-cta p{color:#6B5A3E;margin-bottom:1.5rem;font-size:.95rem}
+
+@media(max-width:768px){
+  .act-featured{grid-template-columns:1fr}
+  .act-photos{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="activites.html" class="active">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html">Retraites</a>
+    <a href="livetolove.html">Live to Love</a>
+    <a href="intervenants.html">Intervenants</a>
+    <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- BANDEAU DEBUT -->
+<div class="page-bandeau" style="position:relative;width:100%;overflow:hidden;margin-bottom:0;">
+<svg width="100%" height="155" viewBox="0 0 800 155" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="tornactivites"><path d="M0,0 L800,0 L800,138 C782,142 764,132 746,135 C726,139 710,146 690,143 C670,140 654,131 634,134 C614,137 598,145 578,142 C558,139 542,130 522,133 C502,136 486,143 466,140 C446,137 430,128 410,131 C390,134 374,142 354,139 C334,136 318,127 298,130 C278,133 262,141 242,138 C222,135 206,126 186,129 C166,132 150,140 130,137 C110,134 94,125 74,128 C54,131 38,139 18,136 C8,134 2,130 0,132 Z"/></clipPath></defs>
+<rect width="800" height="155" fill="#fdebd8" clip-path="url(#tornactivites)"/>
+<path d="M0,132 C18,136 38,139 54,136 C74,128 94,125 110,122 C130,137 150,140 166,137 C186,129 206,126 222,123 C242,138 262,141 278,138 C298,130 318,127 334,124 C354,139 374,142 390,139 C410,131 430,128 446,125 C466,140 486,143 502,140 C522,133 542,130 558,127 C578,142 598,145 614,142 C634,134 654,131 670,128 C690,143 710,146 726,143 C746,135 764,132 782,129 C800,138 800,138 800,148 L0,148Z" fill="rgba(0,0,0,.05)"/>
+<g transform="translate(120,80)" stroke="#c07030" fill="none" opacity=".06">
+      <circle cx="0" cy="0" r="58" stroke-width="5"/>
+      <circle cx="0" cy="0" r="56" stroke-width="1"/>
+      <circle cx="0" cy="0" r="40" stroke-width="2.5"/>
+      <circle cx="0" cy="0" r="14" stroke-width="2" fill="rgba(192,112,48,.08)"/>
+      <line x1="0" y1="-56" x2="0" y2="56" stroke-width="2.5"/>
+      <line x1="-56" y1="0" x2="56" y2="0" stroke-width="2.5"/>
+      <line x1="-40" y1="-40" x2="40" y2="40" stroke-width="2.5"/>
+      <line x1="40" y1="-40" x2="-40" y2="40" stroke-width="2.5"/>
+      <ellipse cx="0" cy="-28" rx="7" ry="11" stroke-width="1.5"/>
+      <ellipse cx="0" cy="28" rx="7" ry="11" stroke-width="1.5"/>
+      <ellipse cx="-28" cy="0" rx="11" ry="7" stroke-width="1.5"/>
+      <ellipse cx="28" cy="0" rx="11" ry="7" stroke-width="1.5"/>
+      <ellipse cx="-20" cy="-20" rx="7" ry="11" transform="rotate(-45,-20,-20)" stroke-width="1.5"/>
+      <ellipse cx="20" cy="-20" rx="7" ry="11" transform="rotate(45,20,-20)" stroke-width="1.5"/>
+      <ellipse cx="-20" cy="20" rx="7" ry="11" transform="rotate(45,-20,20)" stroke-width="1.5"/>
+      <ellipse cx="20" cy="20" rx="7" ry="11" transform="rotate(-45,20,20)" stroke-width="1.5"/>
+    </g>
+<text x="240" y="52" font-size="10" fill="rgba(192,112,48,.45)" font-family="Lato,sans-serif" letter-spacing="2.5">ACTIVITÉS</text>
+<text x="240" y="84" font-size="26" fill="#6a3010" font-family="Cormorant Garamond,Georgia,serif" font-weight="600" opacity=".88">Activités &amp; pratiques</text>
+<line x1="240" y1="98" x2="680" y2="98" stroke="#c07030" stroke-width="1.2" opacity=".3"/>
+</svg>
+</div>
+<!-- BANDEAU FIN -->
+
+
+<div class="page-header activites-header">
+  <div class="page-label">Ce que nous faisons</div>
+  <h1 class="page-title">Activités & pratiques</h1>
+  <div class="page-divider"></div>
+</div>
+
+<div class="act-body">
+  <div class="act-inner">
+
+    <!-- Section méditation mise en avant -->
+    <div class="act-featured">
+      <div class="act-featured-text">
+        <h2>La méditation au cœur de notre pratique</h2>
+        <p>Chaque session est un espace de silence et de présence. Nous pratiquons la méditation silencieuse, le Soutra du Cœur, les visualisations et la récitation de mantras — accessibles à tous, débutants comme pratiquants expérimentés.</p>
+        <p>Lopön Thrinlé Tenzin, notre président, vient à Grenoble chaque trimestre pour guider nos pratiques et transmettre les enseignements du Dharma. Il assure également la traduction lors des venues de Drubpön Ngawang Tenzin, représentant de la lignée Drukpa en Europe, rendant ainsi ses enseignements accessibles à tous.</p>
+        <div class="horaire">
+          <div class="horaire-label">Week-ends de pratique 2025</div>
+          <div class="horaire-val">13-14 septembre & 20-21 décembre<br>Centre d'Études Bouddhiques — Grenoble</div>
+        </div>
+      </div>
+      <img src="galerie_ceb_3.jpg" alt="Session de pratique au CEB Grenoble" class="act-featured-img">
+    </div>
+
+    <!-- Grille des 6 activités -->
+    <div class="act-grid">
+      <div class="act-card">
+        <span class="act-icon">🧘</span>
+        <h3>Méditation</h3>
+        <p>Sessions de méditation silencieuse, pratique du Soutra du Cœur, ouvertes à tous.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon">📿</span>
+        <h3>Enseignements</h3>
+        <p>Visualisations, exercices respiratoires, récitations de mantras avec nos maîtres.</p>
+      </div>
+
+      <div class="act-card">
+        <span class="act-icon">🏔</span>
+        <h3>Retraites & nature</h3>
+        <p>Journées méditatives en Belledonne, Chartreuse et retraites en lien avec Drukpa Plouray.</p>
+      </div>
+
+      <div class="act-card">
+        <span class="act-icon">🕊</span>
+        <h3>Dialogue interreligieux</h3>
+        <p>Colloques au Centre Théologique de Meylan et voyages interreligieux (Rome 2025, Montchardon 2026).</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon">🎨</span>
+        <h3>Ateliers culturels</h3>
+        <p>Cuisine, calligraphie, poésie, musique et balades méditatives — le bouddhisme vivant.</p>
+      </div>
+      <div class="act-card">
+        <span class="act-icon">🤝</span>
+        <h3>Live to Love</h3>
+        <p>Actions altruistes bimensuelles portées par Cécile Dupart dans l'esprit du mouvement humanitaire.</p>
+      </div>
+    </div>
+
+    <!-- Galerie photos -->
+    <div class="act-photos">
+      <img src="Stupa_en_montagne.jpg" alt="Stupa en montagne">
+      <img src="galerie_ceb_4.jpg" alt="Groupe au CEB Grenoble">
+      <img src="Offrande_bouddhiste.jpg" alt="Offrande bouddhiste">
+    </div>
+
+    <!-- CTA -->
+    <div class="act-cta">
+      <p>Vous souhaitez participer à nos activités ou en savoir plus ?</p>
+      <a href="contact.html" class="btn-primary">Nous contacter</a>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+</footer>
+</body>
+</html>

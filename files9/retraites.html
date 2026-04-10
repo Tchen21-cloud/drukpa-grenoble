@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retraites — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.ret-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.ret-card{position:relative;height:320px;overflow:hidden;cursor:pointer;border:1px solid rgba(201,168,76,.2)}
+.ret-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.ret-card:hover img{transform:scale(1.05)}
+.ret-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.1) 100%);transition:background .4s ease}
+.ret-card:hover .ret-overlay{background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.75) 50%,rgba(0,0,0,.4) 100%)}
+.ret-content{position:absolute;inset:0;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
+.ret-badge{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#E8C97A;margin-bottom:.3rem}
+.ret-date{font-size:.8rem;color:#E8C97A;margin-bottom:.4rem;display:block}
+.ret-card h3{font-family:'Cinzel',serif;font-size:1rem;color:#F5E6C3;margin-bottom:.5rem;line-height:1.4}
+.ret-desc{font-size:.82rem;color:rgba(245,230,195,.85);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s ease;opacity:0}
+.ret-card:hover .ret-desc{max-height:100px;opacity:1}
+.ret-link{display:inline-block;margin-top:.6rem;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#E8C97A;text-decoration:none;border-bottom:1px solid #E8C97A;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease .1s,opacity .3s ease .1s}
+.ret-card:hover .ret-link{max-height:30px;opacity:1}
+</style>
+</head>
+<body>
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html" class="active">Retraites</a>
+    <a href="livetolove.html">Live to Love</a>
+    <a href="intervenants.html">Intervenants</a>
+    <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- BANDEAU DEBUT -->
+<div class="page-bandeau" style="position:relative;width:100%;overflow:hidden;margin-bottom:0;">
+<svg width="100%" height="155" viewBox="0 0 800 155" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs><clipPath id="tornretraites"><path d="M0,0 L800,0 L800,138 C782,142 764,132 746,135 C726,139 710,146 690,143 C670,140 654,131 634,134 C614,137 598,145 578,142 C558,139 542,130 522,133 C502,136 486,143 466,140 C446,137 430,128 410,131 C390,134 374,142 354,139 C334,136 318,127 298,130 C278,133 262,141 242,138 C222,135 206,126 186,129 C166,132 150,140 130,137 C110,134 94,125 74,128 C54,131 38,139 18,136 C8,134 2,130 0,132 Z"/></clipPath></defs>
+<rect width="800" height="155" fill="#dff0e4" clip-path="url(#tornretraites)"/>
+<path d="M0,132 C18,136 38,139 54,136 C74,128 94,125 110,122 C130,137 150,140 166,137 C186,129 206,126 222,123 C242,138 262,141 278,138 C298,130 318,127 334,124 C354,139 374,142 390,139 C410,131 430,128 446,125 C466,140 486,143 502,140 C522,133 542,130 558,127 C578,142 598,145 614,142 C634,134 654,131 670,128 C690,143 710,146 726,143 C746,135 764,132 782,129 C800,138 800,138 800,148 L0,148Z" fill="rgba(0,0,0,.05)"/>
+<g transform="translate(120,80)" stroke="#307040" fill="none" opacity=".06">
+      <ellipse cx="0" cy="-24" rx="11" ry="26" stroke-width="2.5"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(45)" stroke-width="2"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(90)" stroke-width="2.5"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(135)" stroke-width="2"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(180)" stroke-width="2.5"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(225)" stroke-width="2"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(270)" stroke-width="2.5"/>
+      <ellipse cx="0" cy="-24" rx="11" ry="26" transform="rotate(315)" stroke-width="2"/>
+      <circle cx="0" cy="0" r="15" stroke-width="2.5" fill="rgba(48,112,64,.06)"/>
+      <circle cx="0" cy="0" r="8" stroke-width="1.5" fill="rgba(48,112,64,.08)"/>
+      <path d="M-32,14 C-44,24 -52,18 -46,8 C-40,-2 -26,2 -18,8Z" stroke-width="1.5"/>
+      <path d="M32,14 C44,24 52,18 46,8 C40,-2 26,2 18,8Z" stroke-width="1.5"/>
+    </g>
+<text x="240" y="52" font-size="10" fill="rgba(48,112,64,.45)" font-family="Lato,sans-serif" letter-spacing="2.5">RETRAITES</text>
+<text x="240" y="84" font-size="26" fill="#103820" font-family="Cormorant Garamond,Georgia,serif" font-weight="600" opacity=".88">Retraites</text>
+<line x1="240" y1="98" x2="680" y2="98" stroke="#307040" stroke-width="1.2" opacity=".3"/>
+</svg>
+</div>
+<!-- BANDEAU FIN -->
+
+
+<div class="page-header retraites-header">
+  <div class="page-label" style="color:#F5C6CB">Agenda spirituel</div>
+  <h1 class="page-title">Retraites</h1>
+  <div class="page-divider"></div>
+</div>
+
+<section class="section" style="background:#1a0810">
+  <div class="section-inner">
+    <div class="ret-grid">
+
+      <div class="ret-card">
+        <img src="Chartreuse.jpg" alt="Chartreuse">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
+          <span class="ret-badge">À venir</span>
+          <span class="ret-date">14 — 19 avril 2026</span>
+          <h3>Retraite de méditation en Chartreuse</h3>
+          <p class="ret-desc">Chalet « Les Belles Ombres » — Ste Marie du Mont. Retraite sous la conduite de Lopön Thrinlé Tenzin, dans le massif de la Chartreuse.</p>
+          <a href="contact.html" class="ret-link">S'inscrire →</a>
+        </div>
+      </div>
+
+      <div class="ret-card">
+        <img src="Plouray.jpg" alt="Plouray">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
+          <span class="ret-badge">À venir</span>
+          <span class="ret-date">Été 2026 — Plouray, Bretagne</span>
+          <h3>Anniversaire des Reliques du Bouddha</h3>
+          <p class="ret-desc">Centre Drukpa Plouray. Célébration du premier anniversaire de la venue des reliques du Bouddha à Plouray.</p>
+          <a href="contact.html" class="ret-link">Nous contacter →</a>
+        </div>
+      </div>
+
+      <div class="ret-card">
+        <img src="Retraite_2025.jpg" alt="Retraite 2025">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
+          <span class="ret-badge">2025</span>
+          <span class="ret-date">21 — 29 juin 2025</span>
+          <h3>Retraite Sangyé Menla</h3>
+          <p class="ret-desc">Les Tranchats, Dordogne — Drukpa Vendée. Retraite guidée par Lopön Thrinlé Tenzin.</p>
+        </div>
+      </div>
+
+      <div class="ret-card">
+        <img src="drukpa-21.jpg" alt="Temple Plouray">
+        <div class="ret-overlay"></div>
+        <div class="ret-content">
+          <span class="ret-badge">2025</span>
+          <span class="ret-date">13-14 sept & 20-21 déc 2025</span>
+          <h3>Week-ends de pratique — Grenoble</h3>
+          <p class="ret-desc">Sessions de pratique intensive en groupe, guidées par Lopön Thrinlé Tenzin lors de ses venues trimestrielles à Grenoble.</p>
+          <a href="contact.html" class="ret-link">Renseignements →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+</footer>
+</body>
+</html>
