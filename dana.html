@@ -1,135 +1,66 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dana — Drukpa Grenoble</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-.dana-hero{background:linear-gradient(135deg,#1a0a2e,#2d1854);padding:5rem 2rem;text-align:center;position:relative;overflow:hidden}
-.dana-hero::before{content:'';position:absolute;inset:0;background:url('Tchenr_zi___Avalokiteshvara.jpg') center 30%/cover;opacity:.2}
-.dana-hero-content{position:relative;z-index:2}
-.dana-symbol{font-size:4rem;display:block;margin-bottom:1.5rem;filter:drop-shadow(0 2px 8px rgba(201,168,76,.5))}
-.dana-title{font-family:'Cinzel',serif;font-size:3rem;color:#E8C97A;margin-bottom:.5rem;letter-spacing:.1em}
-.dana-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:rgba(245,230,195,.8);font-style:italic;margin-bottom:2rem}
-.dana-mantra{font-size:.85rem;letter-spacing:.25em;color:rgba(201,168,76,.6);text-transform:uppercase}
-
-.dana-body{background:#fdf8f0;padding:5rem 2rem}
-.dana-inner{max-width:860px;margin:0 auto}
-
-.dana-intro{background:white;padding:3rem;border-left:4px solid #C9A84C;margin-bottom:3rem;box-shadow:0 2px 20px rgba(0,0,0,.06)}
-.dana-intro h2{font-family:'Cinzel',serif;color:#2C1A08;font-size:1.5rem;margin-bottom:1.5rem}
-.dana-intro p{color:#4A3520;line-height:1.95;font-size:1rem;margin-bottom:1rem}
-.dana-intro .sanskrit{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:#8B6914;margin:1.5rem 0;padding:1rem;border-top:1px solid #E8C97A;border-bottom:1px solid #E8C97A;text-align:center}
-
-.dana-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-bottom:3rem}
-.dana-card{background:white;padding:2rem;text-align:center;border-bottom:3px solid transparent;transition:border-color .2s;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.dana-card:hover{border-bottom-color:#C9A84C}
-.dana-card-icon{font-size:2.5rem;display:block;margin-bottom:1rem}
-.dana-card h3{font-family:'Cinzel',serif;color:#2C1A08;font-size:.95rem;margin-bottom:.75rem}
-.dana-card p{font-size:.85rem;color:#6B5A3E;line-height:1.7}
-
-.dana-cta{background:linear-gradient(135deg,#1a0a2e,#2d1854);padding:3rem;text-align:center;border-radius:2px}
-.dana-cta h2{font-family:'Cinzel',serif;color:#E8C97A;font-size:1.6rem;margin-bottom:1rem}
-.dana-cta p{color:rgba(245,230,195,.8);margin-bottom:2rem;line-height:1.8;font-size:.95rem}
-.dana-btn{display:inline-block;background:#C9A84C;color:#1a0a2e;padding:1rem 3rem;font-family:'Lato',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;text-decoration:none;transition:all .25s;border:2px solid #C9A84C}
-.dana-btn:hover{background:transparent;color:#E8C97A}
-.dana-note{font-size:.8rem;color:rgba(245,230,195,.45);margin-top:1.5rem;font-style:italic}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dana — Drukpa Grenoble</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-
+<body class="page-dana">
 <nav>
-  <a class="nav-logo" href="index.html">
-    <img src="Logo_Drukpa_Grenoble.jpg" alt="Logo Drukpa Grenoble">
-    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+  <a href="index.html" class="nav-logo">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble" class="logo-img">
+    <span class="nav-title">DRUKPA<br>GRENOBLE</span>
   </a>
-  <div class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
-    <a href="activites.html">Activités</a>
-    <a href="dialogue.html">Dialogue</a>
-    <a href="retraites.html">Retraites</a>
-    <a href="livetolove.html">Live to Love</a>
-    <a href="intervenants.html">Intervenants</a>
-    <a href="aumonerie.html">Aumônerie</a>
-    <a href="dana.html" class="active">Dana</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="apropos.html">À&nbsp;propos</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="dialogue.html">Dialogue</a></li>
+    <li><a href="retraites.html">Retraites</a></li>
+    <li><a href="livetolove.html">Live to Love</a></li>
+    <li><a href="intervenants.html">Intervenants</a></li>
+    <li><a href="aumonerie.html">Aumônerie</a></li>
+    <li><a href="dana.html">Dana</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
-
-<!-- Hero -->
-<div class="dana-hero">
-  <div class="dana-hero-content">
-    <h1 class="dana-title">Dana</h1>
+<main>
+  <div class="page-header dana-header">
+    <h1>Dana</h1>
     <p class="dana-subtitle">L'art du don sans attente</p>
-    <div class="dana-mantra">OM MANI PADME HUM</div>
-    <span class="dana-symbol">🪷</span>
+    <p class="mantra">OM MANI PADME HUM</p>
+    <span class="dana-lotus">🪷</span>
   </div>
-</div>
 
-<!-- Corps -->
-<div class="dana-body">
-  <div class="dana-inner">
+  <section class="dana-content">
+    <h2>Qu'est-ce que le Dana ?</h2>
+    <p>Le mot <strong>Dana</strong> (दान) est un terme sanskrit et pali qui signifie <strong>générosité</strong>, <strong>offrande</strong> ou <strong>don</strong>. C'est l'une des vertus fondamentales du bouddhisme, la première des six paramitas — les perfections que cultive le pratiquant sur le chemin de l'Éveil.</p>
+    <blockquote>« Dana est la racine de toute vertu. Par le don, on affaiblit l'attachement et on cultive la joie de partager. »</blockquote>
+    <p>Dans la tradition bouddhiste tibétaine, le Dana n'est pas une simple contribution financière. C'est un <strong>acte spirituel conscient</strong> — une façon de pratiquer le non-attachement, d'exprimer sa gratitude et de contribuer à la pérennité des enseignements du Dharma.</p>
+    <p>Le don peut prendre de nombreuses formes : temps, énergie, compétences, présence bienveillante... et aussi soutien matériel. Chaque offrande, quelle qu'en soit la forme, est reçue avec une profonde gratitude et contribue directement à la vie de notre association.</p>
+  </section>
 
-    <!-- Explication -->
-    <div class="dana-intro">
-      <h2>Qu'est-ce que le Dana ?</h2>
-      <p>
-        Le mot <strong>Dana</strong> (दान) est un terme sanskrit et pali qui signifie <strong>générosité</strong>, <strong>offrande</strong> ou <strong>don</strong>. C'est l'une des vertus fondamentales du bouddhisme, la première des six paramitas — les perfections que cultive le pratiquant sur le chemin de l'Éveil.
-      </p>
-      <div class="sanskrit">
-        « Dana est la racine de toute vertu. Par le don, on affaiblit l'attachement et on cultive la joie de partager. »
-      </div>
-      <p>
-        Dans la tradition bouddhiste tibétaine, le Dana n'est pas une simple contribution financière. C'est un <strong>acte spirituel conscient</strong> — une façon de pratiquer le non-attachement, d'exprimer sa gratitude et de contribuer à la pérennité des enseignements du Dharma.
-      </p>
-      <p>
-        Le don peut prendre de nombreuses formes : temps, énergie, compétences, présence bienveillante... et aussi soutien matériel. Chaque offrande, quelle qu'en soit la forme, est reçue avec une profonde gratitude et contribue directement à la vie de notre association.
-      </p>
-    </div>
+  <section class="dana-usages">
+    <div class="dana-item"><span>🧘</span><h3>Les sessions de méditation</h3><p>Maintenir un espace de pratique ouvert à tous, accessible gratuitement ou à prix libre.</p></div>
+    <div class="dana-item"><span>📿</span><h3>Les enseignements</h3><p>Inviter des maîtres qualifiés et couvrir les frais liés à la transmission du Dharma.</p></div>
+    <div class="dana-item"><span>🏔</span><h3>Les retraites</h3><p>Permettre à tous de participer aux retraites, quel que soit le niveau de ressources.</p></div>
+    <div class="dana-item"><span>💛</span><h3>L'aumônerie</h3><p>Soutenir le service d'accompagnement spirituel bénévole dans les hôpitaux.</p></div>
+  </section>
 
-    <!-- Ce que ça soutient -->
-    <div class="dana-cards">
-      <div class="dana-card">
-        <span class="dana-card-icon">🧘</span>
-        <h3>Les sessions de méditation</h3>
-        <p>Maintenir un espace de pratique ouvert à tous, accessible gratuitement ou à prix libre.</p>
-      </div>
-      <div class="dana-card">
-        <span class="dana-card-icon">📿</span>
-        <h3>Les enseignements</h3>
-        <p>Inviter des maîtres qualifiés et couvrir les frais liés à la transmission du Dharma.</p>
-      </div>
-      <div class="dana-card">
-        <span class="dana-card-icon">🏔</span>
-        <h3>Les retraites</h3>
-        <p>Permettre à tous de participer aux retraites, quel que soit le niveau de ressources.</p>
-      </div>
-      <div class="dana-card">
-        <span class="dana-card-icon">💛</span>
-        <h3>L'aumônerie</h3>
-        <p>Soutenir le service d'accompagnement spirituel bénévole dans les hôpitaux.</p>
-      </div>
-    </div>
-
-    <!-- Bouton de don -->
-    <div class="dana-cta">
-      <h2>Faire un don</h2>
-      <p>
-        Votre générosité, quelle qu'en soit la forme, contribue directement à la vie de Drukpa Grenoble et à la diffusion des enseignements bouddhistes dans notre région.<br>
-        <em style="font-size:.85rem;opacity:.7">Chaque don fait l'objet d'un reçu fiscal déductible des impôts.</em>
-      </p>
-      <a href="https://www.helloasso.com" target="_blank" class="dana-btn">🪷 Faire un don via HelloAsso</a>
-      <p class="dana-note">Vous serez redirigé vers notre page HelloAsso sécurisée.</p>
-    </div>
-
-  </div>
-</div>
-
+  <section class="dana-cta">
+    <h2>Faire un don</h2>
+    <p>Votre générosité, quelle qu'en soit la forme, contribue directement à la vie de Drukpa Grenoble et à la diffusion des enseignements bouddhistes dans notre région.<br>
+    <em>Chaque don fait l'objet d'un reçu fiscal déductible des impôts.</em></p>
+    <a href="https://www.helloasso.com" class="btn btn-primary">🪷 Faire un don via HelloAsso</a>
+    <p class="dana-note">Vous serez redirigé vers notre page HelloAsso sécurisée.</p>
+  </section>
+</main>
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html">Contact</a></p>
+  <!-- FACEBOOK_LINK_ICI -->
+  <!-- PLAUSIBLE_ANALYTICS_ICI -->
 </footer>
 </body>
 </html>

@@ -1,111 +1,86 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Retraites — Drukpa Grenoble</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-.ret-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
-.ret-card{position:relative;height:320px;overflow:hidden;cursor:pointer;border:1px solid rgba(201,168,76,.2)}
-.ret-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.ret-card:hover img{transform:scale(1.05)}
-.ret-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.9) 0%,rgba(0,0,0,.4) 50%,rgba(0,0,0,.1) 100%);transition:background .4s ease}
-.ret-card:hover .ret-overlay{background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.75) 50%,rgba(0,0,0,.4) 100%)}
-.ret-content{position:absolute;inset:0;padding:1.5rem;display:flex;flex-direction:column;justify-content:flex-end;z-index:2}
-.ret-badge{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#E8C97A;margin-bottom:.3rem}
-.ret-date{font-size:.8rem;color:#E8C97A;margin-bottom:.4rem;display:block}
-.ret-card h3{font-family:'Cinzel',serif;font-size:1rem;color:#F5E6C3;margin-bottom:.5rem;line-height:1.4}
-.ret-desc{font-size:.82rem;color:rgba(245,230,195,.85);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .4s ease,opacity .4s ease;opacity:0}
-.ret-card:hover .ret-desc{max-height:100px;opacity:1}
-.ret-link{display:inline-block;margin-top:.6rem;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#E8C97A;text-decoration:none;border-bottom:1px solid #E8C97A;max-height:0;overflow:hidden;opacity:0;transition:max-height .3s ease .1s,opacity .3s ease .1s}
-.ret-card:hover .ret-link{max-height:30px;opacity:1}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Retraites — Drukpa Grenoble</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="page-retraites">
 <nav>
-  <a class="nav-logo" href="index.html">
-    <img src="Logo_Drukpa_Grenoble.jpg" alt="Logo Drukpa Grenoble">
-    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+  <a href="index.html" class="nav-logo">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble" class="logo-img">
+    <span class="nav-title">DRUKPA<br>GRENOBLE</span>
   </a>
-  <div class="nav-links">
-    <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
-    <a href="activites.html">Activités</a>
-    <a href="dialogue.html">Dialogue</a>
-    <a href="retraites.html" class="active">Retraites</a>
-    <a href="livetolove.html">Live to Love</a>
-    <a href="intervenants.html">Intervenants</a>
-    <a href="aumonerie.html">Aumônerie</a>
-    <a href="dana.html">Dana</a>
-    <a href="contact.html">Contact</a>
-  </div>
+  <ul>
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="apropos.html">À&nbsp;propos</a></li>
+    <li><a href="activites.html">Activités</a></li>
+    <li><a href="dialogue.html">Dialogue</a></li>
+    <li><a href="retraites.html">Retraites</a></li>
+    <li><a href="livetolove.html">Live to Love</a></li>
+    <li><a href="intervenants.html">Intervenants</a></li>
+    <li><a href="aumonerie.html">Aumônerie</a></li>
+    <li><a href="dana.html">Dana</a></li>
+    <li><a href="galerie.html">Galerie</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </nav>
+<main>
+  <div class="page-header"><span class="breadcrumb">Agenda spirituel</span>
+    <h1>Retraites</h1></div>
 
-<div class="page-header retraites-header">
-  <div class="page-label" style="color:#F5C6CB">Agenda spirituel</div>
-  <h1 class="page-title">Retraites</h1>
-  <div class="page-divider"></div>
-</div>
+  <section class="retraites-list">
 
-<section class="section" style="background:#1a0810">
-  <div class="section-inner">
-    <div class="ret-grid">
-
-      <div class="ret-card">
-        <img src="Chartreuse.jpg" alt="Chartreuse">
-        <div class="ret-overlay"></div>
-        <div class="ret-content">
-          <span class="ret-badge">À venir</span>
-          <span class="ret-date">14 — 19 avril 2026</span>
-          <h3>Retraite de méditation en Chartreuse</h3>
-          <p class="ret-desc">Chalet « Les Belles Ombres » — Ste Marie du Mont. Retraite sous la conduite de Lopön Thrinlé Tenzin, dans le massif de la Chartreuse.</p>
-          <a href="contact.html" class="ret-link">S'inscrire →</a>
-        </div>
+    <article class="retraite-card featured">
+      <img src="Chartreuse.jpg" alt="Chartreuse">
+      <div class="retraite-info">
+        <span class="retraite-badge a-venir">À venir</span>
+        <span class="retraite-date">14 — 19 avril 2026</span>
+        <h3>Retraite de méditation en Chartreuse</h3>
+        <p>Chalet « Les Belles Ombres » — Ste Marie du Mont. Retraite sous la conduite de Lopön Thrinlé Tenzin, dans le massif de la Chartreuse.</p>
+        <a href="contact.html" class="btn btn-primary">S'inscrire →</a>
       </div>
+    </article>
 
-      <div class="ret-card">
-        <img src="Plouray.jpg" alt="Plouray">
-        <div class="ret-overlay"></div>
-        <div class="ret-content">
-          <span class="ret-badge">À venir</span>
-          <span class="ret-date">Été 2026 — Plouray, Bretagne</span>
-          <h3>Anniversaire des Reliques du Bouddha</h3>
-          <p class="ret-desc">Centre Drukpa Plouray. Célébration du premier anniversaire de la venue des reliques du Bouddha à Plouray.</p>
-          <a href="contact.html" class="ret-link">Nous contacter →</a>
-        </div>
+    <article class="retraite-card featured">
+      <img src="Plouray.jpg" alt="Plouray">
+      <div class="retraite-info">
+        <span class="retraite-badge a-venir">À venir</span>
+        <span class="retraite-date">Été 2026 — Plouray, Bretagne</span>
+        <h3>Anniversaire des Reliques du Bouddha</h3>
+        <p>Centre Drukpa Plouray. Célébration du premier anniversaire de la venue des reliques du Bouddha à Plouray.</p>
+        <a href="contact.html" class="btn btn-secondary">Nous contacter →</a>
       </div>
+    </article>
 
-      <div class="ret-card">
-        <img src="Retraite_2025.jpg" alt="Retraite 2025">
-        <div class="ret-overlay"></div>
-        <div class="ret-content">
-          <span class="ret-badge">2025</span>
-          <span class="ret-date">21 — 29 juin 2025</span>
-          <h3>Retraite Sangyé Menla</h3>
-          <p class="ret-desc">Les Tranchats, Dordogne — Drukpa Vendée. Retraite guidée par Lopön Thrinlé Tenzin.</p>
-        </div>
+    <article class="retraite-card past">
+      <img src="Retraite_2025.jpg" alt="Retraite 2025">
+      <div class="retraite-info">
+        <span class="retraite-badge passee">2025</span>
+        <span class="retraite-date">21 — 29 juin 2025</span>
+        <h3>Retraite Sangyé Menla</h3>
+        <p>Les Tranchats, Dordogne — Drukpa Vendée. Retraite guidée par Lopön Thrinlé Tenzin.</p>
       </div>
+    </article>
 
-      <div class="ret-card">
-        <img src="drukpa-21.jpg" alt="Temple Plouray">
-        <div class="ret-overlay"></div>
-        <div class="ret-content">
-          <span class="ret-badge">2025</span>
-          <span class="ret-date">13-14 sept & 20-21 déc 2025</span>
-          <h3>Week-ends de pratique — Grenoble</h3>
-          <p class="ret-desc">Sessions de pratique intensive en groupe, guidées par Lopön Thrinlé Tenzin lors de ses venues trimestrielles à Grenoble.</p>
-          <a href="contact.html" class="ret-link">Renseignements →</a>
-        </div>
+    <article class="retraite-card past">
+      <img src="drukpa-21.jpg" alt="Temple Plouray">
+      <div class="retraite-info">
+        <span class="retraite-badge passee">2025</span>
+        <span class="retraite-date">13-14 sept &amp; 20-21 déc 2025</span>
+        <h3>Week-ends de pratique — Grenoble</h3>
+        <p>Sessions de pratique intensive en groupe, guidées par Lopön Thrinlé Tenzin lors de ses venues trimestrielles à Grenoble.</p>
+        <a href="contact.html" class="btn btn-secondary">Renseignements →</a>
       </div>
+    </article>
 
-    </div>
-  </div>
-</section>
-
+  </section>
+</main>
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html">Contact</a></p>
+  <!-- FACEBOOK_LINK_ICI -->
+  <!-- PLAUSIBLE_ANALYTICS_ICI -->
 </footer>
 </body>
 </html>
