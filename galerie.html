@@ -1,87 +1,203 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Galerie — Drukpa Grenoble</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galerie — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.galerie-body{background:#0f1a0f;padding:4rem 2rem;min-height:60vh}
+.galerie-inner{max-width:1100px;margin:0 auto}
+
+.sortie-header{margin-bottom:2.5rem}
+.sortie-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#6B9E78;margin-bottom:.4rem}
+.sortie-title{font-family:'Cinzel',serif;font-size:1.4rem;color:#E8C97A;margin-bottom:.3rem}
+.sortie-meta{font-size:.82rem;color:rgba(245,230,195,.5);letter-spacing:.05em}
+
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.photo-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#111}
+.photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .4s ease;display:block}
+.photo-item:hover img{transform:scale(1.06);filter:brightness(1.1)}
+.photo-item-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s ease;display:flex;align-items:center;justify-content:center}
+.photo-item:hover .photo-item-overlay{background:rgba(0,0,0,.25)}
+.photo-zoom{font-size:1.5rem;opacity:0;transition:opacity .3s ease}
+.photo-item:hover .photo-zoom{opacity:1}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:1000;display:none;align-items:center;justify-content:center;flex-direction:column}
+.lightbox.active{display:flex}
+.lightbox-img{max-width:90vw;max-height:85vh;object-fit:contain;border:1px solid rgba(201,168,76,.15)}
+.lightbox-caption{color:rgba(245,230,195,.6);font-size:.82rem;letter-spacing:.08em;margin-top:1rem;font-style:italic}
+.lightbox-close{position:absolute;top:1.5rem;right:2rem;color:rgba(245,230,195,.7);font-size:1.8rem;cursor:pointer;background:none;border:none;line-height:1;transition:color .2s}
+.lightbox-close:hover{color:#E8C97A}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);color:#E8C97A;font-size:1.5rem;width:48px;height:48px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.lightbox-nav:hover{background:rgba(201,168,76,.3)}
+.lightbox-prev{left:1rem}
+.lightbox-next{right:1rem}
+.lightbox-counter{position:absolute;bottom:1.5rem;color:rgba(245,230,195,.4);font-size:.78rem;letter-spacing:.15em}
+</style>
 </head>
-<body class="page-galerie">
+<body>
+
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble" class="logo-img">
-    <span class="nav-title">DRUKPA<br>GRENOBLE</span>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
   </a>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="apropos.html">À&nbsp;propos</a></li>
-    <li><a href="activites.html">Activités</a></li>
-    <li><a href="dialogue.html">Dialogue</a></li>
-    <li><a href="retraites.html">Retraites</a></li>
-    <li><a href="livetolove.html">Live to Love</a></li>
-    <li><a href="intervenants.html">Intervenants</a></li>
-    <li><a href="aumonerie.html">Aumônerie</a></li>
-    <li><a href="dana.html">Dana</a></li>
-    <li><a href="galerie.html">Galerie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-<main>
-  <div class="page-header"><span class="breadcrumb">Vie de l'association</span>
-    <h1>Galerie</h1></div>
-
-  <section class="galerie-section">
-    <div class="galerie-meta">
-      <h2>Sortie nature</h2>
-      <p>Balade au Pont de la Betta — Belledonne</p>
-      <p class="galerie-info">11 mai 2025 · Massif de Belledonne · 1 359 m d'altitude · 6 photos</p>
-    </div>
-    <div class="galerie-grid">
-      <img src="galerie_betta_1.jpg" alt="Cascade dans la forêt de Belledonne" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_betta_2.jpg" alt="Membre et son chien sur le sentier" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_betta_3.jpg" alt="Le groupe au bord du torrent" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_betta_4.jpg" alt="Ciel à travers la forêt de sapins" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_betta_5.jpg" alt="Sentier en forêt de Belledonne" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_betta_6.jpg" alt="Cimes des sapins vers le ciel" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-    </div>
-  </section>
-
-  <section class="galerie-section">
-    <div class="galerie-meta">
-      <h2>Week-end de pratique</h2>
-      <p>Remise des katas par Lopön Thrinlé — CEB Grenoble</p>
-      <p class="galerie-info">20 décembre 2025 · Centre d'Études Bouddhiques · Grenoble · 4 photos</p>
-    </div>
-    <div class="galerie-grid">
-      <img src="galerie_ceb_1.jpg" alt="Remise des katas par Lopön Thrinlé" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_ceb_2.jpg" alt="Lopön Thrinlé remet un kata" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_ceb_3.jpg" alt="Photo de groupe — CEB Grenoble décembre 2025" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-      <img src="galerie_ceb_4.jpg" alt="Photo de groupe — CEB Grenoble décembre 2025" class="galerie-img" onclick="openLightbox(this.src, this.alt)">
-    </div>
-  </section>
-
-  <!-- Lightbox -->
-  <div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:none;align-items:center;justify-content:center;cursor:zoom-out;">
-    <span onclick="closeLightbox()" style="position:absolute;top:1rem;right:1.5rem;color:#fff;font-size:2rem;cursor:pointer;">✕</span>
-    <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;border-radius:4px;box-shadow:0 4px 32px rgba(0,0,0,.6);">
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html">Retraites</a>
+    <a href="livetolove.html">Live to Love</a>
+    <a href="intervenants.html">Intervenants</a>
+    <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="galerie.html" class="active">Galerie</a>
+    <a href="contact.html">Contact</a>
   </div>
-  <script>
-    function openLightbox(src, alt) {
-      const lb = document.getElementById('lightbox');
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox-img').alt = alt;
-      lb.style.display = 'flex';
-    }
-    function closeLightbox() {
-      document.getElementById('lightbox').style.display = 'none';
-    }
-    document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
-  </script>
-</main>
+</nav>
+
+<div class="page-header" style="background:linear-gradient(135deg,#0f2a0f,#1a4a1a)">
+  <div class="page-label" style="color:#6B9E78">Vie de l'association</div>
+  <h1 class="page-title">Galerie</h1>
+  <div class="page-divider"></div>
+</div>
+
+<div class="galerie-body">
+  <div class="galerie-inner">
+
+    <!-- Sortie Pont de la Betta -->
+    <div class="sortie-header">
+      <div class="sortie-label">Sortie nature</div>
+      <div class="sortie-title">Balade au Pont de la Betta — Belledonne</div>
+      <div class="sortie-meta">11 mai 2025 · Massif de Belledonne · 1 359 m d'altitude · 6 photos</div>
+    </div>
+
+    <div class="photo-grid" id="gallery">
+      <div class="photo-item" onclick="openLightbox(0)">
+        <img src="galerie_betta_1.jpg" alt="Cascade dans la forêt de Belledonne">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(1)">
+        <img src="galerie_betta_2.jpg" alt="Membre et son chien sur le sentier">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(2)">
+        <img src="galerie_betta_3.jpg" alt="Le groupe au bord du torrent">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(3)">
+        <img src="galerie_betta_4.jpg" alt="Ciel à travers la forêt de sapins">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(4)">
+        <img src="galerie_betta_5.jpg" alt="Sentier en forêt de Belledonne">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(5)">
+        <img src="galerie_betta_6.jpg" alt="Cimes des sapins vers le ciel">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+    </div>
+
+    <!-- Séparateur -->
+    <div style="margin:4rem 0 3rem;border-top:1px solid rgba(201,168,76,.15)"></div>
+
+    <!-- Rencontre CEB décembre 2025 -->
+    <div class="sortie-header">
+      <div class="sortie-label">Week-end de pratique</div>
+      <div class="sortie-title">Remise des katas par Lopön Thrinlé — CEB Grenoble</div>
+      <div class="sortie-meta">20 décembre 2025 · Centre d'Études Bouddhiques · Grenoble · 4 photos</div>
+    </div>
+
+    <div class="photo-grid">
+      <div class="photo-item" onclick="openLightbox(6)">
+        <img src="galerie_ceb_1.jpg" alt="Remise des katas par Lopön Thrinlé">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(7)">
+        <img src="galerie_ceb_2.jpg" alt="Lopön Thrinlé remet un kata">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(8)">
+        <img src="galerie_ceb_3.jpg" alt="Photo de groupe — CEB Grenoble décembre 2025">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+      <div class="photo-item" onclick="openLightbox(9)">
+        <img src="galerie_ceb_4.jpg" alt="Photo de groupe — CEB Grenoble décembre 2025">
+        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="changePhoto(-1)">‹</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+  <div class="lightbox-counter" id="lightbox-counter"></div>
+  <button class="lightbox-nav lightbox-next" onclick="changePhoto(1)">›</button>
+</div>
+
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html">Contact</a></p>
-  <!-- FACEBOOK_LINK_ICI -->
-  <!-- PLAUSIBLE_ANALYTICS_ICI -->
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
 </footer>
+
+<script>
+var photos = [
+  {src:'galerie_betta_1.jpg', caption:'Cascade dans la forêt de Belledonne'},
+  {src:'galerie_betta_2.jpg', caption:'Sur le sentier'},
+  {src:'galerie_betta_3.jpg', caption:'Le groupe au bord du torrent'},
+  {src:'galerie_betta_4.jpg', caption:'Ciel à travers les sapins'},
+  {src:'galerie_betta_5.jpg', caption:'Sentier en forêt'},
+  {src:'galerie_betta_6.jpg', caption:'Cimes vers le ciel'},
+  {src:'galerie_ceb_1.jpg', caption:'Remise des katas par Lopön Thrinlé — CEB Grenoble, 20 décembre 2025'},
+  {src:'galerie_ceb_2.jpg', caption:'Lopön Thrinlé remet un kata'},
+  {src:'galerie_ceb_3.jpg', caption:'Photo de groupe — CEB Grenoble, décembre 2025'},
+  {src:'galerie_ceb_4.jpg', caption:'Photo de groupe — CEB Grenoble, décembre 2025'}
+];
+var current = 0;
+
+function openLightbox(idx) {
+  current = idx;
+  updateLightbox();
+  document.getElementById('lightbox').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+function closeLightboxOutside(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+
+function changePhoto(dir) {
+  current = (current + dir + photos.length) % photos.length;
+  updateLightbox();
+}
+
+function updateLightbox() {
+  document.getElementById('lightbox-img').src = photos[current].src;
+  document.getElementById('lightbox-caption').textContent = photos[current].caption;
+  document.getElementById('lightbox-counter').textContent = (current+1) + ' / ' + photos.length;
+}
+
+document.addEventListener('keydown', function(e) {
+  if (!document.getElementById('lightbox').classList.contains('active')) return;
+  if (e.key === 'ArrowLeft') changePhoto(-1);
+  if (e.key === 'ArrowRight') changePhoto(1);
+  if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
 </body>
 </html>

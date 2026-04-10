@@ -1,78 +1,88 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Intervenants — Drukpa Grenoble</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intervenants — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-intervenants">
+<body>
+
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble" class="logo-img">
-    <span class="nav-title">DRUKPA<br>GRENOBLE</span>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
   </a>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="apropos.html">À&nbsp;propos</a></li>
-    <li><a href="activites.html">Activités</a></li>
-    <li><a href="dialogue.html">Dialogue</a></li>
-    <li><a href="retraites.html">Retraites</a></li>
-    <li><a href="livetolove.html">Live to Love</a></li>
-    <li><a href="intervenants.html">Intervenants</a></li>
-    <li><a href="aumonerie.html">Aumônerie</a></li>
-    <li><a href="dana.html">Dana</a></li>
-    <li><a href="galerie.html">Galerie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html">Retraites</a>
+    <a href="livetolove.html">Live to Love</a>
+    <a href="intervenants.html" class="active">Intervenants</a>
+    <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
-<main>
-  <div class="page-header"><span class="breadcrumb">Nos maîtres</span>
-    <h1>Intervenants</h1></div>
 
-  <section class="intervenants-list">
+<div class="page-header int-header">
+  <div class="page-label">Nos maîtres</div>
+  <h1 class="page-title">Intervenants</h1>
+  <div class="page-divider"></div>
+</div>
 
-    <article class="intervenant-card">
-      <img src="Le_12e_Gyalwang_Drukpa.jpg" alt="Le 12e Gyalwang Drukpa">
-      <div>
-        <span class="intervenant-role">Chef spirituel de la lignée</span>
-        <h3>Le 12e Gyalwang Drukpa</h3>
-        <p>Jigme Padma Wangchen — Né en 1963 à Tso Péma, intronisé par le XIVe Dalaï-Lama. Fondateur du mouvement Live to Love, il transmet le Dharma dans le monde entier, unissant tradition bouddhique et action contemporaine.</p>
+<section class="section intervenants">
+  <div class="section-inner">
+    <div class="int-grid">
+
+      <!-- Gyalwang Drukpa -->
+      <div class="int-card">
+        <img src="Le_12e_Gyalwang_Drukpa.jpg" alt="Le 12e Gyalwang Drukpa" class="int-card-img">
+        <div class="int-card-body">
+          <div class="int-role">Chef spirituel de la lignée</div>
+          <h3>Le 12e Gyalwang Drukpa</h3>
+          <p>Jigme Padma Wangchen — Né en 1963 à Tso Péma, intronisé par le XIVe Dalaï-Lama. Fondateur du mouvement Live to Love, il transmet le Dharma dans le monde entier, unissant tradition bouddhique et action contemporaine.</p>
+        </div>
       </div>
-    </article>
 
-    <article class="intervenant-card">
-      <img src="Drubp_n_Ngawang_Tenzin_Pagsam_Yongdu.jpg" alt="Drubpön Ngawang Tenzin Pagsam Yongdu">
-      <div>
-        <span class="intervenant-role">Représentant Drukpa en Europe</span>
-        <h3>Drubpön Ngawang Tenzin Pagsam Yongdu</h3>
-        <p>Né en 1955 à Chungkar au Bhoutan, il séjourne en France depuis plus de trente ans. Directeur spirituel du centre Drukpa Plouray et représentant du Gyalwang Drukpa en Europe.</p>
+      <!-- Drubpön -->
+      <div class="int-card">
+        <img src="Drubp_n_Ngawang_Tenzin_Pagsam_Yongdu.jpg" alt="Drubpön Ngawang Tenzin Pagsam Yongdu" class="int-card-img">
+        <div class="int-card-body">
+          <div class="int-role">Représentant Drukpa en Europe</div>
+          <h3>Drubpön Ngawang Tenzin Pagsam Yongdu</h3>
+          <p>Né en 1955 à Chungkar au Bhoutan, il séjourne en France depuis plus de trente ans. Directeur spirituel du centre Drukpa Plouray et représentant du Gyalwang Drukpa en Europe.</p>
+        </div>
       </div>
-    </article>
 
-    <article class="intervenant-card">
-      <img src="Lop_n_Thrinl__Tenzin.jpg" alt="Lopön Thrinlé Tenzin">
-      <div>
-        <span class="intervenant-role">Président &amp; maître local</span>
-        <h3>Lopön Thrinlé Tenzin</h3>
-        <p>Yves Boudéro — Moine ordonné en 1987, poète et praticien, co-président de l'Union Bouddhiste de France. Conduit les retraites et enseignements à Grenoble, intervient en aumônerie hospitalière.</p>
+      <!-- Lopön Thrinlé -->
+      <div class="int-card">
+        <img src="Lop_n_Thrinl__Tenzin.jpg" alt="Lopön Thrinlé Tenzin" class="int-card-img">
+        <div class="int-card-body">
+          <div class="int-role">Président & maître local</div>
+          <h3>Lopön Thrinlé Tenzin</h3>
+          <p>Yves Boudéro — Moine ordonné en 1987, poète et praticien, co-président de l'Union Bouddhiste de France. Conduit les retraites et enseignements à Grenoble, intervient en aumônerie hospitalière.</p>
+        </div>
       </div>
-    </article>
 
-    <article class="intervenant-card">
+    </div>
+
+    <!-- Tchenrézi -->
+    <div class="tchenrezi">
       <img src="Tchenr_zi___Avalokiteshvara.jpg" alt="Tchenrézi — Avalokiteshvara">
-      <div>
+      <div class="tchenrezi-text">
         <h3>Tchenrézi — Avalokiteshvara</h3>
         <p>Tchenrézi, le Bouddha de la compassion, est une divinité centrale de la lignée Drukpa. Sa pratique cultive la bienveillance universelle envers tous les êtres. Le mantra <em>Om Mani Padme Hum</em> lui est dédié. Les sessions de méditation de Drukpa Grenoble incluent régulièrement la pratique de Tchenrézi, accessible aux débutants comme aux pratiquants avancés.</p>
       </div>
-    </article>
+    </div>
+  </div>
+</section>
 
-  </section>
-</main>
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html">Contact</a></p>
-  <!-- FACEBOOK_LINK_ICI -->
-  <!-- PLAUSIBLE_ANALYTICS_ICI -->
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
 </footer>
 </body>
 </html>

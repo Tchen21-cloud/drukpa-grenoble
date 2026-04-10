@@ -1,76 +1,101 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aumônerie bouddhiste — Drukpa Grenoble</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aumônerie — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-aumonerie">
+<body>
+
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble" class="logo-img">
-    <span class="nav-title">DRUKPA<br>GRENOBLE</span>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
   </a>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="apropos.html">À&nbsp;propos</a></li>
-    <li><a href="activites.html">Activités</a></li>
-    <li><a href="dialogue.html">Dialogue</a></li>
-    <li><a href="retraites.html">Retraites</a></li>
-    <li><a href="livetolove.html">Live to Love</a></li>
-    <li><a href="intervenants.html">Intervenants</a></li>
-    <li><a href="aumonerie.html">Aumônerie</a></li>
-    <li><a href="dana.html">Dana</a></li>
-    <li><a href="galerie.html">Galerie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-<main>
-  <div class="page-header"><span class="breadcrumb">Service</span>
-    <h1>Aumônerie bouddhiste</h1></div>
-
-  <section class="aumonerie-intro">
-    <p>L'aumônerie bouddhiste est un service d'accompagnement spirituel proposé aux personnes hospitalisées, en établissement de soins ou en situation de vulnérabilité, dans le respect de leur tradition et de leur chemin intérieur.</p>
-    <p>Ce service est <strong>entièrement gratuit</strong>, ouvert à tous, et s'inscrit dans l'engagement bouddhiste de compassion et de présence bienveillante.</p>
-  </section>
-
-  <section class="intervenants-list">
-
-    <article class="intervenant-card">
-      <img src="Lop_n_Thrinl__Tenzin.jpg" alt="Lopön Thrinlé Tenzin">
-      <div>
-        <span class="intervenant-role">Président — Aumônier en Vendée</span>
-        <h3>Lopön Thrinlé Tenzin</h3>
-        <p>Moine ordonné en 1987, poète et praticien, co-président de l'Union Bouddhiste de France. Aumônier bouddhiste en Vendée. Vient à Grenoble trimestriellement pour dispenser des enseignements et guider les pratiques.</p>
-      </div>
-    </article>
-
-    <article class="intervenant-card">
-      <div>
-        <span class="intervenant-role">Aumônier — Grenoble</span>
-        <h3>Philippe Ferrant</h3>
-        <p>Pratiquant depuis 1996, refuge avec Lama Denys et Gosok Rinpoché. Séminaires avec Khyabje Bokar Rinpoché en Inde. Rencontres avec le Karmapa et le Gyalwang Drukpa. Assure l'aumônerie bouddhiste à Grenoble et dans la région, en lien avec la lignée Drukpa.</p>
-      </div>
-    </article>
-
-  </section>
-
-  <section class="aumonerie-grid">
-    <div class="aumonerie-item"><strong>Milieu hospitalier</strong><p>CHU et cliniques de la région grenobloise</p></div>
-    <div class="aumonerie-item"><strong>Dialogue interreligieux</strong><p>Collaboration avec les aumôniers des autres traditions</p></div>
-    <div class="aumonerie-item"><strong>Disponibilité</strong><p>Sur demande — contact par email</p></div>
-    <div class="aumonerie-item"><strong>Gratuité</strong><p>Service entièrement bénévole</p></div>
-  </section>
-
-  <div class="cta-section">
-    <a href="contact.html" class="btn btn-primary">Nous écrire →</a>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html">Retraites</a>
+    <a href="livetolove.html">Live to Love</a>
+    <a href="intervenants.html">Intervenants</a>
+    <a href="aumonerie.html" class="active">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="galerie.html">Galerie</a>
+    <a href="contact.html">Contact</a>
   </div>
-</main>
+</nav>
+
+<div class="page-header aum-header">
+  <div class="page-label">Service</div>
+  <h1 class="page-title">Aumônerie bouddhiste</h1>
+  <div class="page-divider"></div>
+</div>
+
+<section class="section aumonerie aum-body">
+  <div class="section-inner">
+    <div class="aum-grid">
+      <div class="aum-text">
+        <p>
+          L'aumônerie bouddhiste est un service d'accompagnement spirituel proposé aux personnes hospitalisées, en établissement de soins ou en situation de vulnérabilité, dans le respect de leur tradition et de leur chemin intérieur.
+        </p>
+        <p>
+          Ce service est <strong>entièrement gratuit</strong>, ouvert à tous, et s'inscrit dans l'engagement bouddhiste de compassion et de présence bienveillante.
+        </p>
+
+        <!-- Lopön Thrinlé Tenzin — en premier -->
+        <div style="margin-top:2rem;background:var(--dark);padding:0;border:1px solid rgba(201,168,76,.15);display:flex;gap:0;overflow:hidden">
+          <img src="Lop_n_Thrinl__Tenzin.jpg" alt="Lopön Thrinlé Tenzin" style="width:160px;object-fit:cover;object-position:top;flex-shrink:0">
+          <div style="padding:1.5rem">
+            <div style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">Président — Aumônier en Vendée</div>
+            <h3 style="font-family:'Cinzel',serif;color:var(--gold-light);margin-bottom:.6rem">Lopön Thrinlé Tenzin</h3>
+            <p style="font-size:.85rem;color:rgba(245,230,195,.7);line-height:1.75">
+              Moine ordonné en 1987, poète et praticien, co-président de l'Union Bouddhiste de France. Aumônier bouddhiste en Vendée. Vient à Grenoble trimestriellement pour dispenser des enseignements et guider les pratiques.
+            </p>
+          </div>
+        </div>
+
+        <!-- Philippe Ferrant — photo à venir -->
+        <div style="margin-top:1rem;background:var(--dark);padding:1.5rem;border:1px solid rgba(201,168,76,.15)">
+          <div style="font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem">Aumônier — Grenoble</div>
+          <h3 style="font-family:'Cinzel',serif;color:var(--gold-light);margin-bottom:.6rem">Philippe Ferrant</h3>
+          <p style="font-size:.85rem;color:rgba(245,230,195,.7);line-height:1.75">
+            Pratiquant depuis 1996, refuge avec Lama Denys et Gosok Rinpoché. Séminaires avec Khyabje Bokar Rinpoché en Inde. Rencontres avec le Karmapa et le Gyalwang Drukpa. Assure l'aumônerie bouddhiste à Grenoble et dans la région, en lien avec la lignée Drukpa.
+          </p>
+        </div>
+      </div>
+
+      <div class="aum-boxes">
+        <div class="aum-box">
+          <div class="aum-box-label">Milieu hospitalier</div>
+          <div class="aum-box-val">CHU et cliniques de la région grenobloise</div>
+        </div>
+        <div class="aum-box">
+          <div class="aum-box-label">Dialogue interreligieux</div>
+          <div class="aum-box-val">Collaboration avec les aumôniers des autres traditions</div>
+        </div>
+        <div class="aum-box">
+          <div class="aum-box-label">Disponibilité</div>
+          <div class="aum-box-val">Sur demande — contact par email</div>
+        </div>
+        <div class="aum-box">
+          <div class="aum-box-label">Gratuité</div>
+          <div class="aum-box-val">Service entièrement bénévole</div>
+        </div>
+        <div class="aum-box" style="border-left-color:var(--teal)">
+          <div class="aum-box-label">Contact</div>
+          <div class="aum-box-val"><a href="contact.html" style="color:var(--gold)">Nous écrire →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html">Contact</a></p>
-  <!-- FACEBOOK_LINK_ICI -->
-  <!-- PLAUSIBLE_ANALYTICS_ICI -->
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
 </footer>
 </body>
 </html>

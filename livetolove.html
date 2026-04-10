@@ -1,57 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live to Love — Drukpa Grenoble</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live to Love — Drukpa Grenoble</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
 </head>
-<body class="page-livetolove">
+<body>
+
 <nav>
-  <a href="index.html" class="nav-logo">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble" class="logo-img">
-    <span class="nav-title">DRUKPA<br>GRENOBLE</span>
+  <a class="nav-logo" href="index.html">
+    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
   </a>
-  <ul>
-    <li><a href="index.html">Accueil</a></li>
-    <li><a href="apropos.html">À&nbsp;propos</a></li>
-    <li><a href="activites.html">Activités</a></li>
-    <li><a href="dialogue.html">Dialogue</a></li>
-    <li><a href="retraites.html">Retraites</a></li>
-    <li><a href="livetolove.html">Live to Love</a></li>
-    <li><a href="intervenants.html">Intervenants</a></li>
-    <li><a href="aumonerie.html">Aumônerie</a></li>
-    <li><a href="dana.html">Dana</a></li>
-    <li><a href="galerie.html">Galerie</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
+  <div class="nav-links">
+    <a href="index.html">Accueil</a>
+    <a href="apropos.html">À propos</a>
+    <a href="activites.html">Activités</a>
+    <a href="dialogue.html">Dialogue</a>
+    <a href="retraites.html">Retraites</a>
+    <a href="livetolove.html" class="active">Live to Love</a>
+    <a href="intervenants.html">Intervenants</a>
+    <a href="aumonerie.html">Aumônerie</a>
+    <a href="dana.html">Dana</a>
+    <a href="contact.html">Contact</a>
+  </div>
 </nav>
-<main>
-  <div class="page-header"><span class="breadcrumb">Engagement altruiste</span>
-    <h1>Live to Love</h1></div>
 
-  <figure class="page-figure">
-    <img src="C_cile_Dupart_et_Guy_Pelletier.jpg" alt="Cécile Dupart et Guy Pelletier — Montchardon, mars 2026">
-    <figcaption>Cécile Dupart &amp; Guy Pelletier — Montchardon, mars 2026</figcaption>
-  </figure>
+<div class="page-header ltl-header">
+  <div class="page-label" style="color:#FFD700">Engagement altruiste</div>
+  <h1 class="page-title" style="color:#FFF">Live to Love</h1>
+  <div class="page-divider"></div>
+</div>
 
-  <section class="ltl-content">
-    <p><strong>Cécile Dupart</strong> porte et coordonne les actions Live to Love au sein de Drukpa Grenoble.</p>
-    <p>L'idée est simple et profonde : accomplir des actions particulièrement altruistes, en groupes ou individuellement, et les partager pour encourager chacun à agir.</p>
-    <p>Des week-ends bimestriels sont prévus tout au long de l'année. Chaque participant est invité à mettre en route des actions altruistes ou à partager celles qu'il fait déjà, via photos ou court texte, publiés par l'association internationale <strong>Live to Love</strong> fondée par Sa Sainteté le Gyalwang Drukpa.</p>
-  </section>
+<section class="section livetolove ltl-body">
+  <div class="section-inner">
+    <div class="ltl-grid">
+      <div>
+        <img src="C_cile_Dupart_et_Guy_Pelletier.jpg" alt="Cécile Dupart et Guy Pelletier — Montchardon, mars 2026" class="ltl-img">
+        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.5rem;font-style:italic">Cécile Dupart & Guy Pelletier — Montchardon, mars 2026</p>
+      </div>
+      <div>
+        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:1rem">
+          <strong>Cécile Dupart</strong> porte et coordonne les actions Live to Love au sein de Drukpa Grenoble.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:1rem">
+          L'idée est simple et profonde : accomplir des actions particulièrement altruistes, en groupes ou individuellement, et les partager pour encourager chacun à agir.
+        </p>
+        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:1.5rem">
+          Des week-ends bimestriels sont prévus tout au long de l'année. Chaque participant est invité à mettre en route des actions altruistes ou à partager celles qu'il fait déjà, via photos ou court texte, publiés par l'association internationale <strong>Live to Love</strong> fondée par Sa Sainteté le Gyalwang Drukpa.
+        </p>
+        <div class="ltl-info">
+          <div class="ltl-box">
+            <div class="ltl-box-label">Rythme</div>
+            <div class="ltl-box-val">Week-ends bimestriels tout au long de l'année</div>
+          </div>
+          <div class="ltl-box">
+            <div class="ltl-box-label">Comment participer</div>
+            <div class="ltl-box-val">Individuellement ou en groupe, actions libres et bienveillantes</div>
+          </div>
+          <div class="ltl-box">
+            <div class="ltl-box-label">Partage</div>
+            <div class="ltl-box-val">Photos ou textes courts</div>
+          </div>
+          <div class="ltl-box">
+            <div class="ltl-box-label">Contact</div>
+            <div class="ltl-box-val"><a href="contact.html" style="color:var(--gold)">Nous écrire →</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section class="ltl-grid">
-    <div class="ltl-item"><strong>Rythme</strong><p>Week-ends bimestriels tout au long de l'année</p></div>
-    <div class="ltl-item"><strong>Comment participer</strong><p>Individuellement ou en groupe, actions libres et bienveillantes</p></div>
-    <div class="ltl-item"><strong>Partage</strong><p>Photos ou textes courts</p></div>
-    <div class="ltl-item"><strong>Contact</strong><p><a href="contact.html" class="btn btn-secondary">Nous écrire →</a></p></div>
-  </section>
-</main>
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html">Contact</a></p>
-  <!-- FACEBOOK_LINK_ICI -->
-  <!-- PLAUSIBLE_ANALYTICS_ICI -->
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
 </footer>
 </body>
 </html>
