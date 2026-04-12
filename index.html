@@ -29,148 +29,31 @@
 </nav>
 
 <style>
-#splash{position:relative;width:100%;height:100vh;overflow:hidden;cursor:none}
-
-#hero-reel{position:absolute;inset:0}
-#hero-reel .hero-bg{position:absolute;inset:0;background-image:url('eyeem-82693436.jpg');background-size:cover;background-position:center}
-#hero-reel .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.65) 100%)}
-#hero-reel .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;z-index:1}
-#hero-reel .hero-tagline{color:#E8C97A;text-shadow:0 1px 4px rgba(0,0,0,.8);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
-#hero-reel h1{text-shadow:0 2px 12px rgba(0,0,0,.7);margin:.4rem 0}
-#hero-reel .hero-sub{text-shadow:0 1px 6px rgba(0,0,0,.8);margin-bottom:.8rem}
-#hero-reel .hero-desc{color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.7);max-width:540px;font-size:.93rem;line-height:1.8;margin:0 auto 2rem}
-#hero-reel .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-#volet-g,#volet-d{
-  position:absolute;top:0;bottom:0;
-  z-index:4;
-  overflow:hidden;
-  transition:none;
-}
-#volet-g.ferme,#volet-d.ferme{
-  transition:width 1.4s cubic-bezier(.4,0,.2,1);
-}
-#volet-g{
-  left:0;width:50%;
-  background:#ffffff;
-}
-#volet-d{
-  right:0;width:50%;
-  background:#ffffff;
-}
-
-@keyframes hue-cycle{
-  0%  {filter:hue-rotate(0deg)   saturate(1.0) brightness(1.0)}
-  100%{filter:hue-rotate(360deg) saturate(1.0) brightness(1.0)}
-}
-
-/* Le logo est unique, positionné en absolu sur toute la largeur du splash,
-   chaque volet en clip sa moitié via overflow:hidden */
-.logo-moitie{
-  position:absolute;
-  top:50%; transform:translateY(-50%);
-  width:100vw; height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;
-  animation:hue-cycle 8s linear infinite;
-}
-#volet-g .logo-moitie{
-  left:0;          /* ancré au bord gauche du volet, s'étend sur 100vw */
-}
-#volet-d .logo-moitie{
-  right:0;         /* ancré au bord droit du volet, s'étend vers la gauche */
-  left:auto;
-  transform:translateY(-50%) translateX(calc(100% - 100vw));
-}
-.logo-moitie img{
-  width:90vh;height:90vh;
-  max-width:90vw;max-height:90vh;
-  object-fit:contain;
-  display:block;
-}
-
-#cursor-dot{
-  position:absolute;
-  width:10px;height:10px;border-radius:50%;
-  background:rgba(255,255,255,.75);
-  pointer-events:none;z-index:10;
-  transform:translate(-50%,-50%);
-  transition:opacity .3s;
-  opacity:0;
-}
+.hero-bg{transition:filter .6s ease}
+.hero:hover .hero-bg{filter:blur(3px) brightness(.85)}
+.hero-tagline{color:#E8C97A !important;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+.hero h1{text-shadow:0 2px 12px rgba(0,0,0,.7)}
+.hero-sub{text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.hero-desc{color:rgba(255,255,255,.92) !important;text-shadow:0 1px 4px rgba(0,0,0,.7)}
 </style>
 
-<div id="splash">
-
-  <div id="hero-reel" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tagline">Lignée Drukpa du bouddhisme tibétain — Grenoble</div>
-      <h1>Drukpa Grenoble</h1>
-      <p class="hero-sub">Méditation, enseignements et dialogue interreligieux</p>
-      <p class="hero-desc">Une association ancrée dans la tradition bouddhiste tibétaine, ouverte à tous ceux qui souhaitent cheminer vers une présence plus profonde et plus éveillée.</p>
-      <div class="hero-btns">
-        <a href="activites.html" class="btn-primary">Découvrir nos activités</a>
-        <a href="contact.html" class="btn-outline">Nous contacter</a>
-      </div>
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('eyeem-82693436.jpg')"></div>
+  <div class="hero-overlay" style="background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.65) 100%)"></div>
+  <div class="hero-content">
+    <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble" class="hero-logo">
+    <div class="hero-tagline">Lignée Drukpa du bouddhisme tibétain — Grenoble</div>
+    <h1>Drukpa Grenoble</h1>
+    <p class="hero-sub">Méditation, enseignements et dialogue interreligieux</p>
+    <p class="hero-desc" style="max-width:560px;margin:0 auto 2.5rem;font-size:.95rem;line-height:1.8">
+      Une association ancrée dans la tradition bouddhiste tibétaine, ouverte à tous ceux qui souhaitent cheminer vers une présence plus profonde et plus éveillée.
+    </p>
+    <div class="hero-btns">
+      <a href="activites.html" class="btn-primary">Découvrir nos activités</a>
+      <a href="contact.html" class="btn-outline">Nous contacter</a>
     </div>
   </div>
-
-  <div id="volet-g">
-    <div class="logo-moitie">
-      <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
-    </div>
-  </div>
-  <div id="volet-d">
-    <div class="logo-moitie">
-      <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
-    </div>
-  </div>
-
-  <div id="cursor-dot"></div>
-</div>
-
-<script>
-(function(){
-  var splash    = document.getElementById('splash');
-  var voletG    = document.getElementById('volet-g');
-  var voletD    = document.getElementById('volet-d');
-  var dot       = document.getElementById('cursor-dot');
-  var stopTimer = null;
-
-  function ouvrirVolets(){
-    voletG.classList.remove('ferme');
-    voletD.classList.remove('ferme');
-    voletG.style.width = '0%';
-    voletD.style.width = '0%';
-  }
-  function fermerVolets(){
-    voletG.classList.add('ferme');
-    voletD.classList.add('ferme');
-    voletG.style.width = '50%';
-    voletD.style.width = '50%';
-  }
-
-  splash.addEventListener('mousemove',function(e){
-    var rect = splash.getBoundingClientRect();
-    dot.style.left    = (e.clientX - rect.left) + 'px';
-    dot.style.top     = (e.clientY - rect.top)  + 'px';
-    dot.style.opacity = '1';
-
-    ouvrirVolets();
-
-    clearTimeout(stopTimer);
-    stopTimer = setTimeout(fermerVolets, 900);
-  });
-
-  splash.addEventListener('mouseleave',function(){
-    dot.style.opacity = '0';
-    clearTimeout(stopTimer);
-    fermerVolets();
-  });
-})();
-</script>
+</section>
 
 <!-- Aperçu rapide -->
 <section class="section" style="background:var(--cream2);padding:3rem 2rem">
@@ -228,7 +111,7 @@
 </section>
 
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a></p>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" style="color:var(--gold);text-decoration:none;margin-left:1rem" title="Facebook Drukpa Grenoble">Facebook</a></p>
 </footer>
 
 </body>
