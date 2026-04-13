@@ -53,6 +53,21 @@
   .act-featured{grid-template-columns:1fr}
   .act-photos{grid-template-columns:1fr 1fr}
 }
+/* Section maîtres */
+.act-maitres{display:grid;grid-template-columns:360px 1fr;gap:3rem;align-items:center;background:white;padding:3rem;margin-bottom:3rem;border-left:4px solid var(--gold)}
+.act-maitres-photo-wrap{position:relative}
+.act-maitres-photo{width:100%;height:340px;object-fit:cover;object-position:center top}
+.act-maitres-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,18,8,.85));padding:20px 14px 12px;font-size:.8rem;color:rgba(245,230,195,.9);font-style:italic}
+.act-maitres-text .maitre-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#6B9E78;margin-bottom:.8rem}
+.act-maitres-text h2{font-family:'Cinzel',serif;font-size:1.4rem;color:#2C1A08;margin-bottom:1rem;line-height:1.4}
+.act-maitres-text p{font-size:.9rem;color:#6B5A3E;line-height:1.9;margin-bottom:.8rem}
+.act-maitres-names{margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid #e8e0d0;display:flex;flex-direction:column;gap:.8rem}
+.act-maitre-item{display:flex;align-items:center;gap:.8rem}
+.act-maitre-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0}
+.act-maitre-info{font-size:.85rem;color:#2C1A08}
+.act-maitre-role{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#9a8060;display:block;margin-bottom:1px}
+@media(max-width:768px){.act-maitres{grid-template-columns:1fr}}
+
 </style>
 </head>
 <body>
@@ -99,6 +114,37 @@
       </div>
       <img src="galerie_ceb_3.jpg" alt="Session de pratique au CEB Grenoble" class="act-featured-img">
     </div>
+
+    <!-- Section maîtres -->
+    <div class="act-maitres">
+      <div class="act-maitres-photo-wrap">
+        <img src="lopon_droepen.jpg" alt="Lopön Thrinlé Tenzin et Drubpön Ngawang Tenzin" class="act-maitres-photo">
+        <div class="act-maitres-caption">Lopön Thrinlé Tenzin &amp; Drubpön Ngawang Tenzin — Plouray 2025</div>
+      </div>
+      <div class="act-maitres-text">
+        <div class="maitre-label">Nos maîtres à Grenoble</div>
+        <h2>Une transmission vivante du Dharma</h2>
+        <p>La lignée Drukpa est portée à Grenoble par deux maîtres qualifiés qui guident et transmettent les enseignements dans leur profondeur et leur authenticité.</p>
+        <p>Chaque trimestre, leur présence offre à nos membres un contact direct avec la tradition tibétaine vivante — méditations guidées, enseignements du Dharma, accessibles à tous.</p>
+        <div class="act-maitres-names">
+          <div class="act-maitre-item">
+            <div class="act-maitre-dot"></div>
+            <div class="act-maitre-info">
+              <span class="act-maitre-role">Président &amp; maître local</span>
+              Lopön Thrinlé Tenzin
+            </div>
+          </div>
+          <div class="act-maitre-item">
+            <div class="act-maitre-dot"></div>
+            <div class="act-maitre-info">
+              <span class="act-maitre-role">Représentant Drukpa en Europe</span>
+              Drubpön Ngawang Tenzin
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Grille des 6 activités -->
     <div class="act-grid">
