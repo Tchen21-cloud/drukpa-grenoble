@@ -7,10 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.dana-hero{padding:0;text-align:center;position:relative;overflow:hidden}
-.dana-hero-video{display:block;width:100%;height:auto;max-height:80vh;object-fit:cover}
+.dana-hero{position:relative;overflow:hidden;height:380px}
+.dana-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .dana-hero-content{display:none}
-.dana-hero-content{position:relative;z-index:2}
 .dana-symbol{font-size:4rem;display:block;margin-bottom:1.5rem;filter:drop-shadow(0 2px 8px rgba(201,168,76,.5))}
 .dana-title{font-family:'Cinzel',serif;font-size:3rem;color:#E8C97A;margin-bottom:.5rem;letter-spacing:.1em}
 .dana-subtitle{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:rgba(245,230,195,.8);font-style:italic;margin-bottom:2rem}
@@ -63,10 +62,10 @@
 
 <!-- Hero -->
 <div class="dana-hero">
-  <video class="dana-hero-video" autoplay muted playsinline>
+  <video class="dana-hero-video" autoplay muted playsinline loop>
     <source src="anim_dana_web.mp4" type="video/mp4">
   </video>
-  <div class="dana-hero-content" style="display:none">
+  <div class="dana-hero-content">
     <h1 class="dana-title">Dana</h1>
     <p class="dana-subtitle">L'art du don sans attente</p>
     <div class="dana-mantra">OM MANI PADME HUM</div>
