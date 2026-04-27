@@ -10,7 +10,7 @@
 body{font-family:"Lato",sans-serif;background:var(--cream);color:var(--text)}
 
 /* ===== NAVIGATION ===== */
-nav{background:var(--dark);display:flex;align-items:center;padding:0 2rem;border-bottom:1px solid rgba(201,168,76,0.3);position:sticky;top:0;z-index:100;flex-wrap:wrap}
+nav{background:var(--dark);display:flex;align-items:center;padding:0 3rem;border-bottom:1px solid rgba(201,168,76,0.3);position:sticky;top:0;z-index:100;flex-wrap:wrap}
 .nav-logo{display:flex;align-items:center;gap:.75rem;padding:.5rem 1.5rem .5rem 0;border-right:1px solid rgba(201,168,76,.2);margin-right:1.5rem;text-decoration:none}
 .nav-logo img{width:48px;height:48px;object-fit:contain;mix-blend-mode:screen;opacity:.9}
 .nav-brand{font-family:"Cinzel",serif;font-size:11px;letter-spacing:.12em;color:var(--gold-light);line-height:1.5}
@@ -19,7 +19,7 @@ nav{background:var(--dark);display:flex;align-items:center;padding:0 2rem;border
 .nav-links a:hover,.nav-links a.active{color:var(--gold-light);border-bottom-color:var(--gold)}
 
 /* ===== PAGE HEADER ===== */
-.page-header{background:var(--dark-mid);padding:4rem 2rem 3rem;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)}
+.page-header{background:var(--dark-mid);padding:4rem 5% 3rem;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)}
 .page-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .page-title{font-family:"Cinzel",serif;font-size:2.2rem;color:var(--gold-light);margin-bottom:1rem}
 .page-divider{width:60px;height:1px;background:var(--gold);margin:0 auto}
@@ -40,8 +40,8 @@ nav{background:var(--dark);display:flex;align-items:center;padding:0 2rem;border
 .btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 
 /* ===== SECTIONS ===== */
-.section{padding:5rem 2rem}
-.section-inner{max-width:1000px;margin:0 auto}
+.section{padding:5rem 0}
+.section-inner{max-width:100%;padding-left:5%;padding-right:5%}
 .section-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .section-title{font-family:"Cinzel",serif;font-size:1.9rem;color:var(--text);margin-bottom:1rem}
 .section-title-light{color:var(--gold-light)}
@@ -212,3 +212,4 @@ footer p{font-size:.8rem;color:rgba(245,230,195,.4);letter-spacing:.08em}
 
 /* Accueil — logo visible */
 .hero-logo{mix-blend-mode:normal !important;background:rgba(255,255,255,.15);padding:4px;border-radius:4px}
+
