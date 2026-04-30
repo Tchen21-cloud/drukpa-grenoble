@@ -23,7 +23,10 @@
 
 /* 3 blocs événements */
 .dial-events{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid #C9A84C}
-.dial-event{padding:2rem 2.5rem;border-right:1px solid rgba(201,168,76,.15)}
+.dial-event{border-right:1px solid rgba(201,168,76,.15);overflow:hidden}
+.dial-event-img{width:100%;height:240px;object-fit:cover;display:block;margin-bottom:1.5rem}
+.dial-event-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#E8C97A;margin-bottom:.6rem;padding:0 2rem}
+.dial-event p{font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.7;padding:0 2rem 2rem}
 .dial-event:last-child{border-right:none}
 .dial-event-label{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#E8C97A;margin-bottom:.6rem}
 .dial-event p{font-size:.88rem;color:rgba(255,255,255,.8);line-height:1.7}
@@ -72,26 +75,20 @@
     <p>Cette ouverture au dialogue fait partie intégrante de notre tradition bouddhiste tibétaine, qui reconnaît la valeur de tous les chemins spirituels authentiques.</p>
   </div>
 
-  <!-- 4 photos pleine largeur -->
-  <div class="dial-photos">
-    <img src="Rencontre__cum_nique_Montchardon.jpg" alt="Rencontre œcuménique Montchardon">
-    <img src="Pr_sentation_interreligieuse.jpg" alt="Présentation interreligieuse">
-    <img src="galerie_ceb_3.jpg" alt="Groupe au CEB Grenoble">
-    <img src="galerie_ceb_4.jpg" alt="Groupe au CEB Grenoble">
-  </div>
-  <div class="dial-lieu">Montchardon — 23 mars 2026</div>
-
-  <!-- 3 blocs événements -->
+  <!-- 3 blocs photos + légende SOUS la photo -->
   <div class="dial-events">
     <div class="dial-event">
+      <img src="Rencontre__cum_nique_Montchardon.jpg" alt="Rencontre Montchardon" class="dial-event-img">
       <div class="dial-event-label">Centre Théologique</div>
       <p>Meylan-Grenoble — colloques réguliers avec toutes les traditions</p>
     </div>
     <div class="dial-event">
+      <img src="Pr_sentation_interreligieuse.jpg" alt="Présentation interreligieuse" class="dial-event-img">
       <div class="dial-event-label">Rome 2025</div>
       <p>Voyage interreligieux — rencontres au Vatican et avec d'autres traditions</p>
     </div>
     <div class="dial-event">
+      <img src="galerie_ceb_4.jpg" alt="Groupe CEB Grenoble" class="dial-event-img">
       <div class="dial-event-label">Montchardon 2026</div>
       <p>Rencontre œcuménique — catholiques, protestants, juifs, musulmans, bouddhistes</p>
     </div>

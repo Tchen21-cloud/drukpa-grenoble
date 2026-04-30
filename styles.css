@@ -11,7 +11,7 @@ body{margin:0;padding:0}
   --teal:#2D7D6F;--green:#3A6B3A;
   --text:#2C2010;--text-muted:#6B5A3E;
 }
-body{font-family:"Lato",sans-serif;background:var(--dark);color:var(--text)}
+body{font-family:"Lato",sans-serif;background:var(--dark);color:var(--text);margin:0}
 
 /* ===== NAVIGATION ===== */
 nav{background:var(--dark);display:flex;align-items:center;padding:0 3rem;border-bottom:1px solid rgba(201,168,76,0.3);position:sticky;top:0;z-index:100;flex-wrap:wrap}
