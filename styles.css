@@ -23,10 +23,13 @@ nav{background:var(--dark);display:flex;align-items:center;padding:0 3rem;border
 .nav-links a:hover,.nav-links a.active{color:var(--gold-light);border-bottom-color:var(--gold)}
 
 /* ===== PAGE HEADER ===== */
-.page-header{background:var(--dark-mid);padding:4rem 5% 3rem;text-align:center;border-bottom:1px solid rgba(201,168,76,.2)}
+.page-header{background:var(--dark-mid);padding:4rem 5% 3rem;text-align:center;border-bottom:1px solid rgba(201,168,76,.2);position:relative;overflow:hidden}
+.page-header::before{content:'';position:absolute;right:5%;top:50%;transform:translateY(-50%);width:120px;height:100px;background:url('noeud_eternite.png') center/contain no-repeat;opacity:.15;pointer-events:none}
+.page-header::after{content:'';position:absolute;left:5%;top:50%;transform:translateY(-50%);width:120px;height:100px;background:url('noeud_eternite.png') center/contain no-repeat;opacity:.15;pointer-events:none}
 .page-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .page-title{font-family:"Cinzel",serif;font-size:2.2rem;color:var(--gold-light);margin-bottom:1rem}
 .page-divider{width:60px;height:1px;background:var(--gold);margin:0 auto}
+.noeud{display:block;width:48px;height:40px;background:url('noeud_eternite.png') center/contain no-repeat;margin:1rem auto;opacity:.6}
 
 /* ===== HERO (accueil) ===== */
 .hero{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;text-align:center;padding:4rem 2rem}
@@ -137,7 +140,8 @@ nav{background:var(--dark);display:flex;align-items:center;padding:0 3rem;border
 .form-submit:hover{background:var(--gold-light)}
 
 /* ===== FOOTER ===== */
-footer{background:var(--dark);padding:2rem;text-align:center;border-top:1px solid rgba(201,168,76,.15)}
+footer{background:var(--dark);padding:2rem;text-align:center;border-top:1px solid rgba(201,168,76,.15);position:relative}
+footer::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80px;height:66px;background:url('noeud_eternite.png') center/contain no-repeat;opacity:.06;pointer-events:none}
 footer p{font-size:.8rem;color:rgba(245,230,195,.4);letter-spacing:.08em}
 
 /* ===== RESPONSIVE ===== */
