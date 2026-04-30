@@ -6,6 +6,24 @@
 <title>Live to Love — Drukpa Grenoble</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<style>
+.ltl-body{background:#fff0ee;padding:0}
+.ltl-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:500px}
+.ltl-left{position:relative}
+.ltl-left img{width:100%;height:100%;object-fit:cover;display:block;min-height:500px}
+.ltl-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,18,8,.8));padding:2rem 1.5rem 1rem;font-size:.78rem;color:rgba(245,230,195,.7);font-style:italic}
+.ltl-right{padding:3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;background:#fff0ee}
+.ltl-right p{color:#4A3520;line-height:1.95;font-size:.95rem;margin-bottom:1rem}
+.ltl-boxes{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:2rem}
+.ltl-box{background:#1C1510;padding:1.2rem 1.5rem;border-top:2px solid #C9A84C}
+.ltl-box-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:.4rem}
+.ltl-box-val{font-size:.85rem;color:rgba(245,230,195,.8);line-height:1.6}
+@media(max-width:768px){
+  .ltl-grid{grid-template-columns:1fr}
+  .ltl-right{padding:2rem}
+  .ltl-left img{min-height:280px}
+}
+</style>
 </head>
 <body>
 
@@ -34,48 +52,45 @@
   <div class="page-divider"></div>
 </div>
 
-<section class="section livetolove ltl-body">
-  <div class="section-inner">
-    <div class="ltl-grid">
-      <div>
-        <img src="C_cile_Dupart_et_Guy_Pelletier.jpg" alt="Cécile Dupart et Guy Pelletier — Montchardon, mars 2026" class="ltl-img">
-        <p style="font-size:.8rem;color:var(--text-muted);margin-top:.5rem;font-style:italic">Cécile Dupart & Guy Pelletier — Montchardon, mars 2026</p>
-      </div>
-      <div>
-        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:1rem">
-          <strong>Cécile Dupart</strong> porte et coordonne les actions Live to Love au sein de Drukpa Grenoble.
-        </p>
-        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:1rem">
-          L'idée est simple et profonde : accomplir des actions particulièrement altruistes, en groupes ou individuellement, et les partager pour encourager chacun à agir.
-        </p>
-        <p style="color:var(--text-muted);line-height:1.9;margin-bottom:1.5rem">
-          Des week-ends bimestriels sont prévus tout au long de l'année. Chaque participant est invité à mettre en route des actions altruistes ou à partager celles qu'il fait déjà, via photos ou court texte, publiés par l'association internationale <strong>Live to Love</strong> fondée par Sa Sainteté le Gyalwang Drukpa.
-        </p>
-        <div class="ltl-info">
-          <div class="ltl-box">
-            <div class="ltl-box-label">Rythme</div>
-            <div class="ltl-box-val">Week-ends bimestriels tout au long de l'année</div>
-          </div>
-          <div class="ltl-box">
-            <div class="ltl-box-label">Comment participer</div>
-            <div class="ltl-box-val">Individuellement ou en groupe, actions libres et bienveillantes</div>
-          </div>
-          <div class="ltl-box">
-            <div class="ltl-box-label">Partage</div>
-            <div class="ltl-box-val">Photos ou textes courts</div>
-          </div>
-          <div class="ltl-box">
-            <div class="ltl-box-label">Contact</div>
-            <div class="ltl-box-val"><a href="contact.html" style="color:var(--gold)">Nous écrire →</a></div>
-          </div>
+<div class="ltl-body">
+  <div class="ltl-grid">
+
+    <!-- Photo gauche pleine hauteur -->
+    <div class="ltl-left">
+      <img src="C_cile_Dupart_et_Guy_Pelletier.jpg" alt="Cécile Dupart et Guy Pelletier">
+      <div class="ltl-caption">Cécile Dupart & Guy Pelletier — Montchardon, mars 2026</div>
+    </div>
+
+    <!-- Texte droite -->
+    <div class="ltl-right">
+      <p><strong>Cécile Dupart</strong> porte et coordonne les actions Live to Love au sein de Drukpa Grenoble.</p>
+      <p>L'idée est simple et profonde : accomplir des actions particulièrement altruistes, en groupes ou individuellement, et les partager pour encourager chacun à agir.</p>
+      <p>Des week-ends bimestriels sont prévus tout au long de l'année. Chaque participant est invité à mettre en route des actions altruistes ou à partager celles qu'il fait déjà, via photos ou court texte, publiés par l'association internationale <strong>Live to Love</strong> fondée par Sa Sainteté le Gyalwang Drukpa.</p>
+      <div class="ltl-boxes">
+        <div class="ltl-box">
+          <div class="ltl-box-label">Rythme</div>
+          <div class="ltl-box-val">Week-ends bimestriels tout au long de l'année</div>
+        </div>
+        <div class="ltl-box">
+          <div class="ltl-box-label">Comment participer</div>
+          <div class="ltl-box-val">Individuellement ou en groupe, actions libres et bienveillantes</div>
+        </div>
+        <div class="ltl-box">
+          <div class="ltl-box-label">Partage</div>
+          <div class="ltl-box-val">Photos ou textes courts</div>
+        </div>
+        <div class="ltl-box">
+          <div class="ltl-box-label">Contact</div>
+          <div class="ltl-box-val"><a href="contact.html" style="color:var(--gold)">Nous écrire →</a></div>
         </div>
       </div>
     </div>
+
   </div>
-</section>
+</div>
 
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" style="color:var(--gold);text-decoration:none;margin-left:1rem" title="Facebook Drukpa Grenoble">Facebook</a></p>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" style="color:var(--gold);text-decoration:none;margin-left:1rem">Facebook</a></p>
 </footer>
 </body>
 </html>
