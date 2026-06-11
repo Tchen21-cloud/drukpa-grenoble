@@ -12,18 +12,27 @@
 
 /* ===== JEU DE CARTES (accueil galerie) ===== */
 .deck-intro{text-align:center;color:rgba(245,230,195,.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;margin-bottom:3rem}
-.deck{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:flex-start}
+.deck{display:flex;flex-wrap:wrap;gap:2rem 3rem;justify-content:center;align-items:flex-start}
+
+/* pile de photos qui dépassent */
+.album-stack{position:relative;width:248px;height:372px;margin:1.6rem 2rem;cursor:pointer}
+.stack-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:14px;border:1px solid rgba(201,168,76,.4);box-shadow:0 8px 22px rgba(0,0,0,.5);transition:transform .45s cubic-bezier(.2,.7,.2,1);transform-origin:50% 62%;background:#111}
+.stack-layer.l1{transform:rotate(-8deg) translate(-6px,4px)}
+.stack-layer.l2{transform:rotate(6deg) translate(6px,2px)}
+.stack-layer.l3{transform:rotate(-3deg) translate(0,9px)}
+.album-stack:hover .stack-layer.l1{transform:rotate(-18deg) translate(-34px,8px)}
+.album-stack:hover .stack-layer.l2{transform:rotate(15deg) translate(34px,4px)}
+.album-stack:hover .stack-layer.l3{transform:rotate(-7deg) translate(-8px,18px)}
 
 .album-card{
-  position:relative;width:260px;aspect-ratio:2/3;border-radius:14px;overflow:hidden;cursor:pointer;
-  background:#111;border:1px solid rgba(201,168,76,.45);
-  box-shadow:0 10px 30px rgba(0,0,0,.5);
-  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .3s;
-  transform:rotate(var(--tilt,0deg));
+  position:absolute;inset:0;z-index:5;border-radius:14px;overflow:hidden;
+  background:#111;border:1px solid rgba(201,168,76,.55);
+  box-shadow:0 12px 32px rgba(0,0,0,.55);
+  transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .3s;
 }
-.album-card:hover{transform:rotate(0deg) translateY(-12px) scale(1.03);box-shadow:0 22px 50px rgba(0,0,0,.65);border-color:#E8C97A}
+.album-stack:hover .album-card{transform:translateY(-14px) scale(1.03);box-shadow:0 26px 55px rgba(0,0,0,.65);border-color:#E8C97A}
 .album-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s}
-.album-card:hover .album-card-img{transform:scale(1.08);filter:brightness(1.08)}
+.album-stack:hover .album-card-img{transform:scale(1.06);filter:brightness(1.08)}
 .album-card-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,8,.92) 0%,rgba(8,12,8,.35) 45%,rgba(8,12,8,.15) 100%)}
 .album-card-body{position:absolute;left:0;right:0;bottom:0;padding:1.3rem 1.2rem}
 .album-card-label{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:#7FB98C;margin-bottom:.45rem}
@@ -184,18 +193,25 @@ var currentAlbum = 0;
 /* ---- Jeu de cartes ---- */
 function renderDeck(){
   var deck = document.getElementById('deck');
-  var tilts = [-4, 3, -2, 4, -3];
   deck.innerHTML = albums.map(function(a, i){
-    return '<div class="album-card" style="--tilt:'+tilts[i % tilts.length]+'deg" onclick="openAlbum('+i+')">'
-      + '<img class="album-card-img" src="'+a.cover+'" alt="'+a.title+'" loading="lazy">'
-      + '<div class="album-card-shade"></div>'
-      + '<div class="album-card-pip">&#9784;</div>'
-      + '<div class="album-card-count">'+a.photos.length+' photos</div>'
-      + '<div class="album-card-body">'
-        + '<div class="album-card-label">'+a.label+'</div>'
-        + '<div class="album-card-title">'+a.title+'</div>'
-        + '<div class="album-card-meta">'+a.meta+'</div>'
-        + '<div class="album-card-open">Ouvrir l\'album ›</div>'
+    var n = a.photos.length;
+    var idxs = [1, Math.floor(n/2), n-1].filter(function(x,k,arr){ return x>0 && x<n && arr.indexOf(x)===k; }).slice(0,3);
+    var layers = idxs.map(function(idx, k){
+      return '<img class="stack-layer l'+(k+1)+'" src="'+a.photos[idx].t+'" alt="" loading="lazy">';
+    }).join('');
+    return '<div class="album-stack" onclick="openAlbum('+i+')">'
+      + layers
+      + '<div class="album-card">'
+        + '<img class="album-card-img" src="'+a.cover+'" alt="'+a.title+'" loading="lazy">'
+        + '<div class="album-card-shade"></div>'
+        + '<div class="album-card-pip">&#9784;</div>'
+        + '<div class="album-card-count">'+n+' photos</div>'
+        + '<div class="album-card-body">'
+          + '<div class="album-card-label">'+a.label+'</div>'
+          + '<div class="album-card-title">'+a.title+'</div>'
+          + '<div class="album-card-meta">'+a.meta+'</div>'
+          + '<div class="album-card-open">Ouvrir l\'album ›</div>'
+        + '</div>'
       + '</div>'
     + '</div>';
   }).join('');
