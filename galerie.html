@@ -8,20 +8,50 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 .galerie-body{background:#0f1a0f;padding:4rem 2rem;min-height:60vh}
-.galerie-inner{width:100%;padding-left:5%;padding-right:5%}
+.galerie-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 4%}
 
-.sortie-header{margin-bottom:2.5rem}
+/* ===== JEU DE CARTES (accueil galerie) ===== */
+.deck-intro{text-align:center;color:rgba(245,230,195,.55);font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;margin-bottom:3rem}
+.deck{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;align-items:flex-start}
+
+.album-card{
+  position:relative;width:260px;aspect-ratio:2/3;border-radius:14px;overflow:hidden;cursor:pointer;
+  background:#111;border:1px solid rgba(201,168,76,.45);
+  box-shadow:0 10px 30px rgba(0,0,0,.5);
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .3s;
+  transform:rotate(var(--tilt,0deg));
+}
+.album-card:hover{transform:rotate(0deg) translateY(-12px) scale(1.03);box-shadow:0 22px 50px rgba(0,0,0,.65);border-color:#E8C97A}
+.album-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s}
+.album-card:hover .album-card-img{transform:scale(1.08);filter:brightness(1.08)}
+.album-card-shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,8,.92) 0%,rgba(8,12,8,.35) 45%,rgba(8,12,8,.15) 100%)}
+.album-card-body{position:absolute;left:0;right:0;bottom:0;padding:1.3rem 1.2rem}
+.album-card-label{font-size:8.5px;letter-spacing:.2em;text-transform:uppercase;color:#7FB98C;margin-bottom:.45rem}
+.album-card-title{font-family:'Cinzel',serif;font-size:1.02rem;line-height:1.3;color:#E8C97A;margin-bottom:.5rem}
+.album-card-meta{font-size:.72rem;color:rgba(245,230,195,.6);line-height:1.5}
+.album-card-pip{position:absolute;top:12px;left:14px;font-size:1.1rem;color:rgba(232,201,122,.85);text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.album-card-count{position:absolute;top:12px;right:14px;font-family:'Cinzel',serif;font-size:.8rem;color:rgba(232,201,122,.9);background:rgba(8,12,8,.45);border:1px solid rgba(201,168,76,.35);border-radius:20px;padding:2px 10px}
+.album-card-open{margin-top:.7rem;font-size:8.5px;letter-spacing:.18em;text-transform:uppercase;color:#E8C97A;opacity:0;transition:opacity .3s}
+.album-card:hover .album-card-open{opacity:1}
+
+/* ===== VUE ALBUM (grille existante) ===== */
+.album-view{display:none}
+.album-view.active{display:block}
+.back-btn{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.12);border:1px solid rgba(201,168,76,.35);color:#E8C97A;font-family:'Lato',sans-serif;font-size:10px;letter-spacing:.15em;text-transform:uppercase;padding:.7rem 1.3rem;cursor:pointer;margin-bottom:2.2rem;transition:all .2s}
+.back-btn:hover{background:rgba(201,168,76,.25)}
+
+.sortie-header{margin-bottom:2rem}
 .sortie-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#6B9E78;margin-bottom:.4rem}
 .sortie-title{font-family:'Cinzel',serif;font-size:1.4rem;color:#E8C97A;margin-bottom:.3rem}
 .sortie-meta{font-size:.82rem;color:rgba(245,230,195,.5);letter-spacing:.05em}
 
-.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+.photo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem}
 .photo-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3;background:#111}
 .photo-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .4s ease;display:block}
 .photo-item:hover img{transform:scale(1.06);filter:brightness(1.1)}
 .photo-item-overlay{position:absolute;inset:0;background:rgba(0,0,0,0);transition:background .3s ease;display:flex;align-items:center;justify-content:center}
 .photo-item:hover .photo-item-overlay{background:rgba(0,0,0,.25)}
-.photo-zoom{font-size:1.5rem;opacity:0;transition:opacity .3s ease}
+.photo-zoom{font-size:1.5rem;color:#fff;opacity:0;transition:opacity .3s ease}
 .photo-item:hover .photo-zoom{opacity:1}
 
 /* Lightbox */
@@ -36,6 +66,8 @@
 .lightbox-prev{left:1rem}
 .lightbox-next{right:1rem}
 .lightbox-counter{position:absolute;bottom:1.5rem;color:rgba(245,230,195,.4);font-size:.78rem;letter-spacing:.15em}
+
+@media(max-width:600px){.album-card{width:78vw}}
 </style>
 </head>
 <body>
@@ -69,198 +101,23 @@
 <div class="galerie-body">
   <div class="galerie-inner">
 
-    <!-- Sortie Pont de la Betta -->
-    <div class="sortie-header">
-      <div class="sortie-label">Sortie nature</div>
-      <div class="sortie-title">Balade au Pont de la Betta — Belledonne</div>
-      <div class="sortie-meta">11 mai 2025 · Massif de Belledonne · 1 359 m d'altitude · 10 photos</div>
+    <!-- Jeu de cartes -->
+    <div id="deck-view">
+      <p class="deck-intro">Choisissez une carte pour découvrir l'album.</p>
+      <div class="deck" id="deck"></div>
     </div>
 
-    <div class="photo-grid" id="gallery">
-      <div class="photo-item" onclick="openLightbox(0)">
-        <img loading="lazy" src="th_galerie_betta_1.jpg" alt="Cascade dans la forêt de Belledonne">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
+    <!-- Vue album -->
+    <div class="album-view" id="album-view">
+      <button class="back-btn" onclick="backToDeck()">‹ Retour aux albums</button>
+      <div class="sortie-header">
+        <div class="sortie-label" id="album-label"></div>
+        <div class="sortie-title" id="album-title"></div>
+        <div class="sortie-meta" id="album-meta"></div>
       </div>
-      <div class="photo-item" onclick="openLightbox(1)">
-        <img loading="lazy" src="th_galerie_betta_2.jpg" alt="Pause au bord du torrent">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(2)">
-        <img loading="lazy" src="th_galerie_betta_3.jpg" alt="Membre et son chien sur le sentier">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(3)">
-        <img loading="lazy" src="th_galerie_betta_4.jpg" alt="Le groupe — Pont de la Betta">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(4)">
-        <img loading="lazy" src="th_galerie_betta_5.jpg" alt="Méditation en forêt">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(5)">
-        <img loading="lazy" src="th_galerie_betta_6.jpg" alt="Ciel à travers les sapins">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(6)">
-        <img loading="lazy" src="th_galerie_betta_7.jpg" alt="Cimes des sapins vers le ciel">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(7)">
-        <img loading="lazy" src="th_galerie_betta_8.jpg" alt="Sentier en forêt de Belledonne">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(8)">
-        <img loading="lazy" src="th_galerie_betta_9.jpg" alt="Canopée de Belledonne">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(9)">
-        <img loading="lazy" src="th_galerie_betta_10.jpg" alt="Méditation au bord du torrent">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
+      <div class="photo-grid" id="album-grid"></div>
     </div>
 
-    <!-- Séparateur -->
-    <div style="margin:4rem 0 3rem;border-top:1px solid rgba(201,168,76,.15)"></div>
-
-    <!-- Rencontre CEB décembre 2025 -->
-    <div class="sortie-header">
-      <div class="sortie-label">Week-end de pratique</div>
-      <div class="sortie-title">Remise des katas par Lopön Thrinlé — CEB Grenoble</div>
-      <div class="sortie-meta">20 décembre 2025 · Centre d'Études Bouddhiques · Grenoble · 4 photos</div>
-    </div>
-
-    <div class="photo-grid">
-      <div class="photo-item" onclick="openLightbox(6)">
-        <img loading="lazy" src="galerie_ceb_1.jpg" alt="Remise des katas par Lopön Thrinlé">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(7)">
-        <img loading="lazy" src="galerie_ceb_2.jpg" alt="Lopön Thrinlé remet un kata">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(8)">
-        <img loading="lazy" src="galerie_ceb_3.jpg" alt="Photo de groupe — CEB Grenoble décembre 2025">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(9)">
-        <img loading="lazy" src="galerie_ceb_4.jpg" alt="Photo de groupe — CEB Grenoble décembre 2025">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-    </div>
-
-
-    <div style="margin:4rem 0 3rem;border-top:1px solid rgba(201,168,76,.15)"></div>
-    <div class="sortie-header">
-      <div class="sortie-label">Dialogue interreligieux</div>
-      <div class="sortie-title">Rencontre œcuménique — Montchardon</div>
-      <div class="sortie-meta">23 mars 2026 · Montchardon · 26 photos</div>
-    </div>
-    <div class="photo-grid">
-      <div class="photo-item" onclick="openLightbox(10)">
-        <img src="th_IMG_8131.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(11)">
-        <img src="th_IMG_8132.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(12)">
-        <img src="th_IMG_8133.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(13)">
-        <img src="th_IMG_8134.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(14)">
-        <img src="th_IMG_8135.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(15)">
-        <img src="th_IMG_8149.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(16)">
-        <img src="th_IMG_8150.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(17)">
-        <img src="th_IMG_8162.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(18)">
-        <img src="th_IMG_8166.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(19)">
-        <img src="th_IMG_8173.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(20)">
-        <img src="th_IMG_8179.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(21)">
-        <img src="th_IMG_8181.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(22)">
-        <img src="th_IMG_8183.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(23)">
-        <img src="th_IMG_8185.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(24)">
-        <img src="th_IMG_8186.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(25)">
-        <img src="th_IMG_8187.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(26)">
-        <img src="th_IMG_8189.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(27)">
-        <img src="th_IMG_8194.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(28)">
-        <img src="th_IMG_8197.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(29)">
-        <img src="th_IMG_8198.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(30)">
-        <img src="th_IMG_8203.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(31)">
-        <img src="th_IMG_8206.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(32)">
-        <img src="th_IMG_8217.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(33)">
-        <img src="th_IMG_8228.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(34)">
-        <img src="th_IMG_8236.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-      <div class="photo-item" onclick="openLightbox(35)">
-        <img src="th_IMG_8238.jpg" alt="Rencontre œcuménique Montchardon" loading="lazy">
-        <div class="photo-item-overlay"><span class="photo-zoom">⊕</span></div>
-      </div>
-    </div>
   </div>
 </div>
 
@@ -275,87 +132,133 @@
 </div>
 
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" style="color:var(--gold);text-decoration:none;margin-left:1rem" title="Facebook Drukpa Grenoble">Facebook</a></p>
+  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;margin-left:1rem" title="Facebook Drukpa Grenoble">Facebook</a></p>
 </footer>
 
 <script>
-var photos = [
-    {src:'galerie_betta_1.jpg', caption:'Cascade dans la forêt de Belledonne'},
-  {src:'galerie_betta_2.jpg', caption:'Pause au bord du torrent'},
-  {src:'galerie_betta_3.jpg', caption:'Membre et son chien sur le sentier'},
-  {src:'galerie_betta_4.jpg', caption:'Le groupe — Pont de la Betta'},
-  {src:'galerie_betta_5.jpg', caption:'Méditation en forêt'},
-  {src:'galerie_betta_6.jpg', caption:'Ciel à travers les sapins'},
-  {src:'galerie_betta_7.jpg', caption:'Cimes des sapins vers le ciel'},
-  {src:'galerie_betta_8.jpg', caption:'Sentier en forêt de Belledonne'},
-  {src:'galerie_betta_9.jpg', caption:'Canopée de Belledonne'},
-  {src:'galerie_betta_10.jpg', caption:'Méditation au bord du torrent'},
-  {src:'galerie_ceb_1.jpg', caption:'Remise des katas par Lopön Thrinlé — CEB Grenoble, 20 décembre 2025'},
-  {src:'galerie_ceb_2.jpg', caption:'Lopön Thrinlé remet un kata'},
-  {src:'galerie_ceb_3.jpg', caption:'Photo de groupe — CEB Grenoble, décembre 2025'},
-  {src:'galerie_ceb_4.jpg', caption:'Photo de groupe — CEB Grenoble, décembre 2025'},
-  {src:'IMG_8131.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8132.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8133.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8134.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8135.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8149.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8150.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8162.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8166.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8173.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8179.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8181.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8183.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8185.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8186.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8187.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8189.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8194.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8197.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8198.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8203.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8206.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8217.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8228.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8236.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-  {src:'IMG_8238.jpg', caption:'Rencontre œcuménique — Montchardon, 23 mars 2026'},
-];
-var current = 0;
+var mont = ['8131','8132','8133','8134','8135','8149','8150','8162','8166','8173','8179','8181','8183','8185','8186','8187','8189','8194','8197','8198','8203','8206','8217','8228','8236','8238'];
 
-function openLightbox(idx) {
+var albums = [
+  {
+    label:'Sortie nature',
+    title:'Balade au Pont de la Betta — Belledonne',
+    meta:"11 mai 2025 · Massif de Belledonne · 1 359 m d'altitude · 10 photos",
+    cover:'th_galerie_betta_1.jpg',
+    photos:[
+      {t:'th_galerie_betta_1.jpg', f:'galerie_betta_1.jpg', c:'Cascade dans la forêt de Belledonne'},
+      {t:'th_galerie_betta_2.jpg', f:'galerie_betta_2.jpg', c:'Pause au bord du torrent'},
+      {t:'th_galerie_betta_3.jpg', f:'galerie_betta_3.jpg', c:'Membre et son chien sur le sentier'},
+      {t:'th_galerie_betta_4.jpg', f:'galerie_betta_4.jpg', c:'Le groupe — Pont de la Betta'},
+      {t:'th_galerie_betta_5.jpg', f:'galerie_betta_5.jpg', c:'Méditation en forêt'},
+      {t:'th_galerie_betta_6.jpg', f:'galerie_betta_6.jpg', c:'Ciel à travers les sapins'},
+      {t:'th_galerie_betta_7.jpg', f:'galerie_betta_7.jpg', c:'Cimes des sapins vers le ciel'},
+      {t:'th_galerie_betta_8.jpg', f:'galerie_betta_8.jpg', c:'Sentier en forêt de Belledonne'},
+      {t:'th_galerie_betta_9.jpg', f:'galerie_betta_9.jpg', c:'Canopée de Belledonne'},
+      {t:'th_galerie_betta_10.jpg', f:'galerie_betta_10.jpg', c:'Méditation au bord du torrent'}
+    ]
+  },
+  {
+    label:'Week-end de pratique',
+    title:'Remise des katas par Lopön Thrinlé — CEB Grenoble',
+    meta:"20 décembre 2025 · Centre d'Études Bouddhiques · Grenoble · 4 photos",
+    cover:'galerie_ceb_3.jpg',
+    photos:[
+      {t:'galerie_ceb_1.jpg', f:'galerie_ceb_1.jpg', c:'Remise des katas par Lopön Thrinlé — CEB Grenoble, 20 décembre 2025'},
+      {t:'galerie_ceb_2.jpg', f:'galerie_ceb_2.jpg', c:'Lopön Thrinlé remet un kata'},
+      {t:'galerie_ceb_3.jpg', f:'galerie_ceb_3.jpg', c:'Photo de groupe — CEB Grenoble, décembre 2025'},
+      {t:'galerie_ceb_4.jpg', f:'galerie_ceb_4.jpg', c:'Photo de groupe — CEB Grenoble, décembre 2025'}
+    ]
+  },
+  {
+    label:'Dialogue interreligieux',
+    title:'Rencontre œcuménique — Montchardon',
+    meta:'23 mars 2026 · Montchardon · 26 photos',
+    cover:'th_IMG_8131.jpg',
+    photos:mont.map(function(n){ return {t:'th_IMG_'+n+'.jpg', f:'IMG_'+n+'.jpg', c:'Rencontre œcuménique — Montchardon, 23 mars 2026'}; })
+  }
+];
+
+var current = 0;        // index photo dans l'album courant
+var currentAlbum = 0;
+
+/* ---- Jeu de cartes ---- */
+function renderDeck(){
+  var deck = document.getElementById('deck');
+  var tilts = [-4, 3, -2, 4, -3];
+  deck.innerHTML = albums.map(function(a, i){
+    return '<div class="album-card" style="--tilt:'+tilts[i % tilts.length]+'deg" onclick="openAlbum('+i+')">'
+      + '<img class="album-card-img" src="'+a.cover+'" alt="'+a.title+'" loading="lazy">'
+      + '<div class="album-card-shade"></div>'
+      + '<div class="album-card-pip">&#9784;</div>'
+      + '<div class="album-card-count">'+a.photos.length+' photos</div>'
+      + '<div class="album-card-body">'
+        + '<div class="album-card-label">'+a.label+'</div>'
+        + '<div class="album-card-title">'+a.title+'</div>'
+        + '<div class="album-card-meta">'+a.meta+'</div>'
+        + '<div class="album-card-open">Ouvrir l\'album ›</div>'
+      + '</div>'
+    + '</div>';
+  }).join('');
+}
+
+/* ---- Ouvrir un album ---- */
+function openAlbum(i){
+  currentAlbum = i;
+  var a = albums[i];
+  document.getElementById('album-label').textContent = a.label;
+  document.getElementById('album-title').textContent = a.title;
+  document.getElementById('album-meta').textContent = a.meta;
+  document.getElementById('album-grid').innerHTML = a.photos.map(function(p, idx){
+    return '<div class="photo-item" onclick="openLightbox('+idx+')">'
+      + '<img loading="lazy" src="'+p.t+'" alt="'+p.c+'">'
+      + '<div class="photo-item-overlay"><span class="photo-zoom">&#8853;</span></div>'
+      + '</div>';
+  }).join('');
+  document.getElementById('deck-view').style.display = 'none';
+  document.getElementById('album-view').classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function backToDeck(){
+  document.getElementById('album-view').classList.remove('active');
+  document.getElementById('deck-view').style.display = 'block';
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ---- Lightbox (dans l'album courant) ---- */
+function openLightbox(idx){
   current = idx;
   updateLightbox();
   document.getElementById('lightbox').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
-
-function closeLightbox() {
+function closeLightbox(){
   document.getElementById('lightbox').classList.remove('active');
   document.body.style.overflow = '';
 }
-
-function closeLightboxOutside(e) {
+function closeLightboxOutside(e){
   if (e.target === document.getElementById('lightbox')) closeLightbox();
 }
-
-function changePhoto(dir) {
+function changePhoto(dir){
+  var photos = albums[currentAlbum].photos;
   current = (current + dir + photos.length) % photos.length;
   updateLightbox();
 }
-
-function updateLightbox() {
-  document.getElementById('lightbox-img').src = photos[current].src;
-  document.getElementById('lightbox-caption').textContent = photos[current].caption;
+function updateLightbox(){
+  var photos = albums[currentAlbum].photos;
+  document.getElementById('lightbox-img').src = photos[current].f;
+  document.getElementById('lightbox-caption').textContent = photos[current].c;
   document.getElementById('lightbox-counter').textContent = (current+1) + ' / ' + photos.length;
 }
 
-document.addEventListener('keydown', function(e) {
+document.addEventListener('keydown', function(e){
   if (!document.getElementById('lightbox').classList.contains('active')) return;
   if (e.key === 'ArrowLeft') changePhoto(-1);
   if (e.key === 'ArrowRight') changePhoto(1);
   if (e.key === 'Escape') closeLightbox();
 });
+
+renderDeck();
 </script>
 
 </body>
