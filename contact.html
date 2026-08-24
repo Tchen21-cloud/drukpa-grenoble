@@ -60,17 +60,6 @@
       </p>
       <a href="https://www.helloasso.com" target="_blank" rel="noopener" class="btn btn-or">Adhérer via HelloAsso</a>
 
-      <div class="encadre" style="margin-top:2.2rem">
-        <p class="small">
-          <strong>Nous écrire directement.</strong><br>
-          Pour limiter le courrier indésirable, notre adresse n'est pas affichée
-          en clair sur le site&nbsp;: elle apparaît en cliquant ci-dessous.
-        </p>
-        <p class="small" style="margin-top:.6rem">
-          <a href="#" id="lien-mail">Afficher l'adresse de contact</a>
-        </p>
-      </div>
-
       <h3 style="margin-top:2rem">Nous suivre</h3>
       <p class="small">
         <a href="https://www.facebook.com/profile.php?id=100088255381524"
@@ -78,58 +67,26 @@
       </p>
     </div>
 
-    <!-- ===== Colonne formulaire ===== -->
+    <!-- ===== Colonne "Nous écrire" =====
+         Le formulaire Formspree sera remis en service dès que l'identifiant
+         sera créé (voir LISEZ-MOI). En attendant, l'adresse est affichée
+         au clic, assemblée en JavaScript : elle n'apparaît jamais en clair
+         dans le code de la page, donc jamais pour les robots collecteurs. -->
     <div class="contact-form">
-      <h3>Formulaire</h3>
-      <!--
-        MISE EN SERVICE DU FORMULAIRE (5 minutes, gratuit) :
-        1. Créer un compte sur https://formspree.io
-        2. Créer un formulaire, copier son identifiant (ex. mabcdefg)
-        3. Remplacer VOTRE_ID_FORMSPREE ci-dessous par cet identifiant.
-        L'adresse de réception reste privée : elle n'apparaît jamais dans le code
-        de la page, donc jamais dans les aspirateurs d'adresses.
-      -->
-      <form action="#" onsubmit="return apercuForm(this,event)">
-
-        <!-- Pot de miel : piège à robots, invisible pour les visiteurs -->
-        <input type="text" name="_gotcha" class="pot-de-miel" tabindex="-1"
-               autocomplete="off" aria-hidden="true">
-
-        <div class="form-champ">
-          <label for="nom">Nom</label>
-          <input id="nom" type="text" name="nom" required>
-        </div>
-
-        <div class="form-champ">
-          <label for="email">Adresse électronique</label>
-          <input id="email" type="email" name="email" required>
-        </div>
-
-        <div class="form-champ">
-          <label for="sujet">Sujet</label>
-          <select id="sujet" name="sujet">
-            <option>Découvrir le centre</option>
-            <option>Adhésion à l'association</option>
-            <option>Enseignements et retraites</option>
-            <option>Dialogue interreligieux</option>
-            <option>Live to Love</option>
-            <option>Autre</option>
-          </select>
-        </div>
-
-        <div class="form-champ">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <input type="hidden" name="_subject" value="Message — site Drukpa Grenoble">
-        <button type="submit" class="btn btn-or">Envoyer</button>
-      </form>
-
-      <p class="small muted" style="margin-top:1.2rem">
-        Les informations transmises servent uniquement à répondre à votre message.
-        Elles ne font l'objet d'aucune diffusion.
+      <h3>Nous écrire</h3>
+      <p>
+        Pour toute question sur les activités du centre, les enseignements,
+        l'adhésion ou le dialogue interreligieux, écrivez-nous&nbsp;: nous
+        répondons à chaque message.
       </p>
+      <p class="small muted">
+        Pour limiter le courrier indésirable, notre adresse n'est pas écrite
+        en clair sur cette page. Cliquez ci-dessous pour l'afficher.
+      </p>
+      <p style="margin-top:1.4rem">
+        <a href="#" id="lien-mail-2" class="btn btn-or">Afficher l'adresse</a>
+      </p>
+      <p id="zone-mail" class="small" style="margin-top:1.2rem"></p>
     </div>
 
   </div>
@@ -145,19 +102,20 @@
 </footer>
 
 <script>
-function apercuForm(f,e){e.preventDefault();if(!f.dataset.done){var p=document.createElement("p");p.className="small";p.style.color="#9C2B23";p.textContent="Aperçu : le formulaire n'est pas encore relié.";f.appendChild(p);f.dataset.done=1;}return false;}
-
-/* Adresse assemblée au clic : jamais présente en clair dans le code source,
-   donc invisible pour les robots collecteurs d'adresses.
-   → Remplacer 'contact' et 'exemple.org' par la vraie boîte de l'association. */
+/* L'adresse n'est jamais présente en clair dans le code source : elle est
+   reconstruite au moment du clic, donc invisible pour les aspirateurs
+   d'adresses. Pour la changer, modifier les deux variables ci-dessous. */
 (function(){
-  var boite = 'contact';
-  var domaine = 'exemple' + '.' + 'org';
-  var lien = document.getElementById('lien-mail');
+  var boite   = 'association17.drukpa.grenoble';
+  var domaine = 'gmail' + '.' + 'com';
+  var lien = document.getElementById('lien-mail-2');
+  var zone = document.getElementById('zone-mail');
+  if(!lien) return;
   lien.addEventListener('click', function(e){
     e.preventDefault();
     var adresse = boite + String.fromCharCode(64) + domaine;
-    lien.outerHTML = '<a href="mailto:' + adresse + '">' + adresse + '</a>';
+    zone.innerHTML = '<a href="mailto:' + adresse + '">' + adresse + '</a>';
+    lien.style.display = 'none';
   });
 })();
 </script>
