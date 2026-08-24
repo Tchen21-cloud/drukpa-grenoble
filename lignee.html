@@ -3,152 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La lignée Drukpa — Drukpa Grenoble</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-.lin-body{background:#fdf8f0}
-
-/* Intro */
-.lin-intro{padding:4rem 8%;display:grid;grid-template-columns:1.1fr .9fr;gap:4rem;align-items:center}
-.lin-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#8B6914;margin-bottom:.5rem}
-.lin-title{font-family:'Cinzel',serif;font-size:1.8rem;color:#2C1A08;margin-bottom:.75rem;line-height:1.3}
-.lin-divider{width:50px;height:2px;background:var(--gold);margin-bottom:1.5rem}
-.lin-text p{color:#4A3520;line-height:1.95;font-size:.95rem;margin-bottom:1rem}
-.lin-img-wrap{position:relative}
-.lin-img{width:100%;height:440px;object-fit:cover;display:block}
-.lin-img-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(28,21,16,.85));padding:1.5rem 1.2rem .9rem;font-size:.78rem;color:rgba(245,230,195,.9);font-style:italic}
-
-/* Bandeau citation sombre */
-.lin-quote{background:var(--dark);padding:3rem 8%;text-align:center}
-.lin-quote p{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold-light);font-style:italic;line-height:1.6;max-width:760px;margin:0 auto .8rem}
-.lin-quote cite{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
-
-/* Sections texte */
-.lin-section{padding:3.5rem 8%}
-.lin-section h2{font-family:'Cinzel',serif;font-size:1.35rem;color:#2C1A08;margin-bottom:.5rem}
-.lin-section .lin-divider{margin-top:.75rem;margin-bottom:1.5rem}
-.lin-section p{color:#4A3520;line-height:1.95;font-size:.95rem;margin-bottom:1rem;max-width:860px}
-.lin-section.alt{background:#f3ead9}
-
-/* Filiation */
-.lin-filiation{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;max-width:860px}
-.lin-filiation span{font-family:'Cinzel',serif;font-size:.82rem;color:#6B5A3E;background:white;border:1px solid #e2d4b8;padding:.4rem .85rem;border-radius:2px}
-.lin-filiation span.accent{color:var(--dark);background:var(--gold-light);border-color:var(--gold)}
-
-.lin-cta{text-align:center;padding:3.5rem 8%;background:white}
-.lin-cta p{color:#6B5A3E;margin-bottom:1.5rem;font-size:.95rem}
-
-@media(max-width:768px){
-  .lin-intro{grid-template-columns:1fr;gap:2rem;padding:2.5rem 6%}
-  .lin-img{height:300px}
-}
-</style>
+<title>La lignée — Drukpa Grenoble</title>
+<meta name="description" content="La Lignée Drukpa : Sa Sainteté le 12e Gyalwang Drukpa, Son Éminence Drukpa Thuksey Rinpoché, le Vénérable Drubpön Ngawang Rimpoché et Lopön Thrinlé.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-dg.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
-    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+    <img src="logo_dg_or.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">
+      <span class="fr">DRUKPA GRENOBLE</span>
+      <span class="bo">Druk Pagsam Wangpo</span>
+    </span>
   </a>
   <div class="nav-links">
     <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
     <a href="lignee.html" class="active">La lignée</a>
     <a href="activites.html">Activités</a>
-    <a href="dialogue.html">Dialogue</a>
-    <a href="retraites.html">Retraites</a>
-    <a href="livetolove.html">Live to Love</a>
-    <a href="intervenants.html">Intervenants</a>
-    <a href="aumonerie.html">Aumônerie</a>
-    <a href="galerie.html">Galerie</a>
+    <a href="ubf.html">UBF</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<div class="page-header">
-  <div class="page-label">Notre tradition</div>
-  <h1 class="page-title">La lignée Drukpa</h1>
-  <div class="page-divider"></div>
-</div>
+<header class="page-header">
+  <div class="eyebrow">Notre tradition</div>
+  <h1>La lignée</h1>
+  <div class="rule"></div>
+  <p class="lead" style="max-width:640px;margin:0 auto">
+    La Lignée Drukpa, dite Lignée des Yogis, est l'une des grandes écoles
+    du bouddhisme vajrayana himalayen.
+  </p>
+</header>
 
-<div class="lin-body">
+<section class="section">
+  <div class="wrap">
 
-  <!-- Intro -->
-  <div class="lin-intro">
-    <div>
-      <div class="lin-label">La lignée des Dragons</div>
-      <h2 class="lin-title">Une école vivante du bouddhisme himalayen</h2>
-      <div class="lin-divider"></div>
-      <div class="lin-text">
-        <p>La lignée Drukpa est l'une des grandes écoles du bouddhisme vajrayana de l'Himalaya. Son nom porte une image : au début du XIIIᵉ siècle, le maître <strong>Tsangpa Gyaré Yéshé Dorjé</strong> vit neuf dragons s'élever dans le ciel depuis la terre de Namdruk. Il donna à sa lignée le nom de <em>Drukpa</em> — la « Lignée des Dragons ». En tibétain, <em>druk</em> désigne à la fois le dragon et la voix du tonnerre.</p>
-        <p>Née de la grande tradition Kagyu, la lignée s'est transmise sans interruption de cœur à cœur, de maître à disciple, depuis près de huit siècles. Elle est aujourd'hui connue pour la simplicité de ses pratiquants, la rigueur de sa méditation et la profondeur de ses enseignements.</p>
+    <!-- ===== Sa Sainteté le 12e Gyalwang Drukpa ===== -->
+    <article class="fiche">
+      <img src="Le_12e_Gyalwang_Drukpa.jpg" alt="Sa Sainteté le 12e Gyalwang Drukpa">
+      <div>
+        <h3>Sa Sainteté le 12<sup>e</sup> Gyalwang Drukpa</h3>
+        <div class="role">Chef spirituel de la Lignée Drukpa</div>
+        <p>
+          Sa Sainteté le 12<sup>e</sup> Gyalwang Drukpa est le chef spirituel de la
+          Glorieuse Lignée Drukpa. Maître authentique et accompli, Sa Sainteté incarne
+          par sa modernité, sa simplicité et la profondeur de ses enseignements
+          la pure tradition de la Lignée des Yogis.
+        </p>
       </div>
+    </article>
+
+    <!-- ===== Son Éminence Drukpa Thuksey Rinpoché ===== -->
+    <article class="fiche">
+      <!-- Photo à ajouter : remplacer ce bloc par <img src="..." alt="..."> -->
+      <div class="sans-photo">☸</div>
+      <div>
+        <h3>Son Éminence Drukpa Thuksey Rinpoché</h3>
+        <div class="role">Responsable des centres de la Lignée en Inde et en Europe</div>
+        <p>
+          Réincarnation du 1<sup>er</sup> Thuksey Rinpoché, qui fut le premier Maître
+          de la Lignée Drukpa à se rendre en Europe, l'actuel Drukpa Thuksey Rinpoché
+          est né en 1986 au Ladakh, en Inde. Il est le responsable des centres de la
+          Lignée Drukpa en Inde et en Europe.
+        </p>
+      </div>
+    </article>
+
+    <!-- ===== Le Vénérable Drubpön Ngawang Rimpoché ===== -->
+    <article class="fiche">
+      <img src="Drubp_n_Ngawang_Tenzin_Pagsam_Yongdu.jpg" alt="Le Vénérable Drubpön Ngawang Rimpoché">
+      <div>
+        <h3>Le Vénérable Drubpön Ngawang Rimpoché</h3>
+        <div class="role">Représentant de Sa Sainteté Gyalwang Drukpa en Europe</div>
+        <p>
+          Le Vénérable Drubpön Ngawang Rimpoché est né à Chungkar, au Bhoutan, en 1955,
+          et séjourne en France depuis plus de trente ans. Il est le directeur spirituel
+          et le maître de pratique du centre bouddhique Drukpa Plouray, et le représentant
+          de Sa Sainteté Gyalwang Drukpa en Europe.
+        </p>
+      </div>
+    </article>
+
+    <!-- ===== Le Vénérable Lopön Thrinlé ===== -->
+    <article class="fiche">
+      <img src="portrait-lopon-thrinle.jpg" alt="Le Vénérable Lopön Thrinlé">
+      <div>
+        <h3>Le Vénérable Lopön Thrinlé</h3>
+        <div class="role">Moine français de la Lignée Drukpa</div>
+        <p>
+          Lama Thrinlé, précisément Jigmé Thrinlé Gyatso, est un moine français
+          de la Lignée Drukpa. Il a accompli de longues retraites solitaires
+          dans le massif de la Maurienne pendant quinze ans.
+        </p>
+        <p>
+          Il est également aumônier hospitalier de l'Union Bouddhiste de France.
+          Engagé dans le dialogue interconvictionnel, il est l'auteur de nombreux
+          ouvrages poétiques et de dharma.
+        </p>
+      </div>
+    </article>
+
+    <div class="encadre">
+      <p class="small">
+        Les biographies complètes de chacun des maîtres sont consultables sur le site
+        du centre bouddhique Drukpa Plouray (drukpa.eu).
+        <a href="https://drukpa.eu/fr" target="_blank" rel="noopener">Y accéder →</a>
+      </p>
     </div>
-    <div class="lin-img-wrap">
-      <img src="Le_12e_Gyalwang_Drukpa.jpg" alt="Sa Sainteté le 12e Gyalwang Drukpa" class="lin-img">
-      <div class="lin-img-cap">Sa Sainteté le XIIᵉ Gyalwang Drukpa, détenteur actuel de la lignée</div>
-    </div>
-  </div>
 
-  <!-- Citation -->
-  <div class="lin-quote">
-    <p>« Vivre pour aimer » — non comme une formule, mais comme une manière d'habiter chaque jour avec attention, simplicité et compassion.</p>
-    <cite>Esprit de la lignée Drukpa</cite>
   </div>
-
-  <!-- Origines -->
-  <div class="lin-section">
-    <h2>Aux origines : Tsangpa Gyaré</h2>
-    <div class="lin-divider"></div>
-    <p>Fondateur de la lignée et premier <strong>Gyalwang Drukpa</strong>, Tsangpa Gyaré Yéshé Dorjé (1161–1211) hérita d'une transmission directe remontant aux grands maîtres indiens et tibétains. On rapporte qu'il rassembla une multitude de disciples, dont un grand nombre atteignirent un éveil authentique. Son ordre se distingua très tôt par sa pureté, son dépouillement et sa vie d'ascèse.</p>
-    <p>La lignée s'inscrit dans une filiation ininterrompue de réalisés :</p>
-    <div class="lin-filiation">
-      <span>Tilopa</span>
-      <span>Naropa</span>
-      <span>Marpa</span>
-      <span>Milarépa</span>
-      <span>Gampopa</span>
-      <span>Phagmo Droupa</span>
-      <span>Lingchen Répa</span>
-      <span class="accent">Tsangpa Gyaré — 1ᵉʳ Gyalwang Drukpa</span>
-    </div>
-  </div>
-
-  <!-- Rayonnement -->
-  <div class="lin-section alt">
-    <h2>Un rayonnement à travers l'Himalaya</h2>
-    <div class="lin-divider"></div>
-    <p>Au fil des siècles, la lignée s'est répandue du Tibet au Ladakh, au Bhoutan et dans tout l'Himalaya. Au XVIIᵉ siècle, l'une des émanations de Tsangpa Gyaré, Shabdrung Ngawang Namgyal, unifia le Bhoutan et y devint guide spirituel et temporel — c'est de là que le pays tire son nom de « terre du Dragon ».</p>
-    <p>De génération en génération, les détenteurs de la lignée ont veillé à préserver l'intégrité des enseignements tout en les rendant accessibles aux femmes et aux hommes de leur temps.</p>
-  </div>
-
-  <!-- 12e Gyalwang Drukpa -->
-  <div class="lin-section">
-    <h2>Sa Sainteté le XIIᵉ Gyalwang Drukpa</h2>
-    <div class="lin-divider"></div>
-    <p>La lignée est aujourd'hui portée par <strong>Sa Sainteté le XIIᵉ Gyalwang Drukpa, Jigme Pema Wangchen</strong>, né en 1963 à Tso Pema, en Inde, et reconnu très jeune comme la réincarnation de son prédécesseur. Maître de méditation respecté, il est aussi une voix engagée de notre époque.</p>
-    <p>À travers le mouvement humanitaire et écologique <strong>Live to Love</strong> qu'il a fondé, il porte des actions concrètes : reforestation de l'Himalaya, marches de pèlerinage contre la pollution plastique (les <em>Eco Pad Yatra</em>), éducation, secours d'urgence et égalité entre les femmes et les hommes — incarnée notamment par les nonnes Kung Fu de Druk Amitabha. Pour la lignée Drukpa, la pratique spirituelle et l'action au service du monde ne font qu'un.</p>
-  </div>
-
-  <!-- Plouray et Grenoble -->
-  <div class="lin-section alt">
-    <h2>De Plouray à Grenoble</h2>
-    <div class="lin-divider"></div>
-    <p>En France, la lignée a son siège européen à <strong>Drukpa Plouray</strong>, dans le Morbihan, où la congrégation <em>Pel Drukpay Tcheutsol</em> est chargée de représenter la tradition Drukpa en Europe. C'est à cette source vivante que notre association est rattachée.</p>
-    <p>À Grenoble, cette transmission prend racine dans notre territoire grâce à deux maîtres qualifiés : <strong>Drubpön Ngawang Tenzin</strong>, représentant de la lignée en Europe, et <strong>Lopön Thrinlé Tenzin</strong>, notre président, qui guide nos pratiques et rend les enseignements accessibles à tous. Au pied des montagnes de l'Isère, nous nous efforçons de faire vivre cet héritage avec notre propre voix — fidèles à son esprit, ancrés dans notre communauté.</p>
-  </div>
-
-  <div class="lin-cta">
-    <p>Découvrir comment cette tradition prend vie au quotidien à Grenoble :</p>
-    <a href="activites.html" class="btn-primary">Nos activités</a>
-  </div>
-
-</div>
+</section>
 
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" rel="noopener" style="color:var(--gold);text-decoration:none;margin-left:1rem" title="Facebook Drukpa Grenoble">Facebook</a></p>
+  <p>Association Drukpa Grenoble — association loi 1901 — membre de l'Union Bouddhiste de France</p>
+  <p>
+    <a href="contact.html">Contact</a> ·
+    <a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" rel="noopener">Facebook</a> ·
+    <a href="https://drukpa.eu/fr" target="_blank" rel="noopener">Drukpa Plouray</a>
+  </p>
 </footer>
+
 </body>
 </html>

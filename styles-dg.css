@@ -1,0 +1,213 @@
+/* ============================================================
+   Drukpa Grenoble — feuille de style unique (version sobre)
+   Fond blanc · texte noir · accents rouge & doré
+   Conforme au brief du bureau (mai 2026)
+   ============================================================ */
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --blanc:#ffffff;
+  --papier:#FCFAF6;      /* blanc cassé très léger pour les bandes alternées */
+  --noir:#1A1A1A;
+  --gris:#55504A;
+  --rouge:#9C2B23;
+  --or:#B8923A;
+  --or-clair:#CBA85A;
+  --trait:#E6E1D7;
+}
+
+html{scroll-behavior:smooth}
+body{
+  font-family:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--blanc);
+  color:var(--noir);
+  line-height:1.75;
+  font-weight:300;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:var(--rouge)}
+
+/* ---------- Navigation ---------- */
+nav{
+  background:var(--blanc);
+  border-bottom:1px solid var(--trait);
+  position:sticky;top:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;flex-wrap:wrap;gap:.5rem;
+}
+.nav-logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;padding:.7rem 0}
+.nav-logo img{width:38px;height:38px;object-fit:contain}
+.nav-brand{line-height:1.35}
+.nav-brand .fr{
+  display:block;font-family:"Cinzel",serif;font-size:11px;letter-spacing:.16em;
+  color:var(--noir);font-weight:600;
+}
+.nav-brand .bo{
+  display:block;font-size:10px;letter-spacing:.1em;color:var(--or);margin-top:2px;
+}
+.nav-links{display:flex;flex-wrap:wrap}
+.nav-links a{
+  font-size:10px;letter-spacing:.18em;text-transform:uppercase;font-weight:400;
+  color:var(--gris);padding:1.15rem .9rem;text-decoration:none;
+  border-bottom:2px solid transparent;transition:color .2s,border-color .2s;
+}
+.nav-links a:hover,.nav-links a.active{color:var(--rouge);border-bottom-color:var(--or)}
+
+/* ---------- Blocs de page ---------- */
+.section{padding:4.5rem 2rem}
+.section.alt{background:var(--papier)}
+.wrap{max-width:860px;margin:0 auto}
+.wrap-large{max-width:1080px;margin:0 auto}
+
+.eyebrow{
+  font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--or);text-align:center;margin-bottom:.8rem;
+}
+h1,h2,h3{font-family:"Cinzel",serif;font-weight:600;color:var(--noir)}
+h1{font-size:clamp(2rem,5vw,3rem);letter-spacing:.04em;text-align:center}
+h2{font-size:clamp(1.3rem,3vw,1.75rem);text-align:center;margin-bottom:.7rem}
+h3{font-size:1.05rem;color:var(--rouge);margin-bottom:.5rem;letter-spacing:.02em}
+.rule{width:52px;height:2px;background:var(--or);margin:1.2rem auto 2.4rem}
+.rule.left{margin-left:0}
+
+p{margin-bottom:1.1rem;color:var(--gris)}
+p strong{color:var(--noir);font-weight:400}
+.lead{
+  font-family:"Cormorant Garamond",Georgia,serif;
+  font-size:clamp(1.1rem,2.4vw,1.4rem);
+  line-height:1.65;color:var(--noir);text-align:center;
+}
+.center{text-align:center}
+.small{font-size:.85rem}
+.muted{color:var(--gris)}
+
+/* ---------- En-tête d'accueil ---------- */
+.accueil-hero{padding:4rem 2rem 3rem;text-align:center;background:var(--blanc)}
+.accueil-hero .logo{width:96px;height:96px;object-fit:contain;margin:0 auto 1.6rem}
+.nom-tibetain{
+  font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.12em;color:var(--or);
+  margin-top:.6rem;font-weight:400;
+}
+.nom-tibetain-script{
+  /* Nom du centre en caractères tibétains — à valider avec Guy */
+  font-family:"Noto Serif Tibetan","Kailasa","Microsoft Himalaya",serif;
+  font-size:clamp(1.3rem,3.4vw,1.9rem);line-height:2.1;
+  color:var(--noir);margin-top:1rem;
+}
+
+/* ---------- En-tête de page intérieure ---------- */
+.page-header{
+  padding:3.2rem 2rem 2.4rem;text-align:center;
+  border-bottom:1px solid var(--trait);background:var(--blanc);
+}
+
+/* ---------- Portraits / fiches ---------- */
+.fiche{
+  display:grid;grid-template-columns:180px 1fr;gap:2rem;align-items:start;
+  padding:2.4rem 0;border-bottom:1px solid var(--trait);
+}
+.fiche:last-child{border-bottom:none}
+.fiche img{width:180px;height:180px;object-fit:cover;border:1px solid var(--trait)}
+.fiche .sans-photo{
+  width:180px;height:180px;border:1px solid var(--trait);background:var(--papier);
+  display:flex;align-items:center;justify-content:center;
+  font-family:"Cinzel",serif;font-size:2rem;color:var(--or-clair);
+}
+.fiche h3{margin-bottom:.15rem}
+.fiche .role{
+  font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--or);margin-bottom:.9rem;
+}
+
+/* ---------- Cartes ---------- */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.4rem}
+.carte{
+  background:var(--blanc);border:1px solid var(--trait);
+  border-top:3px solid transparent;padding:1.8rem 1.6rem;
+  text-decoration:none;display:block;transition:border-color .2s,transform .2s;
+}
+.carte:hover{border-top-color:var(--or);transform:translateY(-3px)}
+.carte p{font-size:.88rem;margin-bottom:0}
+
+/* ---------- Image d'ambiance (sans visage) ---------- */
+.bandeau{position:relative;height:46vh;min-height:300px;overflow:hidden}
+.bandeau img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bandeau .voile{position:absolute;inset:0;background:rgba(26,26,26,.42)}
+.bandeau .texte{
+  position:relative;z-index:2;height:100%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:2rem;
+}
+.bandeau .texte p{
+  font-family:"Cormorant Garamond",Georgia,serif;font-style:italic;
+  font-size:clamp(1.15rem,2.8vw,1.7rem);color:#fff;line-height:1.55;
+  max-width:720px;margin-bottom:.9rem;
+}
+.bandeau .texte cite{
+  font-style:normal;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--or-clair);
+}
+
+/* ---------- Encadrés ---------- */
+.encadre{
+  border-left:3px solid var(--or);background:var(--papier);
+  padding:1.4rem 1.6rem;margin:2rem 0;
+}
+.encadre p:last-child{margin-bottom:0}
+.encadre.rouge{border-left-color:var(--rouge)}
+
+/* ---------- Boutons ---------- */
+.btn{
+  display:inline-block;padding:.8rem 2.1rem;font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;text-decoration:none;font-weight:700;transition:all .2s;
+}
+.btn-or{background:var(--or);color:#fff}
+.btn-or:hover{background:var(--or-clair)}
+.btn-rouge{border:1px solid var(--rouge);color:var(--rouge);background:transparent}
+.btn-rouge:hover{background:var(--rouge);color:#fff}
+.btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:1.8rem}
+
+/* ---------- Listes ---------- */
+ul.propre{list-style:none;margin:0 0 1.2rem}
+ul.propre li{
+  position:relative;padding-left:1.4rem;margin-bottom:.6rem;color:var(--gris);
+}
+ul.propre li::before{
+  content:"·";position:absolute;left:.35rem;color:var(--or);font-size:1.4rem;line-height:1;
+}
+
+/* ---------- Formulaire ---------- */
+.form-champ{margin-bottom:1.1rem}
+.form-champ label{
+  display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--gris);margin-bottom:.35rem;
+}
+.form-champ input,.form-champ select,.form-champ textarea{
+  width:100%;background:var(--blanc);border:1px solid var(--trait);
+  padding:.75rem 1rem;font-family:inherit;font-size:.92rem;color:var(--noir);
+}
+.form-champ input:focus,.form-champ select:focus,.form-champ textarea:focus{
+  outline:none;border-color:var(--or);
+}
+.form-champ textarea{height:140px;resize:vertical}
+.pot-de-miel{position:absolute;left:-9999px;top:-9999px}
+button.btn-or{border:none;cursor:pointer;font-family:inherit}
+
+/* ---------- Pied de page ---------- */
+footer{
+  background:var(--blanc);border-top:1px solid var(--trait);
+  padding:2.2rem;text-align:center;
+}
+footer p{font-size:.82rem;color:var(--gris);margin-bottom:.4rem}
+footer a{color:var(--or);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+/* ---------- Responsive ---------- */
+@media(max-width:820px){
+  nav{padding:0 1rem;justify-content:center}
+  .nav-links a{padding:.9rem .6rem}
+  .fiche{grid-template-columns:1fr;gap:1.2rem}
+  .fiche img,.fiche .sans-photo{width:150px;height:150px}
+  .section{padding:3.2rem 1.3rem}
+}

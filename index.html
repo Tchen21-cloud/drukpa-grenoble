@@ -3,236 +3,136 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Drukpa Grenoble — Méditation & Enseignements bouddhistes</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<title>Drukpa Grenoble — Centre bouddhique de la Lignée Drukpa</title>
+<meta name="description" content="Drukpa Grenoble, centre bouddhique de l'école tibétaine du vajrayana et de la Lignée Drukpa, sous l'autorité spirituelle de Sa Sainteté Gyalwang Drukpa.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&family=Noto+Serif+Tibetan:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-dg.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
-    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+    <img src="logo_dg_or.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">
+      <span class="fr">DRUKPA GRENOBLE</span>
+      <span class="bo">Druk Pagsam Wangpo</span>
+    </span>
   </a>
   <div class="nav-links">
     <a href="index.html" class="active">Accueil</a>
-    <a href="apropos.html">À propos</a>
     <a href="lignee.html">La lignée</a>
     <a href="activites.html">Activités</a>
-    <a href="dialogue.html">Dialogue</a>
-    <a href="retraites.html">Retraites</a>
-    <a href="livetolove.html">Live to Love</a>
-    <a href="intervenants.html">Intervenants</a>
-    <a href="aumonerie.html">Aumônerie</a>
-    <a href="galerie.html">Galerie</a>
+    <a href="ubf.html">UBF</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<style>
-#splash{position:relative;width:100%;height:100vh;overflow:hidden;cursor:none}
-
-#hero-reel{position:absolute;inset:0}
-#hero-reel .hero-bg{position:absolute;inset:0;background-image:url('eyeem-82693436.jpg');background-size:cover;background-position:center}
-#hero-reel .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45) 0%,rgba(0,0,0,.2) 50%,rgba(0,0,0,.65) 100%)}
-#hero-reel .hero-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;z-index:1}
-#hero-reel .hero-tagline{color:#E8C97A;text-shadow:0 1px 4px rgba(0,0,0,.8);font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.8rem}
-#hero-reel h1{text-shadow:0 2px 12px rgba(0,0,0,.7);margin:.4rem 0}
-#hero-reel .hero-sub{text-shadow:0 1px 6px rgba(0,0,0,.8);margin-bottom:.8rem}
-#hero-reel .hero-desc{color:rgba(255,255,255,.92);text-shadow:0 1px 4px rgba(0,0,0,.7);max-width:540px;font-size:.93rem;line-height:1.8;margin:0 auto 2rem}
-#hero-reel .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-#volet-g,#volet-d{
-  position:absolute;top:0;bottom:0;
-  z-index:4;
-  overflow:hidden;
-  transition:none;
-}
-#volet-g.ferme,#volet-d.ferme{
-  transition:width 1.4s cubic-bezier(.4,0,.2,1);
-}
-#volet-g{
-  left:0;width:50%;
-  background:#ffffff;
-}
-#volet-d{
-  right:0;width:50%;
-  background:#ffffff;
-}
-
-@keyframes hue-cycle{
-  0%   {filter:hue-rotate(0deg)   saturate(1.5) brightness(1.0)}
-  25%  {filter:hue-rotate(45deg)  saturate(1.5) brightness(1.0)}
-  50%  {filter:hue-rotate(120deg) saturate(1.5) brightness(1.0)}
-  75%  {filter:hue-rotate(210deg) saturate(1.5) brightness(1.0)}
-  100% {filter:hue-rotate(360deg) saturate(1.5) brightness(1.0)}
-}
-
-/* Le logo est unique, positionné en absolu sur toute la largeur du splash,
-   chaque volet en clip sa moitié via overflow:hidden */
-.logo-moitie{
-  position:absolute;
-  top:50%; transform:translateY(-50%);
-  width:100vw; height:100vh;
-  display:flex;align-items:center;justify-content:center;
-  pointer-events:none;
-  animation:hue-cycle 8s linear infinite;
-}
-#volet-g .logo-moitie{
-  left:0;          /* ancré au bord gauche du volet, s'étend sur 100vw */
-}
-#volet-d .logo-moitie{
-  right:0;         /* ancré au bord droit du volet, s'étend vers la gauche */
-  left:auto;
-  transform:translateY(-50%) translateX(calc(100% - 100vw));
-}
-.logo-moitie img{
-  width:90vh;height:90vh;
-  max-width:90vw;max-height:90vh;
-  object-fit:contain;
-  display:block;
-}
-
-#cursor-dot{
-  position:absolute;
-  width:10px;height:10px;border-radius:50%;
-  background:rgba(255,255,255,.75);
-  pointer-events:none;z-index:10;
-  transform:translate(-50%,-50%);
-  transition:opacity .3s;
-  opacity:0;
-}
-</style>
-
-<div id="splash">
-
-  <div id="hero-reel" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="hero-tagline">Lignée Drukpa du bouddhisme tibétain — Grenoble</div>
-      <h1>Drukpa Grenoble</h1>
-      <p class="hero-sub">Méditation, enseignements et dialogue interreligieux</p>
-      <p class="hero-desc">Une association ancrée dans la tradition bouddhiste tibétaine, ouverte à tous ceux qui souhaitent cheminer vers une présence plus profonde et plus éveillée.</p>
-      <div class="hero-btns">
-        <a href="activites.html" class="btn-primary">Découvrir nos activités</a>
-        <a href="contact.html" class="btn-outline">Nous contacter</a>
-      </div>
-    </div>
+<!-- ============ ACCUEIL ============ -->
+<header class="accueil-hero">
+  <img src="logo_dg_or.png" alt="Logo Drukpa Grenoble" class="logo">
+  <h1>Drukpa Grenoble</h1>
+  <!-- Nom du centre transmis par Guy : DRUK PAGSAM WANGPO, nom du 5e Gyalwang Drukpa.
+       Orthographe tibétaine : འབྲུག་དཔག་བསམ་དབང་པོ།
+       (dpag bsam dbang po, attesté ; le préfixe འབྲུག « Druk » reste à faire valider
+       par Guy ou Lopön Thrinlé avant mise en ligne définitive.) -->
+  <div class="nom-tibetain-script">འབྲུག་དཔག་བསམ་དབང་པོ།</div>
+  <div class="nom-tibetain">DRUK PAGSAM WANGPO</div>
+  <div class="rule"></div>
+  <p class="lead">
+    Drukpa Grenoble est un centre bouddhique de l'école tibétaine du vajrayana,
+    et plus particulièrement de la Lignée Drukpa.
+  </p>
+  <p class="center" style="max-width:680px;margin:0 auto">
+    Il est placé sous l'autorité spirituelle de Sa Sainteté Gyalwang Drukpa.
+    Le Vénérable Drubpön Ngawang Rimpoché, représentant de Sa Sainteté en Europe,
+    et Lopön Thrinlé y dirigent régulièrement des retraites d'enseignements.
+  </p>
+  <div class="btns">
+    <a href="activites.html" class="btn btn-or">Nos activités</a>
+    <a href="contact.html" class="btn btn-rouge">Nous contacter</a>
   </div>
+</header>
 
-  <div id="volet-g">
-    <div class="logo-moitie">
-      <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
-    </div>
+<!-- ============ PHOTO DES MAÎTRES ============ -->
+<!-- Emplacement prévu pour la photo réunissant Sa Sainteté, Drubpön Ngawang
+     Rimpoché et Lopön Thrinlé. Remplacer le src ci-dessous par le fichier retenu. -->
+<section class="section" style="padding-top:0">
+  <div class="wrap center">
+    <img src="Le_12e_Gyalwang_Drukpa.jpg"
+         alt="Sa Sainteté Gyalwang Drukpa"
+         style="margin:0 auto;max-width:460px;max-height:420px;object-fit:contain">
+    <p class="small muted" style="margin-top:.8rem;font-style:italic">
+      Sa Sainteté Gyalwang Drukpa — photo à remplacer par le cliché réunissant
+      Sa Sainteté, Drubpön Ngawang Rimpoché et Lopön Thrinlé.
+    </p>
   </div>
-  <div id="volet-d">
-    <div class="logo-moitie">
-      <img src="logo_drukpa_grenoble_hero.png" alt="Logo Drukpa Grenoble">
-    </div>
+</section>
+
+<!-- ============ BANDEAU (paysage, sans visage) ============ -->
+<section class="bandeau">
+  <img src="stupa-montagne.jpg" alt="Stupa en montagne">
+  <div class="voile"></div>
+  <div class="texte">
+    <p>« Contribuer à nourrir les causes d'un bonheur relatif, et aussi plus profond
+      et véritable, pour toutes celles et tous ceux qui s'y relient. »</p>
+    <cite>Lopön Thrinlé</cite>
   </div>
+</section>
 
-  <div id="cursor-dot"></div>
-</div>
-
-<script>
-(function(){
-  var splash    = document.getElementById('splash');
-  var voletG    = document.getElementById('volet-g');
-  var voletD    = document.getElementById('volet-d');
-  var dot       = document.getElementById('cursor-dot');
-  var stopTimer = null;
-
-  function ouvrirVolets(){
-    voletG.classList.remove('ferme');
-    voletD.classList.remove('ferme');
-    voletG.style.width = '0%';
-    voletD.style.width = '0%';
-  }
-  function fermerVolets(){
-    voletG.classList.add('ferme');
-    voletD.classList.add('ferme');
-    voletG.style.width = '50%';
-    voletD.style.width = '50%';
-  }
-
-  splash.addEventListener('mousemove',function(e){
-    var rect = splash.getBoundingClientRect();
-    dot.style.left    = (e.clientX - rect.left) + 'px';
-    dot.style.top     = (e.clientY - rect.top)  + 'px';
-    dot.style.opacity = '1';
-
-    ouvrirVolets();
-
-    clearTimeout(stopTimer);
-    stopTimer = setTimeout(fermerVolets, 900);
-  });
-
-  splash.addEventListener('mouseleave',function(){
-    dot.style.opacity = '0';
-    clearTimeout(stopTimer);
-    fermerVolets();
-  });
-})();
-</script>
-
-<!-- Aperçu rapide -->
-<section class="section" style="background:var(--cream2);padding:3rem 2rem">
-  <div class="section-inner">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;text-align:center">
-      <div>
-        <span style="font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);display:block">15</span>
-        <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">Adhérents 2025</span>
-      </div>
-      <div>
-        <span style="font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);display:block">4</span>
-        <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">Week-ends annuels</span>
-      </div>
-      <div>
-        <span style="font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);display:block">30+</span>
-        <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">Ans de pratique</span>
-      </div>
-      <div>
-        <span style="font-family:'Cinzel',serif;font-size:2rem;color:var(--gold);display:block">2</span>
-        <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">Aumôniers</span>
-      </div>
+<!-- ============ RUBRIQUES ============ -->
+<section class="section alt">
+  <div class="wrap-large">
+    <div class="eyebrow">Explorer</div>
+    <h2>Nos rubriques</h2>
+    <div class="rule"></div>
+    <div class="grid">
+      <a href="lignee.html" class="carte">
+        <h3>La lignée</h3>
+        <p>Sa Sainteté le 12<sup>e</sup> Gyalwang Drukpa, Son Éminence Drukpa Thuksey
+          Rinpoché, le Vénérable Drubpön Ngawang Rimpoché et Lopön Thrinlé.</p>
+      </a>
+      <a href="activites.html" class="carte">
+        <h3>Activités</h3>
+        <p>Méditations, enseignements et retraites, dialogue interreligieux
+          et actions Live to Love.</p>
+      </a>
+      <a href="ubf.html" class="carte">
+        <h3>Union Bouddhiste de France</h3>
+        <p>Notre affiliation nationale et les aumôneries bouddhistes.</p>
+      </a>
+      <a href="contact.html" class="carte">
+        <h3>Contact</h3>
+        <p>Nous écrire, adhérer à l'association, rejoindre les temps de pratique.</p>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- Liens rapides -->
-<section class="section" style="padding:4rem 2rem">
-  <div class="section-inner">
-    <div class="section-label">Explorer</div>
-    <h2 class="section-title">Nos rubriques</h2>
-    <div class="section-divider"></div>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem">
-      <a href="retraites.html" style="display:block;background:var(--dark);padding:1.5rem;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">
-        <span style="font-size:1.5rem;display:block;margin-bottom:.5rem">🏔</span>
-        <span style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold-light)">Retraites</span>
-        <p style="font-size:.8rem;color:rgba(245,230,195,.55);margin-top:.3rem">Agenda & inscriptions</p>
-      </a>
-      <a href="intervenants.html" style="display:block;background:var(--dark);padding:1.5rem;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">
-        <span style="font-size:1.5rem;display:block;margin-bottom:.5rem">🙏</span>
-        <span style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold-light)">Intervenants</span>
-        <p style="font-size:.8rem;color:rgba(245,230,195,.55);margin-top:.3rem">Nos maîtres spirituels</p>
-      </a>
-      <a href="dialogue.html" style="display:block;background:var(--dark);padding:1.5rem;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">
-        <span style="font-size:1.5rem;display:block;margin-bottom:.5rem">🕊</span>
-        <span style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold-light)">Dialogue interreligieux</span>
-        <p style="font-size:.8rem;color:rgba(245,230,195,.55);margin-top:.3rem">Rencontres & échanges</p>
-      </a>
-      <a href="aumonerie.html" style="display:block;background:var(--dark);padding:1.5rem;text-decoration:none;border-bottom:2px solid transparent;transition:border-color .2s" onmouseover="this.style.borderColor='var(--gold)'" onmouseout="this.style.borderColor='transparent'">
-        <span style="font-size:1.5rem;display:block;margin-bottom:.5rem">💛</span>
-        <span style="font-family:'Cinzel',serif;font-size:.9rem;color:var(--gold-light)">Aumônerie</span>
-        <p style="font-size:.8rem;color:rgba(245,230,195,.55);margin-top:.3rem">Accompagnement spirituel</p>
-      </a>
-    </div>
+<!-- ============ LIEN PLOURAY ============ -->
+<section class="section">
+  <div class="wrap center">
+    <div class="eyebrow">Notre centre de référence</div>
+    <h2>Drukpa Plouray</h2>
+    <div class="rule"></div>
+    <img src="Plouray.jpg" alt="Centre bouddhique Drukpa Plouray"
+         style="margin:0 auto 1.6rem;max-width:480px;max-height:360px;object-fit:cover">
+    <p>
+      Drukpa Grenoble est relié au centre bouddhique Drukpa Plouray, en Bretagne,
+      où sont organisées des retraites collectives et des enseignements,
+      notamment en présence de Drubpön Ngawang Rimpoché.
+    </p>
+    <a href="https://drukpa.eu/fr" target="_blank" rel="noopener"
+       class="btn btn-rouge">Visiter Drukpa Plouray</a>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" style="color:var(--gold);text-decoration:none;margin-left:1rem" title="Facebook Drukpa Grenoble">Facebook</a></p>
+  <p>Association Drukpa Grenoble — association loi 1901 — membre de l'Union Bouddhiste de France</p>
+  <p>
+    <a href="contact.html">Contact</a> ·
+    <a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" rel="noopener">Facebook</a> ·
+    <a href="https://drukpa.eu/fr" target="_blank" rel="noopener">Drukpa Plouray</a>
+  </p>
 </footer>
 
 </body>
