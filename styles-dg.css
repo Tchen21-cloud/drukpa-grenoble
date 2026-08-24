@@ -85,6 +85,7 @@ p strong{color:var(--noir);font-weight:400}
 /* ---------- En-tête d'accueil ---------- */
 .accueil-hero{padding:4rem 2rem 3rem;text-align:center;background:var(--blanc)}
 .accueil-hero .logo{width:96px;height:96px;object-fit:contain;margin:0 auto 1.6rem}
+.accueil-hero .logo.grand{width:min(230px,58vw);height:auto;margin-bottom:1.8rem}
 .nom-tibetain{
   font-size:clamp(1rem,2.6vw,1.4rem);letter-spacing:.12em;color:var(--or);
   margin-top:.6rem;font-weight:400;
