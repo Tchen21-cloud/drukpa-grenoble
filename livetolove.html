@@ -4,94 +4,153 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Live to Love — Drukpa Grenoble</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-.ltl-body{background:#fff0ee;padding:0}
-.ltl-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:500px}
-.ltl-left{position:relative}
-.ltl-left img{width:100%;height:100%;object-fit:cover;display:block;min-height:500px}
-.ltl-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(26,18,8,.8));padding:2rem 1.5rem 1rem;font-size:.78rem;color:rgba(245,230,195,.7);font-style:italic}
-.ltl-right{padding:3.5rem 4rem;display:flex;flex-direction:column;justify-content:center;background:#fff0ee}
-.ltl-right p{color:#4A3520;line-height:1.95;font-size:.95rem;margin-bottom:1rem}
-.ltl-boxes{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:2rem}
-.ltl-box{background:#1C1510;padding:1.2rem 1.5rem;border-top:2px solid #C9A84C}
-.ltl-box-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#C9A84C;margin-bottom:.4rem}
-.ltl-box-val{font-size:.85rem;color:rgba(245,230,195,.8);line-height:1.6}
-@media(max-width:768px){
-  .ltl-grid{grid-template-columns:1fr}
-  .ltl-right{padding:2rem}
-  .ltl-left img{min-height:280px}
-}
-</style>
+<meta name="description" content="Live to Love, l'action humanitaire de la lignée Drukpa dans l'Himalaya : urgence Népal, Journées Altruistes et soutien aux communautés himalayennes.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles-dg.css">
 </head>
 <body>
 
 <nav>
   <a class="nav-logo" href="index.html">
-    <img src="logo_drukpa_grenoble_header.png" alt="Logo Drukpa Grenoble">
-    <span class="nav-brand">DRUKPA<br>GRENOBLE</span>
+    <img src="logo_dg_couleur.png" alt="Logo Drukpa Grenoble">
+    <span class="nav-brand">
+      <span class="fr">DRUKPA GRENOBLE</span>
+      <span class="bo">Druk Pagsam Wangpo</span>
+    </span>
   </a>
   <div class="nav-links">
     <a href="index.html">Accueil</a>
-    <a href="apropos.html">À propos</a>
     <a href="lignee.html">La lignée</a>
     <a href="activites.html">Activités</a>
-    <a href="dialogue.html">Dialogue</a>
-    <a href="retraites.html">Retraites</a>
+    <a href="actualites.html">Actualités</a>
     <a href="livetolove.html" class="active">Live to Love</a>
-    <a href="intervenants.html">Intervenants</a>
-    <a href="aumonerie.html">Aumônerie</a>
-    <a href="galerie.html">Galerie</a>
+    <a href="ubf.html">UBF</a>
     <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<div class="page-header ltl-header">
-  <div class="page-label" style="color:#FFD700">Engagement altruiste</div>
-  <h1 class="page-title" style="color:#FFF">Live to Love</h1>
-  <div class="page-divider"></div>
-</div>
+<header class="page-header">
+  <div class="eyebrow">L'action humanitaire de la lignée</div>
+  <h1>Live to Love</h1>
+  <div class="rule"></div>
+  <p class="lead" style="max-width:660px;margin:0 auto">
+    Agir avec les communautés himalayennes, et non pour elles.
+  </p>
+</header>
 
-<div class="ltl-body">
-  <div class="ltl-grid">
+<section class="section">
+  <div class="wrap">
+    <p>
+      Live to Love est l'organisation humanitaire née à l'initiative de Sa Sainteté
+      le XII<sup>e</sup> Gyalwang Drukpa. Elle travaille aux côtés des populations de
+      l'Himalaya, dans des vallées souvent difficiles d'accès, où les secours mettent
+      des jours à parvenir et où les habitants sont les premiers à se porter secours
+      entre eux.
+    </p>
+    <p>
+      Son action couvre l'éducation, l'accès aux soins, la protection de
+      l'environnement et le secours d'urgence après les catastrophes naturelles.
+      Un fonds d'intervention himalayen maintient en permanence un réseau de
+      partenaires locaux, capables d'agir dans les jours qui suivent un sinistre.
+      Ce sont ces partenaires, déjà sur place, qui rendent l'aide possible là où
+      les organisations internationales n'arrivent que bien plus tard.
+    </p>
+    <p>
+      L'association Drukpa Grenoble relaie ces appels auprès de ses membres et de
+      ses amis. Live to Love France est l'antenne française de l'organisation.
+    </p>
+  </div>
+</section>
 
-    <!-- Photo gauche pleine hauteur -->
-    <div class="ltl-left">
-      <img src="C_cile_Dupart_et_Guy_Pelletier.jpg" alt="Cécile Dupart et Guy Pelletier">
-      <div class="ltl-caption">Cécile Dupart & Guy Pelletier — Montchardon, mars 2026</div>
-    </div>
+<section class="section alt">
+  <div class="wrap">
 
-    <!-- Texte droite -->
-    <div class="ltl-right">
-      <p><strong>Cécile Dupart</strong> porte et coordonne les actions Live to Love au sein de Drukpa Grenoble.</p>
-      <p>L'idée est simple et profonde : accomplir des actions particulièrement altruistes, en groupes ou individuellement, et les partager pour encourager chacun à agir.</p>
-      <p>Des week-ends bimestriels sont prévus tout au long de l'année. Chaque participant est invité à mettre en route des actions altruistes ou à partager celles qu'il fait déjà, via photos ou court texte, publiés par l'association internationale <strong>Live to Love</strong> fondée par Sa Sainteté le Gyalwang Drukpa.</p>
-      <div class="ltl-boxes">
-        <div class="ltl-box">
-          <div class="ltl-box-label">Rythme</div>
-          <div class="ltl-box-val">Week-ends bimestriels tout au long de l'année</div>
-        </div>
-        <div class="ltl-box">
-          <div class="ltl-box-label">Comment participer</div>
-          <div class="ltl-box-val">Individuellement ou en groupe, actions libres et bienveillantes</div>
-        </div>
-        <div class="ltl-box">
-          <div class="ltl-box-label">Partage</div>
-          <div class="ltl-box-val">Photos ou textes courts</div>
-        </div>
-        <div class="ltl-box">
-          <div class="ltl-box-label">Contact</div>
-          <div class="ltl-box-val"><a href="contact.html" style="color:var(--gold)">Nous écrire →</a></div>
-        </div>
+    <div class="encadre rouge">
+      <div class="eyebrow">Appel en cours</div>
+      <h2 style="text-align:left;margin-top:.2em">Urgence Népal — inondations</h2>
+      <div class="rule left"></div>
+
+      <p>
+        Le 26 août 2026, une lave torrentielle provoquée par l'effondrement d'un
+        glacier à la frontière népalo-tibétaine a ravagé la vallée de la Trishuli,
+        du nord au sud du Népal. En quelques minutes, elle a emporté des milliers
+        de vies, des villages entiers, des routes, des ponts et des installations
+        hydroélectriques.
+      </p>
+      <p>
+        L'accès à ces zones reculées reste très difficile pour les secours, et les
+        survivants demeurent isolés et démunis en cette période de mousson, où les
+        pluies aggravent encore la situation. Les équipes de Live to Love, en
+        contact étroit avec leurs partenaires sur le terrain, ont commencé à
+        acheminer des denrées de première nécessité dans les premières zones
+        accessibles.
+      </p>
+      <p>
+        Les catastrophes tuent deux fois. Les inondations fauchent des vies, puis,
+        dans les semaines qui suivent, viennent les morts plus silencieuses : eaux
+        contaminées, faim, trafic d'êtres humains. Les dons servent à acheter et à
+        préparer des fournitures de première nécessité, et à constituer des stocks
+        pour tenir dans la durée, car l'effort sera long.
+      </p>
+
+      <div class="btns">
+        <a class="btn btn-rouge" href="https://www.helloasso.com/associations/live-to-love-france/formulaires/2" target="_blank" rel="noopener">Faire un don</a>
       </div>
+
+      <p class="small muted">
+        Le don en ligne passe par HelloAsso, sur la page officielle de Live to Love
+        France. Pour un don par chèque, les coordonnées de la trésorière et le RIB
+        sont communiqués sur demande : <a href="contact.html">nous écrire</a>.
+      </p>
     </div>
 
   </div>
-</div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="agenda">
+      <h2 style="text-align:left;margin-top:0">Les Journées Altruistes</h2>
+      <div class="rule left"></div>
+      <p class="lieu">
+        Deux jours pour se retrouver, pratiquer et soutenir les actions de Live to Love.
+      </p>
+
+      <table>
+        <thead>
+          <tr><th>Date</th><th>Événement</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="date">Sam. 10 – dim. 11 octobre 2026</td>
+            <td>Journées Live to Love</td>
+          </tr>
+          <tr>
+            <td class="date">Sam. 5 – dim. 6 décembre 2026</td>
+            <td>Journées Live to Love</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="encadre">
+      <p class="small">
+        <strong>Participer.</strong> Les Journées Altruistes sont ouvertes à toutes
+        et à tous. Pour connaître le programme et le lieu de chaque week-end,
+        <a href="contact.html">écrivez-nous</a>.
+      </p>
+    </div>
+  </div>
+</section>
 
 <footer>
-  <p>© 2025 Association Drukpa Grenoble — Membre de l'Union Bouddhiste de France — <a href="contact.html" style="color:var(--gold)">Contact</a><a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" style="color:var(--gold);text-decoration:none;margin-left:1rem">Facebook</a></p>
+  <p>Association Drukpa Grenoble — association loi 1901 — membre de l'Union Bouddhiste de France</p>
+  <p>
+    <a href="contact.html">Contact</a> ·
+    <a href="https://www.facebook.com/profile.php?id=100088255381524" target="_blank" rel="noopener">Facebook</a> ·
+    <a href="https://drukpa.eu/fr" target="_blank" rel="noopener">Drukpa Plouray</a>
+  </p>
 </footer>
+
 </body>
 </html>
