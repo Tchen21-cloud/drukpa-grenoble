@@ -258,3 +258,27 @@ footer a:hover{text-decoration:underline}
   .agenda td.date{width:auto;font-weight:700;white-space:normal;margin-bottom:.3rem}
   .agenda td.qui{width:auto;font-size:.82rem;color:var(--or);margin-top:.3rem}
 }
+
+
+/* ---------- Macaron « Membre de l'Union Bouddhiste de France » ----------
+   Bandeau d'affiliation fourni par Lopön Thrinlé (septembre 2026).
+   Il se place en bas de l'accueil, au-dessus du pied de page, et en tête
+   de la page UBF. Le PNG est détouré : seul le contour extérieur est
+   transparent, le fond crème du macaron est conservé. */
+.macaron{
+  background:var(--papier);
+  border-top:1px solid var(--trait);
+  padding:2.8rem 1.5rem;
+  text-align:center;
+}
+.macaron a{display:inline-block;text-decoration:none}
+.macaron img{
+  margin:0 auto;
+  width:100%;max-width:330px;
+  transition:opacity .25s ease;
+}
+.macaron a:hover img{opacity:.82}
+@media(max-width:600px){
+  .macaron{padding:2.2rem 1.2rem}
+  .macaron img{max-width:250px}
+}
