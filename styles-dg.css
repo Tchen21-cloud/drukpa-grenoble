@@ -274,11 +274,11 @@ footer a:hover{text-decoration:underline}
 .macaron a{display:inline-block;text-decoration:none}
 .macaron img{
   margin:0 auto;
-  width:100%;max-width:330px;
+  width:100%;max-width:165px;
   transition:opacity .25s ease;
 }
 .macaron a:hover img{opacity:.82}
 @media(max-width:600px){
   .macaron{padding:2.2rem 1.2rem}
-  .macaron img{max-width:250px}
+  .macaron img{max-width:125px}
 }
