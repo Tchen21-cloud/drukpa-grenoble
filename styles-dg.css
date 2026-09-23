@@ -282,3 +282,23 @@ footer a:hover{text-decoration:underline}
   .macaron{padding:2.2rem 1.2rem}
   .macaron img{max-width:125px}
 }
+
+
+/* ---------- Macaron UBF dans l'en-tête ----------
+   Version retenue par Lopön Thrinlé Tenzin (septembre 2026) : le macaron
+   est posé à droite du nom du centre, sur la même ligne, séparé par un
+   filet. Il n'ajoute aucune hauteur à la barre de navigation. */
+.nav-gauche{display:flex;align-items:center}
+.nav-ubf{
+  display:flex;align-items:center;
+  margin-left:1.1rem;padding-left:1.1rem;
+  border-left:1px solid var(--trait);
+  transition:opacity .25s ease;
+}
+.nav-ubf img{height:30px;width:auto}
+.nav-ubf:hover{opacity:.82}
+@media(max-width:820px){
+  .nav-gauche{width:100%;justify-content:center}
+  .nav-ubf{margin-left:.9rem;padding-left:.9rem}
+  .nav-ubf img{height:26px}
+}
